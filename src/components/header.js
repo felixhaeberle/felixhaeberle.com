@@ -4,8 +4,9 @@ import React from "react"
 
 const Header = ({ siteTitle }) => (
   <header
+    className={'p-5'}
     style={{
-      background: `rebeccapurple`,
+      background: `blue`,
       marginBottom: `1.45rem`,
     }}
   >
