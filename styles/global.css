@@ -1,0 +1,63 @@
+:root {
+  /* General */
+  --fontSize: 16px;
+  --unit: calc(var(--fontSize)*0.5);
+
+  /* Raster */
+  --body-max-width: calc(var(--unit)*180);
+  --body-padding-x: calc(var(--unit)*8);
+  --body-padding-y: calc(var(--unit)*8);
+  --columnGap: calc(var(--unit)*8);
+  --rowGap: calc(var(--unit)*8);
+  --column-gap-compact: calc(var(--unit)*4);
+  --row-gap-compact: calc(var(--unit)*2);
+
+  /* Colors */
+  --colorBg: rgba(4,13,33,1);
+  --colorText: rgba(239,246,255,1);
+  --colorTextDark: rgba(129,147,178,1);
+  --colorTextLight: rgba(233,233,233,1);
+  --colorTextDarker: rgba(177,186,201,1);
+  --colorButtonBg: rgba(13,27,56,1);
+
+  /* Fonts */
+  --fontSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  --fontMono: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier, monospace;
+  --fontSizeExtraSmall: 12px;
+  --fontSizeSmall: 14px;
+  --fontSizeMedium: 16px;
+  --fontSizeLarge: 18px;
+  --fontSizeExtraLarge: 36px;
+  /* Font Specials */
+  --letterSpacing: 0.02em;
+  --lineHeightSmallText: 145%;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--fontSans);
+  line-height: normal;
+  font-size: 1rem;
+  background: var(--colorBg);
+  color: var(--colorText);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.button-icon {
+  fill: var(--colorTextDark);
+}

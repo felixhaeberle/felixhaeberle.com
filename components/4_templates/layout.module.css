@@ -1,0 +1,10 @@
+.container {
+  margin: 0 auto;
+  padding: var(--body-padding-y) var(--body-padding-x);
+  max-width: var(--body-max-width);
+  min-height: 100vh;
+}
+
+.backToHome {
+  margin: 3rem 0 0;
+}
