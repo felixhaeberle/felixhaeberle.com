@@ -61,3 +61,10 @@ img {
 .button-icon {
   fill: var(--colorTextDark);
 }
+
+.external-link-icon {
+  fill: var(--colorTextDark);
+  transform: rotate(-45deg);
+  position: relative;
+  top: 1px;
+}

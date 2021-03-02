@@ -2,9 +2,9 @@ import styled from 'styled-components'
 import Link from 'next/link'
 import Image from 'next/image'
 import Text from '../1_atoms/Text'
-
 import Date from '../date'
 import { CardItem } from '../2_molecules/Card'
+import ExternalLink from '../1_atoms/ExternalLink'
 
 const CardStudiesItem = styled.div`
   display: flex;
@@ -24,6 +24,7 @@ CardStudiesItem.Year = styled(CardItem.Date)``
 
 CardStudiesItem.TextSmallDark = styled(Text.Small.Dark)`
   max-width: 80%;
+  padding-bottom: calc(var(--unit)*3.125);
 `
 
 export default function CardStudies({title, text, date, link, image}){
@@ -42,6 +43,7 @@ export default function CardStudies({title, text, date, link, image}){
             </CardStudiesItem.Year>
           </CardStudiesItem.Header>
           <CardStudiesItem.TextSmallDark>{text}</CardStudiesItem.TextSmallDark>
+          <ExternalLink title={'external link'} link={link}/>
         </CardStudiesItem>
       </r-cell>
       <r-cell span="6">
