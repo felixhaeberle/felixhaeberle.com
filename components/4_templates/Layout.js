@@ -17,6 +17,7 @@ export default function Layout({ children, home }) {
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet" />
         <meta name="description" content={site.title} />
+        <meta name="robots" content="noindex"></meta>
         <meta
           property="og:image"
           content={`https://og-image.vercel.app/${encodeURI(
