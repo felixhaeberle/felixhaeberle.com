@@ -1,6 +1,6 @@
 ---
-title: "Project Three"
-date: "2019-01-07"
+title: "Project Four"
+date: "2020-10-02"
 text: "Next.js has two forms of pre-rendering: Static Generation and Server-side Rendering."
 ---
 
