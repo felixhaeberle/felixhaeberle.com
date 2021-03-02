@@ -32,7 +32,7 @@ export default function Home({ writingsList, studiesList, workList }) {
     
           <Text.Mono.Dark>Work</Text.Mono.Dark>
           <ul className={utilStyles.list}>
-            {workList.map(({ id, date, title, text }) => (
+            {workList.slice(0, 4).map(({ id, date, title, text }) => (
               <li className={utilStyles.listItem} key={id}>
                 <Card link={`/work/${id}`} 
                       year={date} 
@@ -50,7 +50,7 @@ export default function Home({ writingsList, studiesList, workList }) {
         <r-cell order-s="-1" order-xs="-1" span="2">
           <Text.Mono.Dark>Studies</Text.Mono.Dark>
           <ul className={utilStyles.list}>
-            {studiesList.map(({ id, date, title, text }) => (
+            {studiesList.slice(0, 3).map(({ id, date, title, text }) => (
               <li className={utilStyles.listItem} key={id}>
                 <Card link={`/studies/${id}`} 
                       title={title}
@@ -68,7 +68,7 @@ export default function Home({ writingsList, studiesList, workList }) {
         <r-cell span="2">
           <Text.Mono.Dark>Writings</Text.Mono.Dark>
           <ul className={utilStyles.list}>
-            {writingsList.map(({ id, date, title, text }) => (
+            {writingsList.slice(0, 4).map(({ id, date, title, text }) => (
               <li className={utilStyles.listItem} key={id}>
                 <Card link={`/writings/${id}`} 
                       date={date} 
