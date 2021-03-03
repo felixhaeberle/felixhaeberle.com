@@ -5,7 +5,7 @@ import Layout from '../../components/4_templates/Layout'
 import Head from 'next/head'
 import Text from '../../components/1_atoms/Text'
 import HeaderWrapper from '../../components/1_atoms/HeaderWrapper'
-import HeaderText from '../../components/1_atoms/HeaderText'
+import Intro from '../../components/1_atoms/Intro'
 import Date from '../../components/date'
 import Card from '../../components/2_molecules/Card'
 
@@ -31,7 +31,7 @@ export default function Work({ workList }) {
           <Text.Large>Work</Text.Large>
       </HeaderWrapper>
       <div>
-        <HeaderText />
+        <Intro />
         <WorkItem.Wrapper>
           <r-grid columns="6" columns-s="2" columns-xs="1">
             {workList.map(({ id, date, title, text }, index, arr) => {
