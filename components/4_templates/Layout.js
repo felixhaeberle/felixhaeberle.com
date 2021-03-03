@@ -2,11 +2,7 @@ import Head from 'next/head'
 import styles from './layout.module.css'
 import Header from '../2_molecules/Header'
 import Footer from '../2_molecules/Footer'
-
-export const site = {
-  name: 'Felix Häberle',
-  title: 'Felix Häberle – Portfolio'
-}
+import { site } from '../../pages/_app'
 
 export default function Layout({ children, home }) {
   return (

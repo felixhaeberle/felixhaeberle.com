@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import Layout, { site } from '../components/4_templates/Layout'
+import { site } from './_app'
+import Layout from '../components/4_templates/Layout'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedData } from '../lib/content'
 import Text from '../components/1_atoms/Text'
