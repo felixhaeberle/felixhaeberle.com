@@ -42,14 +42,14 @@ export default function Me() {
       </HeaderWrapper>
       <div>
         <Listing>
-          <r-grid columns="6" columns-s="2">
-            <r-cell span="4" flow-cols="2" flow-cols-s="1">
+          <r-grid columns="6" columns-s="4">
+            <r-cell span="4" flow-cols="2" flow-cols-s="2" flow-cols-xs="1">
               <Text.Intro>My career as a designer started in the 1990s with an online magazine I created with a few friends. I started helping others with design and websites to learn more. It eventually led me to my first job as a designer, at Lear Corporation in 1999.</Text.Intro>
               <Text.Intro>My career as a designer started in the 1990s with an online magazine I created with a few friends. I started helping others with design and websites to learn more. It eventually led me to my first job as a designer, at Lear Corporation in 1999. My career as a designer started in the 1990s with an online magazine I created with a few friends. I started helping others with design and websites to learn more. It eventually led me to my first job as a designer.</Text.Intro>
               <Text.Intro>My career as a designer started in the 1990s with an online magazine I created with a few friends. I started helping others with design and websites to learn more. It eventually led me to my first job as a designer, at Lear Corporation in 1999. My career as a designer started in the 1990s with an online magazine I created with a few friends. I started helping others with design and websites to learn more. It eventually led me to my first job as a designer.</Text.Intro>
               <Text.Intro>My career as a designer started in the 1990s with an online magazine I created with a few friends. I started helping others with design and websites to learn more. It eventually led me to my first job as a designer, at Lear Corporation in 1999.</Text.Intro>
             </r-cell>
-            <r-cell span="2" style={{justifySelf: 'end'}}>
+            <r-cell span="2" order-s="-1" style={{justifySelf: 'end'}}>
               <ImageWrapper>
                 <Image src="/images/profile.png" width="300px" height="300px" />
               </ImageWrapper>
@@ -68,13 +68,13 @@ export default function Me() {
                 ))}
               </SocialLinkWrapper>
             </r-cell>
-            <r-cell span="2">
+            <r-cell span="2" span-s="4">
               <Principle />
             </r-cell>
-            <r-cell span="2">
+            <r-cell span="2" span-s="4">
               <Principle />
             </r-cell>
-            <r-cell span="2">
+            <r-cell span="2" span-s="4">
               <Principle />
             </r-cell>
             {cvListing.map((item) => (
