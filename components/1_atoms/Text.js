@@ -13,6 +13,12 @@ Text.Dark = styled(Text)`
   color: var(--colorTextDark);
 `
 
+Text.Intro = styled(Text)`
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: calc(var(--unit) * 1.5);
+`
+
 // Text Large
 Text.Large = styled.h1`
   font-family: var(--fontSans);

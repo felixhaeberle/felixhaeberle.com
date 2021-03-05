@@ -8,6 +8,7 @@ import Layout from '../../components/4_templates/Layout'
 import Text from '../../components/1_atoms/Text'
 import HeaderWrapper from '../../components/1_atoms/HeaderWrapper'
 import Button from '../../components/1_atoms/Button'
+import Principle from '../../components/1_atoms/Principle'
 
 const Listing = styled.div`
   margin-top: calc(var(--rowGap)*1.5);
@@ -35,7 +36,10 @@ export default function Me() {
         <Listing>
           <r-grid columns="6" columns-s="2">
             <r-cell span="4" flow-cols="2" flow-cols-s="1">
-              My career as a designer started in the 1990s with an online magazine I created with a few friends. I started helping others with design and websites to learn more. It eventually led me to my first job as a designer, at Lear Corporation in 1999. My career as a designer started in the 1990s with an online magazine I created with a few friends. I started helping others with design and websites to learn more. It eventually led me to my first job as a designer, at Lear Corporation in 1999.
+              <Text.Intro>My career as a designer started in the 1990s with an online magazine I created with a few friends. I started helping others with design and websites to learn more. It eventually led me to my first job as a designer, at Lear Corporation in 1999.</Text.Intro>
+              <Text.Intro>My career as a designer started in the 1990s with an online magazine I created with a few friends. I started helping others with design and websites to learn more. It eventually led me to my first job as a designer, at Lear Corporation in 1999. My career as a designer started in the 1990s with an online magazine I created with a few friends. I started helping others with design and websites to learn more. It eventually led me to my first job as a designer.</Text.Intro>
+              <Text.Intro>My career as a designer started in the 1990s with an online magazine I created with a few friends. I started helping others with design and websites to learn more. It eventually led me to my first job as a designer, at Lear Corporation in 1999. My career as a designer started in the 1990s with an online magazine I created with a few friends. I started helping others with design and websites to learn more. It eventually led me to my first job as a designer.</Text.Intro>
+              <Text.Intro>My career as a designer started in the 1990s with an online magazine I created with a few friends. I started helping others with design and websites to learn more. It eventually led me to my first job as a designer, at Lear Corporation in 1999.</Text.Intro>
             </r-cell>
             <r-cell span="2" style={{justifySelf: 'end'}}>
               <ImageWrapper>
@@ -55,6 +59,15 @@ export default function Me() {
                   </Link>
                 ))}
               </SocialLinkWrapper>
+            </r-cell>
+            <r-cell span="2">
+              <Principle />
+            </r-cell>
+            <r-cell span="2">
+              <Principle />
+            </r-cell>
+            <r-cell span="2">
+              <Principle />
             </r-cell>
           </r-grid>
         </Listing>
