@@ -8,7 +8,7 @@ import Layout from '../../components/4_templates/Layout'
 import Text from '../../components/1_atoms/Text'
 import HeaderWrapper from '../../components/1_atoms/HeaderWrapper'
 import Button from '../../components/1_atoms/Button'
-import Principle from '../../components/1_atoms/Principle'
+import Principle from '../../components/2_molecules/Principle'
 
 const Listing = styled.div`
   margin-top: calc(var(--rowGap)*1.5);

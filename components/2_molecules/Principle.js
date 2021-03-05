@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Text from './Text'
+import Text from '../1_atoms/Text'
 
 const PrincipleItem = styled.div`
   display: flex;

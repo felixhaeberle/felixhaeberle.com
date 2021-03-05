@@ -26,7 +26,7 @@ export default function ExternalLink ({link, title}) {
   return (
     <Link href={link} passHref>
       <ExternalLinkAnchor>
-        <ExternalLinkItem>{title}</ExternalLinkItem><ArrowRight16 class="external-link-icon"/>
+        <ExternalLinkItem>{title}</ExternalLinkItem><ArrowRight16 className="external-link-icon"/>
       </ExternalLinkAnchor>
     </Link>
   )
