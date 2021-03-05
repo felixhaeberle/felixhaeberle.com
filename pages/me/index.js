@@ -4,11 +4,13 @@ import Link from 'next/link'
 import styled from 'styled-components'
 import { getSortedData } from '../../lib/content'
 import { socialLinks } from '../_app'
+import cv from '../../content/me/cv.json'
 import Layout from '../../components/4_templates/Layout'
 import Text from '../../components/1_atoms/Text'
 import HeaderWrapper from '../../components/1_atoms/HeaderWrapper'
 import Button from '../../components/1_atoms/Button'
 import Principle from '../../components/2_molecules/Principle'
+import CVSection from '../../components/2_molecules/CVSection'
 
 const Listing = styled.div`
   margin-top: calc(var(--rowGap)*1.5);
@@ -22,6 +24,12 @@ const SocialLinkWrapper = styled.div`
   display: flex;
   justify-content: space-between;
 `
+
+const cvListing = [
+  {title: 'Professional Experience', data: cv.filter((item) => (item.type === "experience"))},
+  {title: 'Education', data: cv.filter((item) => (item.type === "education"))},
+  {title: 'Open Source', data: cv.filter((item) => (item.type === "open source"))}
+]
 
 export default function Me() {
   return (
@@ -69,6 +77,9 @@ export default function Me() {
             <r-cell span="2">
               <Principle />
             </r-cell>
+            {cvListing.map((item) => (
+              <CVSection content={item} />
+            ))}
           </r-grid>
         </Listing>
       </div>

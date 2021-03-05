@@ -19,6 +19,13 @@
   --colorTextLight: rgba(233,233,233,1);
   --colorTextDarker: rgba(177,186,201,1);
   --colorButtonBg: rgba(13,27,56,1);
+ 
+  --colorBgRGB: 4,13,33;
+  --colorTextRGB: 239,246,255;
+  --colorTextDarkRBG: 129,147,178;
+  --colorTextLightRGB: 233,233,233;
+  --colorTextDarkerRGB: 177,186,201;
+  --colorButtonBgRGB: 13,27,56;
 
   /* Fonts */
   --fontSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
