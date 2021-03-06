@@ -75,3 +75,22 @@ img {
   position: relative;
   top: 1px;
 }
+
+.cv-section, .cv-section.header {
+  margin-top: calc(var(--unit)*10);
+}
+
+@media (max-width: 64rem) {
+  .cv-section {
+    margin-top: 0;
+  }
+}
+
+.cv-image {
+  max-width: 300px;
+}
+@media (min-width: 64rem) {
+  .cv-image {
+    justify-self: end;
+  }
+}

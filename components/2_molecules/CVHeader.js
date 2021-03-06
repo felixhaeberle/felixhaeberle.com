@@ -6,7 +6,9 @@ const CVSection = styled.div`
   padding-top: calc(var(--unit)*2.5);
 `
 
-CVSection.Headline = styled(Text.Mono.Dark)``;
+CVSection.Headline = styled(Text.Mono.Dark)`
+  margin: 0;
+`;
 
 export default function CVHeader({title}){
   return (

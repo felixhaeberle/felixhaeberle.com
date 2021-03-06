@@ -1,10 +1,16 @@
 import styled from 'styled-components'
 import Text from '../1_atoms/Text'
+import { media } from '../../pages/_app' 
 
 const PrincipleItem = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-top: calc(var(--unit)*10);
+
+  ${media.lessThan('medium')`
+    margin-top: margin-top: calc(var(--unit)*5);
+  `}
 
   ${Text} {
     margin-bottom: calc(var(--unit)*1.875);
