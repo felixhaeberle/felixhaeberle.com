@@ -8,6 +8,7 @@ import Card from '../components/2_molecules/Card'
 import styled from 'styled-components'
 import Button from '../components/1_atoms/Button'
 import Link from 'next/link'
+import { getAllPostsForHome } from '../lib/api' 
 
 Text.Currently = styled(Text)`
   margin-bottom: calc(var(--unit)* 4.5);
@@ -51,12 +52,12 @@ export default function Home({ writingsList, studiesList, workList }) {
         <r-cell order-s="-1" order-xs="-1" span="2">
           <Text.Mono.Dark>Studies</Text.Mono.Dark>
           <ul className={utilStyles.list}>
-            {studiesList.slice(0, 3).map(({ id, date, title, text }) => (
-              <li className={utilStyles.listItem} key={id}>
-                <Card link={`/studies/${id}`} 
+            {studiesList.slice(0, 3).map(({ _id, link, title, desc, image }) => (
+              <li className={utilStyles.listItem} key={_id}>
+                <Card link={link} 
                       title={title}
-                      text={text}
-                      image={true} />
+                      text={desc}
+                      image={image} />
               </li>
             ))}
           </ul>
@@ -91,13 +92,14 @@ export default function Home({ writingsList, studiesList, workList }) {
 
 export async function getStaticProps() {
   let allWritingsData = getSortedData('content/writings');
-  let allStudiesData = getSortedData('content/studies');
+  let allStudiesData = await getAllPostsForHome();
   let allWorkData = getSortedData('content/work');
   return {
     props: {
       writingsList: allWritingsData,
       studiesList: allStudiesData,
       workList: allWorkData,
-    }
+    },
+    revalidate: 1
   }
 }

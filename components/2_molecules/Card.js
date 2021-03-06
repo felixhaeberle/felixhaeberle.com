@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Text from '../1_atoms/Text'
 import styled from 'styled-components';
 import Date from '../date';
+import { urlFor } from '../../lib/sanity'
 
 export const CardItem = styled.div`
   margin-bottom: calc(var(--unit)* 4.5);
@@ -44,7 +45,7 @@ export default function Card ({image, title, link, text, year, date}) {
     <CardItem>
       {image ? 
         <CardItem.Image>
-          <Image src="https://images.unsplash.com/photo-1602851519564-ab7b91239f1b" width="350" height="150" objectFit="cover" ></Image>
+          <Image src={urlFor(image).width(350).url()} width="350" height="150" objectFit="cover"></Image>
         </CardItem.Image> : ''}
       <CardItem.Header>
         <Link href={link} passHref>
