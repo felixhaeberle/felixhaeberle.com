@@ -10,6 +10,7 @@ import siteSettings from './documents/siteSettings'
 import blockContent from './array/blockContent'
 import category from './documents/category'
 import study from './documents/study'
+import project from './documents/project'
 import author from './documents/author'
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -24,6 +25,7 @@ export default createSchema({
     siteSettings,
     link,
     study,
+    project,
     author,
     category,
     // When added to this list, object types can be used as
