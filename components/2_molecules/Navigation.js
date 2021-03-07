@@ -29,14 +29,14 @@ const NavigationItem = styled.li`
   }
 `
 
-export default function Navigation({ navigationItems }) {
+export default function Navigation({ navigationItems, title }) {
   const router = useRouter();
 
   return (
     <NavigationShell>
       <Link href="/" passHref>
         <a>
-          <Text>{site.name}</Text>
+          <Text>{title}</Text>
         </a>
       </Link>
       <nav>

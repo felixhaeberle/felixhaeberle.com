@@ -8,24 +8,22 @@ import Card from '../components/2_molecules/Card'
 import styled from 'styled-components'
 import Button from '../components/1_atoms/Button'
 import Link from 'next/link'
-import { getAllPostsForHome } from '../lib/api' 
+import { getAllPostsForHome, getSanityContent } from '../lib/api' 
 
 Text.Currently = styled(Text)`
   margin-bottom: calc(var(--unit)* 4.5);
 `
 
-const doing = 'I’m studying Interaction Design B.A. @ HfG Schwäbisch Gmünd combining my web tech background with design thinking.'
-
-export default function Home({ writingsList, studiesList, workList }) {
+export default function Home({ writingsList, studiesList, workList, settings }) {
   return (
-    <Layout home>
+    <Layout home settings={settings}>
       <Head>
-        <title>{site.title}</title>
+        <title>{settings.site_title}</title>
       </Head>
       <r-grid columns="6" columns-s="4" columns-xs="2">
         <r-cell span="2">
           <Text.Mono.Dark>Currently</Text.Mono.Dark>
-          <Text.Currently>{doing}</Text.Currently>
+          <Text.Currently>{settings.currently}</Text.Currently>
           <Link href="/me">
             <a>
               <Button title={"Let's talk"} symbol={'Voicemail24'}/>
@@ -91,14 +89,47 @@ export default function Home({ writingsList, studiesList, workList }) {
 }
 
 export async function getStaticProps() {
-  let allWritingsData = getSortedData('content/writings');
-  let allStudiesData = await getAllPostsForHome();
-  let allWorkData = getSortedData('content/work');
+  const allWritingsData = getSortedData('content/writings');
+  const allStudiesData = await getAllPostsForHome();
+  const allWorkData = getSortedData('content/work');
+  const allSettingsData = await getSanityContent({
+    query: `
+      query AllSettings {
+        allSiteSettings {
+          _id,
+          title,
+          site_title,
+          frontpage_text,
+          currently,
+          legal_links {
+            text,
+            link
+          },
+          social_links {
+            text,
+            link
+          }
+        }
+      }
+    `,
+  });
+  
+  const settingsData = allSettingsData.allSiteSettings.map((setting) => ({
+    _id: setting._id,
+    title: setting.title,
+    site_title: setting.site_title,
+    frontpage_text: setting.frontpage_text,
+    currently: setting.currently,
+    legal_links: setting.legal_links,
+    social_links: setting.social_links
+  }))[0];
+
   return {
     props: {
       writingsList: allWritingsData,
       studiesList: allStudiesData,
       workList: allWorkData,
+      settings: settingsData
     },
     revalidate: 1
   }

@@ -15,12 +15,16 @@ const FooterLinkAnchor = styled.a`
   }
 ` 
 
-export default function FooterLink({url, title, light}){
+export default function FooterLink({text, link, light}){
   return (
-    <Link href={url} passHref>
-      <FooterLinkAnchor>
-        {light ? <FooterText>{title}</FooterText> : <FooterText.Dark>{title}</FooterText.Dark> } 
-      </FooterLinkAnchor>
-    </Link>
+  <>
+    { text && link ? 
+      (<Link href={link} passHref>
+        <FooterLinkAnchor>
+          {light ? <FooterText>{text}</FooterText> : <FooterText.Dark>{text}</FooterText.Dark> } 
+        </FooterLinkAnchor>
+       </Link>) : ''
+    }
+  </>
   )
 }

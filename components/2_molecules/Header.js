@@ -4,7 +4,7 @@ import Navigation from './Navigation'
 import HeaderWrapper from '../1_atoms/HeaderWrapper'
 
 
-export default function Header({ home }) {
+export default function Header({ home, settings }) {
 
   const homeText = 'Hi, I’m Felix, an interaction designer and frontend developer. I’m dedicated to Open Source and Accessibility.'
 
@@ -29,9 +29,9 @@ export default function Header({ home }) {
 
   return (
       <header className={styles.header}>
-        <Navigation navigationItems={navigationItems} />
+        <Navigation navigationItems={navigationItems} title={settings.title}/>
         <HeaderWrapper>
-            { home ? (<Text.Large>{homeText}</Text.Large>) : ''}
+            { home ? (<Text.Large>{settings.frontpage_text}</Text.Large>) : ''}
         </HeaderWrapper>
       </header>
   )

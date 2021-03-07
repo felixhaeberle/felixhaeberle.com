@@ -21,7 +21,7 @@ FooterItem.Cell = styled.div`
   height: 100%;
 `
 
-export default function Footer(){
+export default function Footer({settings}){
   let currentYear = format(new Date(), "yyyy");
 
   return (
@@ -29,14 +29,14 @@ export default function Footer(){
       <FooterItem.Cell>
         <FooterText.Dark>This is a text.</FooterText.Dark>
         &nbsp;
-        <FooterLink url={'/'} title={'Details'} light/>
+        <FooterLink link={'/'} text={'Details'} light/>
       </FooterItem.Cell>
       <FooterItem.Cell>
-        <FooterLinks links={socialLinks.slice(0, 3)} />
+        <FooterLinks links={settings.social_links.slice(0, 3)} />
       </FooterItem.Cell>
       <FooterItem.Cell>
-        <FooterText.Dark>{currentYear} © {site.name}&nbsp;</FooterText.Dark>
-        <FooterLinks links={legalLinks} />
+        <FooterText.Dark>{currentYear} © {settings.title}&nbsp;</FooterText.Dark>
+        <FooterLinks links={settings.legal_links} />
       </FooterItem.Cell>
     </FooterItem>
   )

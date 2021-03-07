@@ -15,17 +15,17 @@ export default function FooterLinks({links}) {
   return (
     <nav>
       <FooterLinksItem>
-      {
-        links.map(({title, url}, index) => {
+      { links ? 
+        links.map(({text, link}, index) => {
           return ( 
             <FooterLinksItem.Child key={index}>
               &nbsp;
-                <FooterLink {...{url, title}}/>
+                <FooterLink {...{text, link}}/>
               &nbsp;
               {index !== links.length -1 ? <FooterText.Dark>/</FooterText.Dark> : ''}
             </FooterLinksItem.Child>
           )
-        })
+        }) : ''
       }
       </FooterLinksItem>
     </nav>
