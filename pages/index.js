@@ -51,7 +51,9 @@ export default function Home({ writingsList, studiesList, workList, settings }) 
           <Text.Mono.Dark>Studies</Text.Mono.Dark>
           <ul className={utilStyles.list}>
             {studiesList.slice(0, 3).map(({ _id, link, title, desc, image }) => (
+              
               <li className={utilStyles.listItem} key={_id}>
+                {console.log(image)}
                 <Card link={link} 
                       title={title}
                       text={desc}

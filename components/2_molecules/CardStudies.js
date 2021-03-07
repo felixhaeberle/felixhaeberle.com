@@ -5,6 +5,7 @@ import Text from '../1_atoms/Text'
 import Date from '../date'
 import { CardItem } from '../2_molecules/Card'
 import ExternalLink from '../1_atoms/ExternalLink'
+import { urlFor } from '../../lib/sanity'
 
 const CardStudiesItem = styled.div`
   display: flex;
@@ -51,7 +52,7 @@ export default function CardStudies({title, text, date, link, image}){
           height="450"
           width="900"
           objectFit="cover"
-          src="https://images.unsplash.com/photo-1602851519564-ab7b91239f1b" />
+          src={urlFor(image).width(900).url()} />
       </r-cell>
     </>
   )

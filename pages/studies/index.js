@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import styled from 'styled-components'
-import { getSortedData } from '../../lib/content'
+import { format, parseISO } from 'date-fns' 
 import { getSanityContent } from '../../lib/api'
 import Layout from '../../components/4_templates/Layout'
 import Text from '../../components/1_atoms/Text'
@@ -12,7 +12,7 @@ const Listing = styled.div`
   margin-top: calc(var(--rowGap)*1.5);
 `
 
-export default function Studies({ studiesList, settings }) {
+export default function Studies({ studyList, settings }) {
   return (
     <Layout settings={settings}>
       <Head>
@@ -25,12 +25,13 @@ export default function Studies({ studiesList, settings }) {
         <Intro />
         <Listing>
           <r-grid columns="10">
-          {studiesList.map(({ id, date, title, text }) => (
-            <CardStudies link={`x`}
-                  date={date} 
-                  title={title}
-                  text={text}
-                  key={id} />
+          {studyList.map(({ title, description, image, publishedAt, externalLink }, index) => (
+            <CardStudies  date={publishedAt} 
+                          title={title}
+                          text={description}
+                          link={externalLink}
+                          image={image}
+                          key={index} />
           ))}
           </r-grid>
         </Listing>
@@ -40,10 +41,9 @@ export default function Studies({ studiesList, settings }) {
 }
 
 export async function getStaticProps() {
-  let allStudiesData = getSortedData('content/studies');
-  const allSettingsData = await getSanityContent({
+  const allStudiesData = await getSanityContent({
     query: `
-      query AllSettings {
+      query AllStudies {
         allSiteSettings {
           _id,
           title,
@@ -57,11 +57,22 @@ export async function getStaticProps() {
             link
           }
         }
+        allStudy {
+          title,
+          description,
+          externalLink,
+          publishedAt,
+          mainImage {
+            asset {
+              _id
+            }
+          }
+        }
       }
     `,
   });
   
-  const settingsData = allSettingsData.allSiteSettings.map((setting) => ({
+  const settingsData = allStudiesData.allSiteSettings.map((setting) => ({
     _id: setting._id,
     title: setting.title,
     site_title: setting.site_title,
@@ -69,9 +80,20 @@ export async function getStaticProps() {
     social_links: setting.social_links
   }))[0];
 
+  const studyData = allStudiesData.allStudy.map((study) => ({
+    title: study.title,
+    description: study.description,
+    externalLink: study.externalLink,
+    publishedAt: study.publishedAt,
+    image: study.mainImage.asset._id
+  }));
+
+  // sort newest work first
+  const studyDataSorted = studyData.sort((a, b) => (format(parseISO(a.publishedAt), 'yyyy') < format(parseISO(b.publishedAt), 'yyyy')) ? 1 : -1)
+
   return {
     props: {
-      studiesList: allStudiesData,
+      studyList: studyDataSorted,
       settings: settingsData
     }
   }
