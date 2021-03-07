@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { format, parseISO } from 'date-fns'
-import {getSortedData} from '../../lib/content'
+import { getSortedData } from '../../lib/content'
+import { getSanityContent } from '../../lib/api'
 import Layout from '../../components/4_templates/Layout'
 import Head from 'next/head'
 import Text from '../../components/1_atoms/Text'
@@ -21,9 +22,9 @@ WorkItem.Year = styled(Text.Mono.Dark)`
   margin-bottom: 0;
 `
 
-export default function Work({ workList }) {
+export default function Work({ workList, settings }) {
   return (
-    <Layout>
+    <Layout settings={settings}>
       <Head>
         <title>Work</title>
       </Head>
@@ -66,9 +67,38 @@ export default function Work({ workList }) {
 
 export async function getStaticProps() {
   let allWorkData = getSortedData('content/work');
+  const allSettingsData = await getSanityContent({
+    query: `
+      query AllSettings {
+        allSiteSettings {
+          _id,
+          title,
+          site_title,
+          legal_links {
+            text,
+            link
+          },
+          social_links {
+            text,
+            link
+          }
+        }
+      }
+    `,
+  });
+  
+  const settingsData = allSettingsData.allSiteSettings.map((setting) => ({
+    _id: setting._id,
+    title: setting.title,
+    site_title: setting.site_title,
+    legal_links: setting.legal_links,
+    social_links: setting.social_links
+  }))[0];
+
   return {
     props: {
-      workList: allWorkData
+      workList: allWorkData,
+      settings: settingsData
     }
   }
 } 

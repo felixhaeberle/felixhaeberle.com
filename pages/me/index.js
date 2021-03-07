@@ -2,8 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import styled from 'styled-components'
-import { getSortedData } from '../../lib/content'
-import { socialLinks } from '../_app'
+import { getSanityContent } from '../../lib/api'
 import cv from '../../content/me/cv.json'
 import Layout from '../../components/4_templates/Layout'
 import Text from '../../components/1_atoms/Text'
@@ -31,9 +30,9 @@ const cvListing = [
   {title: 'Open Source', data: cv.filter((item) => (item.type === "open source"))}
 ]
 
-export default function Me() {
+export default function Me({settings}) {
   return (
-    <Layout>
+    <Layout settings={settings}>
       <Head>
         <title>About</title>
       </Head>
@@ -59,10 +58,10 @@ export default function Me() {
                 </a>
               </Link>
               <SocialLinkWrapper>
-                {socialLinks.map(({url, title}, index) => (
-                  <Link href={url} key={index} passHref>
+                {settings.social_links.map(({link, text}, index) => (
+                  <Link href={link} key={index} passHref>
                     <a>
-                      <Text>{title}</Text>
+                      <Text>{text}</Text>
                     </a>
                   </Link>
                 ))}
@@ -88,10 +87,37 @@ export default function Me() {
 }
 
 export async function getStaticProps() {
-  let allStudiesData = getSortedData('content/studies');
+  const allSettingsData = await getSanityContent({
+    query: `
+      query AllSettings {
+        allSiteSettings {
+          _id,
+          title,
+          site_title,
+          legal_links {
+            text,
+            link
+          },
+          social_links {
+            text,
+            link
+          }
+        }
+      }
+    `,
+  });
+  
+  const settingsData = allSettingsData.allSiteSettings.map((setting) => ({
+    _id: setting._id,
+    title: setting.title,
+    site_title: setting.site_title,
+    legal_links: setting.legal_links,
+    social_links: setting.social_links
+  }))[0];
+
   return {
     props: {
-      studiesList: allStudiesData
+      settings: settingsData
     }
   }
 }
