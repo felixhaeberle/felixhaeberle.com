@@ -27,6 +27,18 @@ export default {
       type: 'text'
     },
     {
+      title: 'Navigation',
+      name: 'navigation',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'page'}]  
+        }
+      ]
+
+    },
+    {
       title: 'Social links',
       name: 'social_links',
       type: 'array',

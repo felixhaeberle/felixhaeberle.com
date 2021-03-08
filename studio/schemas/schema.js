@@ -12,6 +12,13 @@ import category from './documents/category'
 import study from './documents/study'
 import project from './documents/project'
 import author from './documents/author'
+import cv from './documents/cv'
+import cvItem from './documents/cvItem'
+import page from './documents/page'
+import columnText from './documents/columnText'
+import textCard from './documents/textCard'
+import textCards from './documents/textCards'
+
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -23,9 +30,15 @@ export default createSchema({
     // The following are document types which will appear
     // in the studio.
     siteSettings,
+    cv,
+    cvItem,
+    columnText,
+    textCard,
+    textCards,
     link,
     study,
     project,
+    page,
     author,
     category,
     // When added to this list, object types can be used as

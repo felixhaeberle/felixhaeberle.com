@@ -89,7 +89,7 @@ export async function getStaticProps() {
   }));
 
   // sort newest work first
-  const studyDataSorted = studyData.sort((a, b) => (format(parseISO(a.publishedAt), 'yyyy') < format(parseISO(b.publishedAt), 'yyyy')) ? 1 : -1)
+  const studyDataSorted = studyData.sort((a, b) => (new Date(a.publishedAt) < new Date(b.publishedAt)) ? 1 : -1)
 
   return {
     props: {
