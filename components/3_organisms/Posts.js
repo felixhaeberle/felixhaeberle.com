@@ -5,9 +5,9 @@ import Layout from '../4_templates/Layout'
 import Text from '../1_atoms/Text'
 import HeaderWrapper from '../1_atoms/HeaderWrapper'
 
-export default function Post({ postData }) {
+export default function Post({ postData, settings }) {
   return (
-    <Layout>
+    <Layout settings={settings}>
       <Head>
         <title>{postData.title}</title>
       </Head>

@@ -3,7 +3,7 @@ import styles from './layout.module.css'
 import Header from '../2_molecules/Header'
 import Footer from '../2_molecules/Footer'
 
-export default function Layout({ children, home, settings }) {
+export default function Layout({ children, settings, home }) {
   return (
     <div className={styles.container}>
       <Head>

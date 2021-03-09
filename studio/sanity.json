@@ -13,7 +13,8 @@
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/desk-tool",
-    "dashboard-widget-vercel"
+    "dashboard-widget-vercel",
+    "@sanity/dashboard"
   ],
   "env": {
     "development": {
@@ -30,6 +31,10 @@
     {
       "name": "part:@sanity/desk-tool/structure",
       "path": "./schemas/deskStructure.js"
+    },
+    {
+      "implements": "part:@sanity/dashboard/config",
+      "path": "./schemas/dashboardConfig.js"
     }
   ]
 }
