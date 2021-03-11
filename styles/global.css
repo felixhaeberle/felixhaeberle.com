@@ -58,6 +58,13 @@
   }
 }
 
+@media (max-width: 40rem) {
+  :root {
+    --body-padding-x: calc(var(--unit)*4);
+    --body-padding-y: calc(var(--unit)*4);
+  }
+}
+
 html, body {
   padding: 0;
   margin: 0;
