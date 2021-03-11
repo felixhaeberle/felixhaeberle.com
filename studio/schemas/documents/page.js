@@ -16,11 +16,7 @@ export default {
       name: 'content',
       type: 'array',
       of: [
-        {type: 'block'},
-        {type: 'cv'},
-        {type: 'column_text'},
-        {type: 'image'},
-        {type: 'text_cards'}
+        {type: 'block'}
       ]
     }
   ],

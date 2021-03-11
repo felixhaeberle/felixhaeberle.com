@@ -2,7 +2,7 @@ import Link from '../1_atoms/Link'
 import { useRouter } from 'next/router'
 import Text from '../1_atoms/Text'
 import styled from 'styled-components'
-import { media } from '../../pages/_app'
+import media from '../0_helpers/viewportValues'
 
 const NavigationShell = styled.div`
   display: flex;

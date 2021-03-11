@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { media } from '../../pages/_app'
+import media from '../0_helpers/viewportValues'
 
 const HeaderWrapper = styled.div`
   margin-top: calc(var(--unit) *31);

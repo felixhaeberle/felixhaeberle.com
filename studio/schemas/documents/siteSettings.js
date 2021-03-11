@@ -49,6 +49,18 @@ export default {
       name: 'legal_links',
       type: 'array',
       of: [{type: 'link'}]
+    },
+    {
+      title: 'Cards',
+      name: 'cards',
+      type: 'array',
+      of: [{type: 'text_cards'}]
+    },
+    {
+      title: 'CV',
+      name: 'cv',
+      type: 'array',
+      of: [{type: 'cv'}]
     }
   ]
 } 

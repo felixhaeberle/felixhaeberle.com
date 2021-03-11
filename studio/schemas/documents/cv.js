@@ -1,3 +1,5 @@
+import React from 'react'
+
 export default {
   title: 'CV',
   name: 'cv',
@@ -21,5 +23,13 @@ export default {
       type: 'array',
       of: [{type: 'cv_item'}]
     },
-  ]
+  ],
+  preview: {
+    prepare() {
+      return {
+        title: 'CV',
+        media: <span>🎓</span>
+      }
+    }
+  }
 }

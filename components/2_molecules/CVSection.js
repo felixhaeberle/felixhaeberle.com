@@ -1,10 +1,10 @@
 import CVHeader from "./CVHeader";
-import Date from '../date'
+import Date from '../0_helpers/date'
 import Text from '../1_atoms/Text'
 import Link from 'next/link'
 import styled from 'styled-components'
-import { media } from '../../pages/_app'
-import { useMediaQuery } from '../viewport';
+import media from '../0_helpers/viewportValues'
+import { useMediaQuery } from '../0_helpers/viewport';
 
 const CVItem = styled.div`
   display: flex;
@@ -35,6 +35,10 @@ const CVText = styled(Text)`
   font-weight: 400;
 `;
 
+CVText.Dark = styled(Text.Small.Dark)`
+  line-height: calc(var(--unit)*4);
+`;
+
 const CVTextLink = styled(CVText)`
   color: var(--colorText);
   text-decoration: underline;
@@ -58,11 +62,11 @@ export default function CVSection({content}){
         <CVItem key={index}>
           {isSmallBreakpoint ? (
             <CVItem.Column>
-              <CVText as="span"><Date dateString={item.startDate} formatString={'MMM, yy'}></Date></CVText > – <CVText as="span"><Date dateString={item.endDate} formatString={'MMM, yy'}></Date></CVText><br/>
+              <CVText.Dark as="span"><Date dateString={item.startDate} formatString={'MMM, yy'}></Date></CVText.Dark><CVText.Dark as="span"> – </CVText.Dark><CVText.Dark as="span"><Date dateString={item.endDate} formatString={'MMM, yy'}></Date></CVText.Dark><br/>
             </CVItem.Column>
           ) : (
             <CVItem.Column>
-              <CVText as="span"><Date dateString={item.startDate} formatString={'MMM, yyyy'}></Date></CVText > – <CVText as="span"><Date dateString={item.endDate} formatString={'MMM, yyyy'}></Date></CVText><br/>
+              <CVText.Dark as="span"><Date dateString={item.startDate} formatString={'MMM, yyyy'}></Date></CVText.Dark><CVText.Dark as="span"> – </CVText.Dark><CVText.Dark as="span"><Date dateString={item.endDate} formatString={'MMM, yyyy'}></Date></CVText.Dark><br/>
             </CVItem.Column>
           )}
           <CVText key={index}>

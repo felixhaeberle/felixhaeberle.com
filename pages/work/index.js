@@ -6,7 +6,7 @@ import Head from 'next/head'
 import Text from '../../components/1_atoms/Text'
 import HeaderWrapper from '../../components/1_atoms/HeaderWrapper'
 import Intro from '../../components/1_atoms/Intro'
-import Date from '../../components/date'
+import Date from '../../components/0_helpers/date'
 import Card from '../../components/2_molecules/Card'
 
 const WorkItem = styled.div``;

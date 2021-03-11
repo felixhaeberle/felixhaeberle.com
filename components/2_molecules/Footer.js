@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import FooterText from '../1_atoms/FooterText'
 import FooterLink from '../1_atoms/FooterLink'
 import FooterLinks from '../1_atoms/FooterLinks'
-import { media } from '../../pages/_app';
+import media from '../0_helpers/viewportValues';
 
 export const FooterItem = styled.footer`
   display: flex;

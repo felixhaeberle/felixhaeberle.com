@@ -1,3 +1,5 @@
+import React from 'react'
+
 export default {
   title: 'Text Card',
   name: 'text_card',
@@ -16,7 +18,15 @@ export default {
     {
       title: 'Card Description',
       name: 'card_description',
-      type: 'string'
+      type: 'text'
     },
-  ]
+  ],
+  preview: {
+    prepare() {
+      return {
+        title: 'Card',
+        media: <span>💳</span>
+      }
+    }
+  }
 }

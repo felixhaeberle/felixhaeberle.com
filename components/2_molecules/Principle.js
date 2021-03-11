@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import Text from '../1_atoms/Text'
-import { media } from '../../pages/_app' 
+import media from '../0_helpers/viewportValues' 
 
 const PrincipleItem = styled.div`
   display: flex;

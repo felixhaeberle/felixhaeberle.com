@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Text from '../1_atoms/Text'
 import styled from 'styled-components';
-import Date from '../date';
+import Date from '../0_helpers/date';
 import { urlFor } from '../../lib/sanity'
 
 export const CardItem = styled.div`
@@ -36,17 +36,25 @@ CardItem.Date = styled(Text.Mono.Dark)`
   margin-bottom: 0;
 `
 
-CardItem.Image = styled.div`
+CardItem.ImageWrapper = styled.div`
   margin-bottom: calc(var(--unit)* 1.75);
+`
+
+CardItem.Image = styled.img`
+  object-fit: cover;
+
+  &.opened {
+    object-fit: unset;
+  }
 `
 
 export default function Card ({image, title, link, text, year, date}) {
   return (
     <CardItem>
       {image ? 
-        <CardItem.Image>
-          <Image src={urlFor(image).width(350).url()} width="350" height="150" objectFit="cover"></Image>
-        </CardItem.Image> : ''}
+        <CardItem.ImageWrapper>
+          <CardItem.Image className={'img-zoomable'} src={urlFor(image).width(350).height(150).url()} width="350" height="150" />
+        </CardItem.ImageWrapper> : ''}
       <CardItem.Header>
         <Link href={link} passHref>
           <a>

@@ -31,7 +31,7 @@ export default function Home({ writingsList, studiesList, workList, settings }) 
     
           <Text.Mono.Dark>Work</Text.Mono.Dark>
           <List>
-            {workList.slice(0, 4).map(({ id, date, title, text }) => (
+            {workList.slice(0, 5).map(({ id, date, title, text }) => (
               <List.Item key={id}>
                 <Card link={`/work/${id}`} 
                       year={date} 
