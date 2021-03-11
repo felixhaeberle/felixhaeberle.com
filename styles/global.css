@@ -1,4 +1,9 @@
 :root {
+  /* Into */
+  --HEY_HELLO_🤙__Happy_that_you_came_here: '🏆';
+  --Enjoy_the_view_and_reach_out: '📱';
+  --Lets_build_something_together: '🥳';
+  
   /* General */
   --fontSize: 16px;
   --unit: calc(var(--fontSize)*0.5);
@@ -30,14 +35,27 @@
   /* Fonts */
   --fontSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   --fontMono: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier, monospace;
-  --fontSizeExtraSmall: 12px;
-  --fontSizeSmall: 14px;
-  --fontSizeMedium: 16px;
-  --fontSizeLarge: 18px;
-  --fontSizeExtraLarge: 36px;
+  --fontSizeExtraSmall: calc(var(--unit)*1.5); /* 12px */
+  --fontSizeSmall: calc(var(--unit)*1.75); /* 14px */
+  --fontSizeMedium: calc(var(--unit)*2); /* 16px */
+  --fontSizeLarge: calc(var(--unit)*2.25); /* 18px */
+  --fontSizeExtraLarge: calc(var(--unit)*4.5); /* 36px */
   /* Font Specials */
   --letterSpacing: 0.02em;
   --lineHeightSmallText: 145%;
+}
+
+@media (max-width: 64rem) {
+  :root {
+    --fontSize: 14px;
+
+    --body-padding-x: calc(var(--unit)*6);
+    --body-padding-y: calc(var(--unit)*6);
+    --columnGap: calc(var(--unit)*6);
+    --rowGap: calc(var(--unit)*6);
+    --column-gap-compact: calc(var(--unit)*3);
+    --row-gap-compact: calc(var(--unit));
+  }
 }
 
 html, body {

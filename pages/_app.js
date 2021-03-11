@@ -10,6 +10,13 @@ export const mediaSizes = {
   xsmall: "26rem"
 }
 
+// Render CSS variables in the browser
+typeof window !== 'undefined' ? (
+  Object.keys(mediaSizes).map(function(key, index) {
+    return(document.querySelector(":root").style.setProperty(`--media-size-${key}`, mediaSizes[key]))
+ })
+) : null
+
 export const media = generateMedia({
   xlarge: mediaSizes.xlarge,
   large: mediaSizes.large,

@@ -2,7 +2,7 @@ import Link from '../1_atoms/Link'
 import { useRouter } from 'next/router'
 import Text from '../1_atoms/Text'
 import styled from 'styled-components'
-import { site } from '../../pages/_app'
+import { media } from '../../pages/_app'
 
 const NavigationShell = styled.div`
   display: flex;
@@ -19,6 +19,16 @@ const NavigationWrapper = styled.ul`
   display: flex;
   flex-direction: row;
   list-style: none;
+
+  ${media.lessThan('medium')`
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: calc(var(--unit)*3);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  `}
 `
 
 const NavigationItem = styled.li`
@@ -27,6 +37,15 @@ const NavigationItem = styled.li`
   &:hover{
     cursor: pointer;
   }
+
+  ${media.lessThan('medium')`
+    margin-left: unset;
+    margin-bottom: calc(var(--unit)*1);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  `}
 `
 
 export default function Navigation({ navigationItems, title }) {

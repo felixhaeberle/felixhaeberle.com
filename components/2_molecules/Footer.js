@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import FooterText from '../1_atoms/FooterText'
 import FooterLink from '../1_atoms/FooterLink'
 import FooterLinks from '../1_atoms/FooterLinks'
-import { site, socialLinks, legalLinks } from '../../pages/_app';
+import { media } from '../../pages/_app';
 
 export const FooterItem = styled.footer`
   display: flex;
@@ -13,6 +13,10 @@ export const FooterItem = styled.footer`
   border-top: 1px solid var(--colorTextDark);
   padding: calc(var(--unit)*3) 0;
   margin-top: calc(var(--unit)*16);
+
+  ${media.lessThan('medium')`
+    flex-direction: column;
+  `}
 `
 
 FooterItem.Cell = styled.div`

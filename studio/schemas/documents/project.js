@@ -1,3 +1,6 @@
+import React from 'react'
+import getFavicons from 'get-website-favicon'
+
 export default {
   type: 'document',
   name: 'project',
@@ -27,5 +30,20 @@ export default {
       type: 'datetime',
       validation: Rule => Rule.required()
     }
-  ]
+  ],
+  preview: {
+    select: {
+      title: 'title',
+      link: 'link'
+    },
+    prepare(selection) {
+      const {title, link} = selection
+
+      return {
+        title: title,
+        subtitle: link,
+        media: <span>🛠</span>
+      }
+    }
+  }
 }
