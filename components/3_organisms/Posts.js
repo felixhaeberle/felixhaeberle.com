@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Date from '../date'
+import Date from '../0_helpers/date'
 import utilStyles from '../../styles/utils.module.css'
 import Layout from '../4_templates/Layout'
 import Text from '../1_atoms/Text'
