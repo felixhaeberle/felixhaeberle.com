@@ -25,12 +25,13 @@ export default function Studies({ studyList, settings }) {
         <Intro />
         <Listing>
           <r-grid columns="10">
-          {studyList.map(({ title, description, image, publishedAt, externalLink }, index) => (
+          {studyList.map(({ title, description, image, imageAlt, publishedAt, externalLink }, index) => (
             <CardStudies  date={publishedAt} 
                           title={title}
                           text={description}
                           link={externalLink}
                           image={image}
+                          imageAlt={imageAlt} 
                           key={index} />
           ))}
           </r-grid>
@@ -62,10 +63,13 @@ export async function getStaticProps() {
           description,
           externalLink,
           publishedAt,
-          mainImage {
-            asset {
-              _id
-            }
+          image {
+            image {
+              asset {
+                _id
+              }
+            },
+            alternative
           }
         }
       }
@@ -85,7 +89,8 @@ export async function getStaticProps() {
     description: study.description,
     externalLink: study.externalLink,
     publishedAt: study.publishedAt,
-    image: study.mainImage.asset._id
+    image: study.image.image.asset._id,
+    imageAlt: study.image.alternative 
   }));
 
   // sort newest work first

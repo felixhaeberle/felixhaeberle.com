@@ -28,7 +28,7 @@ CardStudiesItem.TextSmallDark = styled(Text.Small.Dark)`
   padding-bottom: calc(var(--unit)*3.125);
 `
 
-export default function CardStudies({title, text, date, link, image}){
+export default function CardStudies({title, text, date, link, image, imageAlt}){
   return(
     <> 
       <r-cell span="4">
@@ -48,7 +48,8 @@ export default function CardStudies({title, text, date, link, image}){
         </CardStudiesItem>
       </r-cell>
       <r-cell span="6">
-        <Image 
+        <Image
+          {...( imageAlt && { alt: imageAlt })} 
           height="450"
           width="900"
           objectFit="cover"

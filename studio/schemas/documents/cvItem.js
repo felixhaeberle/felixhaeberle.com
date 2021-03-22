@@ -29,6 +29,11 @@ export default {
       type: 'date'
     },
     {
+      title: 'Ongoing',
+      name: 'ongoing',
+      type: 'boolean'
+    },
+    {
       title: 'End Date',
       name: 'endDate',
       type: 'date'

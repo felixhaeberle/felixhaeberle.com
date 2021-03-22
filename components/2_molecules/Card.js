@@ -48,12 +48,12 @@ CardItem.Image = styled.img`
   }
 `
 
-export default function Card ({image, title, link, text, year, date}) {
+export default function Card ({image, imageAlt, title, link, text, year, date}) {
   return (
     <CardItem>
       {image ? 
         <CardItem.ImageWrapper>
-          <CardItem.Image className={'img-zoomable'} src={urlFor(image).width(350).height(150).url()} width="350" height="150" />
+          <CardItem.Image {...( imageAlt && { alt: imageAlt })} className={'img-zoomable'} src={urlFor(image).width(350).height(150).url()} width="350" height="150" />
         </CardItem.ImageWrapper> : ''}
       <CardItem.Header>
         <Link href={link} passHref>

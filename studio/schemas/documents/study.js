@@ -25,13 +25,9 @@ export default {
       validation: Rule => Rule.required().min(10).max(255)
     },
     {
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-      validation: Rule => Rule.required()
+      name: 'image',
+      title: 'Image',
+      type: 'a11yImage'
     },
     {
       title: 'External Link',

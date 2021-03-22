@@ -49,12 +49,13 @@ export default function Home({ writingsList, studiesList, workList, settings }) 
         <r-cell span="2" span-m="3" span-s="6">
           <Text.Mono.Dark>Studies</Text.Mono.Dark>
           <List>
-            {studiesList.slice(0, 3).map(({ _id, link, title, desc, image }) => (
+            {studiesList.slice(0, 3).map(({ _id, link, title, desc, image, image_alt }) => (
               <List.Item key={_id}>
                 <Card link={link} 
                       title={title}
                       text={desc}
-                      image={image} />
+                      image={image}
+                      imageAlt={image_alt} />
               </List.Item>
             ))}
           </List>

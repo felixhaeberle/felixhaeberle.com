@@ -4,7 +4,10 @@ export default {
   name: 'siteSettings',
   type: 'document',
   title: 'Site settings',
-  __experimental_actions: ['create', 'update', /*'delete',*/ 'publish'], 
+  __experimental_actions: ['create', 'update', /*'delete',*/ 'publish'],
+  initialValue: {
+    ongoing: false
+  }, 
   fields: [
     {
       title: 'Title',

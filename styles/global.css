@@ -48,6 +48,7 @@
 @media (max-width: 64rem) {
   :root {
     --fontSize: 14px;
+    --fontSizeExtraLarge: calc(var(--unit)*3.5); /* 20px */
 
     --body-padding-x: calc(var(--unit)*6);
     --body-padding-y: calc(var(--unit)*6);
@@ -119,4 +120,15 @@ img {
   .cv-image {
     justify-self: end;
   }
+}
+
+
+/* Animations */
+
+@keyframes wiggle {
+  0% {transform: rotate(5deg);}
+  25% {transform: rotate(-5deg);}
+  50% {transform: rotate(10deg);}
+  75% {transform: rotate(-3deg);}
+  100% {transform: rotate(0deg);}
 }

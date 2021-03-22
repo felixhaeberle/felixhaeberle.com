@@ -9,6 +9,7 @@ import link from './documents/link.js'
 import siteSettings from './documents/siteSettings'
 import blockContent from './array/blockContent'
 import category from './documents/category'
+import a11yImage from './documents/a11yImage'
 import study from './documents/study'
 import project from './documents/project'
 import author from './documents/author'
@@ -18,6 +19,7 @@ import page from './documents/page'
 import columnText from './documents/columnText'
 import textCard from './documents/textCard'
 import textCards from './documents/textCards'
+import writings from './documents/writings'
 
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -35,9 +37,11 @@ export default createSchema({
     columnText,
     textCard,
     textCards,
+    a11yImage,
     link,
     study,
     project,
+    writings,
     page,
     author,
     category,
