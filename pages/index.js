@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { getSortedData } from '../lib/content'
 import { getAllPostsForHome, getSanityContent } from '../lib/api' 
+import { getSiteSettings } from '../lib/query/settings'
 import Layout from '../components/4_templates/Layout'
 import Text from '../components/1_atoms/Text'
 import Card from '../components/2_molecules/Card'
@@ -92,45 +93,14 @@ export async function getStaticProps() {
   const allWritingsData = getSortedData('content/writings');
   const allStudiesData = await getAllPostsForHome();
   const allWorkData = getSortedData('content/work');
-  const allSettingsData = await getSanityContent({
-    query: `
-      query AllSettings {
-        allSiteSettings {
-          _id,
-          title,
-          site_title,
-          frontpage_text,
-          currently,
-          legal_links {
-            text,
-            link
-          },
-          social_links {
-            text,
-            link
-          }
-        }
-      }
-    `,
-  });
-  
-  const settingsData = allSettingsData.allSiteSettings.map((setting) => ({
-    _id: setting._id,
-    title: setting.title,
-    site_title: setting.site_title,
-    frontpage_text: setting.frontpage_text,
-    currently: setting.currently,
-    legal_links: setting.legal_links,
-    social_links: setting.social_links
-  }))[0];
+  const siteSettings = await getSiteSettings();
 
   return {
     props: {
       writingsList: allWritingsData,
       studiesList: allStudiesData,
       workList: allWorkData,
-      settings: settingsData
-    },
-    revalidate: 1
+      settings: siteSettings
+    }
   }
 }

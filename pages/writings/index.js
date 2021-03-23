@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { getSanityContent } from '../../lib/api'
+import { getSiteSettings } from '../../lib/query/settings'
 import Text from '../../components/1_atoms/Text'
 import Layout from '../../components/4_templates/Layout'
 import HeaderWrapper from '../../components/1_atoms/HeaderWrapper'
@@ -22,37 +23,11 @@ export default function Writings({settings}) {
 }
 
 export async function getStaticProps() {
-  const allSettingsData = await getSanityContent({
-    query: `
-      query AllSettings {
-        allSiteSettings {
-          _id,
-          title,
-          site_title,
-          legal_links {
-            text,
-            link
-          },
-          social_links {
-            text,
-            link
-          }
-        }
-      }
-    `,
-  });
-  
-  const settingsData = allSettingsData.allSiteSettings.map((setting) => ({
-    _id: setting._id,
-    title: setting.title,
-    site_title: setting.site_title,
-    legal_links: setting.legal_links,
-    social_links: setting.social_links
-  }))[0];
+  const siteSettings = await getSiteSettings();
 
   return {
     props: {
-      settings: settingsData
+      settings: siteSettings
     }
   }
 }

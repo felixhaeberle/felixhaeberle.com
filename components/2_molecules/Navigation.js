@@ -53,11 +53,13 @@ export default function Navigation({ navigationItems, title }) {
 
   return (
     <NavigationShell>
-      <Link href="/" passHref>
-        <a>
-          <Text>{title}</Text>
-        </a>
-      </Link>
+      <div>
+        <Link href="/" passHref>
+          <a>
+            <Text>{title}</Text>
+          </a>
+        </Link>
+      </div>
       <nav>
         <NavigationWrapper>
         {navigationItems.map(({ url, title }) => (

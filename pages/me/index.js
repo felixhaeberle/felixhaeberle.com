@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styled from 'styled-components'
 import { getSanityContent } from '../../lib/api'
+import { getSiteSettings } from '../../lib/query/settings'
 import cv from '../../content/me/cv.json'
 import Layout from '../../components/4_templates/Layout'
 import Text from '../../components/1_atoms/Text'
@@ -87,37 +88,11 @@ export default function Me({settings}) {
 }
 
 export async function getStaticProps() {
-  const allSettingsData = await getSanityContent({
-    query: `
-      query AllSettings {
-        allSiteSettings {
-          _id,
-          title,
-          site_title,
-          legal_links {
-            text,
-            link
-          },
-          social_links {
-            text,
-            link
-          }
-        }
-      }
-    `,
-  });
-  
-  const settingsData = allSettingsData.allSiteSettings.map((setting) => ({
-    _id: setting._id,
-    title: setting.title,
-    site_title: setting.site_title,
-    legal_links: setting.legal_links,
-    social_links: setting.social_links
-  }))[0];
+  const siteSettings = await getSiteSettings();
 
   return {
     props: {
-      settings: settingsData
+      settings: siteSettings
     }
   }
 }

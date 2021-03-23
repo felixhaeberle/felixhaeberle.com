@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styled from 'styled-components'
 import { format, parseISO } from 'date-fns' 
 import { getSanityContent } from '../../lib/api'
+import { getSiteSettings } from '../../lib/query/settings'
 import Layout from '../../components/4_templates/Layout'
 import Text from '../../components/1_atoms/Text'
 import HeaderWrapper from '../../components/1_atoms/HeaderWrapper'
@@ -42,22 +43,10 @@ export default function Studies({ studyList, settings }) {
 }
 
 export async function getStaticProps() {
+  const siteSettings = await getSiteSettings();
   const allStudiesData = await getSanityContent({
     query: `
       query AllStudies {
-        allSiteSettings {
-          _id,
-          title,
-          site_title,
-          legal_links {
-            text,
-            link
-          },
-          social_links {
-            text,
-            link
-          }
-        }
         allStudy {
           title,
           description,
@@ -75,14 +64,6 @@ export async function getStaticProps() {
       }
     `,
   });
-  
-  const settingsData = allStudiesData.allSiteSettings.map((setting) => ({
-    _id: setting._id,
-    title: setting.title,
-    site_title: setting.site_title,
-    legal_links: setting.legal_links,
-    social_links: setting.social_links
-  }))[0];
 
   const studyData = allStudiesData.allStudy.map((study) => ({
     title: study.title,
@@ -99,7 +80,7 @@ export async function getStaticProps() {
   return {
     props: {
       studyList: studyDataSorted,
-      settings: settingsData
+      settings: siteSettings
     }
   }
 }

@@ -1,6 +1,8 @@
 import styled from 'styled-components'
+import React from 'react'
 import { format, parseISO } from 'date-fns'
 import { getSanityContent } from '../../lib/api'
+import { getSiteSettings } from '../../lib/query/settings'
 import Layout from '../../components/4_templates/Layout'
 import Head from 'next/head'
 import Text from '../../components/1_atoms/Text'
@@ -44,7 +46,7 @@ export default function Work({ projects, settings }) {
               }
 
               return(
-                <>
+                <React.Fragment key={index}>
                   {/* Year */}
                   {newYear ? <r-cell span="row"><WorkItem.Year><Date dateString={releasedAt} formatString={'yyyy'}/></WorkItem.Year></r-cell> : ''}
                   {/* Project */}
@@ -54,7 +56,7 @@ export default function Work({ projects, settings }) {
                       text={description}
                       key={index} />
                   </r-cell>
-                </>
+                </React.Fragment>
               )
             })}
           </r-grid>
@@ -65,22 +67,10 @@ export default function Work({ projects, settings }) {
 }
 
 export async function getStaticProps() {
+  const siteSettings = await getSiteSettings();
   const allWorkData = await getSanityContent({
     query: `
       query AllWork {
-        allSiteSettings {
-          _id,
-          title,
-          site_title,
-          legal_links {
-            text,
-            link
-          },
-          social_links {
-            text,
-            link
-          }
-        }
         allProject {
           title,
           description,
@@ -90,14 +80,6 @@ export async function getStaticProps() {
       }
     `,
   });
-  
-  const settingsData = allWorkData.allSiteSettings.map((setting) => ({
-    _id: setting._id,
-    title: setting.title,
-    site_title: setting.site_title,
-    legal_links: setting.legal_links,
-    social_links: setting.social_links
-  }))[0];
 
   const workData = allWorkData.allProject.map((project) => ({
     title: project.title,
@@ -112,7 +94,7 @@ export async function getStaticProps() {
   return {
     props: {
       projects: workDataSorted,
-      settings: settingsData
+      settings: siteSettings
     }
   }
 } 
