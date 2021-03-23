@@ -1,14 +1,17 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import { getSortedData } from '../lib/content'
-import { getAllPostsForHome, getSanityContent } from '../lib/api' 
-import { getSiteSettings } from '../lib/query/settings'
-import Layout from '../components/4_templates/Layout'
-import Text from '../components/1_atoms/Text'
-import Card from '../components/2_molecules/Card'
-import styled from 'styled-components'
+import { format, parseISO } from 'date-fns'
+
 import Button from '../components/1_atoms/Button'
+import Card from '../components/2_molecules/Card'
+import Head from 'next/head'
+import Layout from '../components/4_templates/Layout'
+import Link from 'next/link'
 import List from '../components/1_atoms/List'
+import Text from '../components/1_atoms/Text'
+import { getSiteSettings } from '../lib/query/settings'
+import { getSortedData } from '../lib/content'
+import { getStudies } from '../lib/query/studies'
+import { getWork } from '../lib/query/work'
+import styled from 'styled-components'
 
 Text.Currently = styled(Text)`
   margin-bottom: calc(var(--unit)* 4.5);
@@ -32,12 +35,12 @@ export default function Home({ writingsList, studiesList, workList, settings }) 
     
           <Text.Mono.Dark>Work</Text.Mono.Dark>
           <List>
-            {workList.slice(0, 5).map(({ id, date, title, text }) => (
-              <List.Item key={id}>
-                <Card link={`/work/${id}`} 
-                      year={date} 
+            {workList.slice(0, 5).map(({ link, title, releasedAt, description }, index) => (
+              <List.Item key={index}>
+                <Card link={link} 
+                      year={releasedAt} 
                       title={title}
-                      text={text} />
+                      text={description} />
               </List.Item>
             ))}
           </List>
@@ -50,11 +53,11 @@ export default function Home({ writingsList, studiesList, workList, settings }) 
         <r-cell span="2" span-m="3" span-s="6">
           <Text.Mono.Dark>Studies</Text.Mono.Dark>
           <List>
-            {studiesList.slice(0, 3).map(({ _id, link, title, desc, image, image_alt }) => (
+            {studiesList.slice(0, 3).map(({ _id, externalLink, title, description, image, image_alt }) => (
               <List.Item key={_id}>
-                <Card link={link} 
+                <Card link={externalLink} 
                       title={title}
-                      text={desc}
+                      text={description}
                       image={image}
                       imageAlt={image_alt} />
               </List.Item>
@@ -90,16 +93,22 @@ export default function Home({ writingsList, studiesList, workList, settings }) 
 }
 
 export async function getStaticProps() {
-  const allWritingsData = getSortedData('content/writings');
-  const allStudiesData = await getAllPostsForHome();
-  const allWorkData = getSortedData('content/work');
   const siteSettings = await getSiteSettings();
+  const work = await getWork();
+  const studies = await getStudies();
+  const allWritingsData = getSortedData('content/writings');
+
+  // sort newest work first
+  const workSorted = work.sort((a, b) => (format(parseISO(a.releasedAt), 'yyyy') < format(parseISO(b.releasedAt), 'yyyy')) ? 1 : -1)
+
+  // sort newest work first
+  const studiesSorted = studies.sort((a, b) => (new Date(a.publishedAt) < new Date(b.publishedAt)) ? 1 : -1)
 
   return {
     props: {
       writingsList: allWritingsData,
-      studiesList: allStudiesData,
-      workList: allWorkData,
+      studiesList: studiesSorted,
+      workList: workSorted,
       settings: siteSettings
     }
   }

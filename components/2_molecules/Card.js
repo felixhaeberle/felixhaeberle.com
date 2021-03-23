@@ -1,8 +1,8 @@
-import Link from 'next/link'
+import Date from '../0_helpers/date';
 import Image from 'next/image'
+import Link from 'next/link'
 import Text from '../1_atoms/Text'
 import styled from 'styled-components';
-import Date from '../0_helpers/date';
 import { urlFor } from '../../lib/sanity'
 
 export const CardItem = styled.div`
@@ -56,11 +56,12 @@ export default function Card ({image, imageAlt, title, link, text, year, date}) 
           <CardItem.Image {...( imageAlt && { alt: imageAlt })} className={'img-zoomable'} src={urlFor(image).width(350).height(150).url()} width="350" height="150" />
         </CardItem.ImageWrapper> : ''}
       <CardItem.Header>
-        <Link href={link} passHref>
+        {link ?
+          <Link href={link} passHref>
           <a>
             <Text>{title}</Text>
           </a>
-        </Link>
+        </Link> : ''}
         {year ? 
           <CardItem.Date>
             <Date dateString={year} formatString={'yyyy'}/>

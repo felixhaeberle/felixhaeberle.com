@@ -1,15 +1,17 @@
-import styled from 'styled-components'
-import React from 'react'
 import { format, parseISO } from 'date-fns'
-import { getSanityContent } from '../../lib/api'
-import { getSiteSettings } from '../../lib/query/settings'
-import Layout from '../../components/4_templates/Layout'
+
+import Card from '../../components/2_molecules/Card'
+import Date from '../../components/0_helpers/date'
 import Head from 'next/head'
-import Text from '../../components/1_atoms/Text'
 import HeaderWrapper from '../../components/1_atoms/HeaderWrapper'
 import Intro from '../../components/1_atoms/Intro'
-import Date from '../../components/0_helpers/date'
-import Card from '../../components/2_molecules/Card'
+import Layout from '../../components/4_templates/Layout'
+import React from 'react'
+import Text from '../../components/1_atoms/Text'
+import { getSanityContent } from '../../lib/api'
+import { getSiteSettings } from '../../lib/query/settings'
+import { getWork } from '../../lib/query/work'
+import styled from 'styled-components'
 
 const WorkItem = styled.div``;
 
@@ -68,32 +70,14 @@ export default function Work({ projects, settings }) {
 
 export async function getStaticProps() {
   const siteSettings = await getSiteSettings();
-  const allWorkData = await getSanityContent({
-    query: `
-      query AllWork {
-        allProject {
-          title,
-          description,
-          link,
-          releasedAt
-        }
-      }
-    `,
-  });
-
-  const workData = allWorkData.allProject.map((project) => ({
-    title: project.title,
-    description: project.description,
-    link: project.link,
-    releasedAt: project.releasedAt
-  }));
+  const work = await getWork();
 
   // sort newest work first
-  const workDataSorted = workData.sort((a, b) => (format(parseISO(a.releasedAt), 'yyyy') < format(parseISO(b.releasedAt), 'yyyy')) ? 1 : -1)
+  const workSorted = work.sort((a, b) => (format(parseISO(a.releasedAt), 'yyyy') < format(parseISO(b.releasedAt), 'yyyy')) ? 1 : -1)
 
   return {
     props: {
-      projects: workDataSorted,
+      projects: workSorted,
       settings: siteSettings
     }
   }
