@@ -1,7 +1,7 @@
-import Head from 'next/head'
-import styles from './layout.module.css'
-import Header from '../2_molecules/Header'
 import Footer from '../2_molecules/Footer'
+import Head from 'next/head'
+import Header from '../2_molecules/Header'
+import styles from './layout.module.css'
 
 export default function Layout({ children, settings, home }) {
   return (

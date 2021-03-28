@@ -1,6 +1,6 @@
-import styled from 'styled-components'
-import FooterText from '../1_atoms/FooterText'
 import FooterLink from '../1_atoms/FooterLink'
+import FooterText from '../1_atoms/FooterText'
+import styled from 'styled-components'
 
 const FooterLinksItem = styled.ul`
 display: flex;

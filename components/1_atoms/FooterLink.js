@@ -1,7 +1,6 @@
-import styled from 'styled-components'
 import FooterText from '../1_atoms/FooterText'
 import Link from 'next/link'
-
+import styled from 'styled-components'
 
 const FooterLinkAnchor = styled.a`
   &:hover {

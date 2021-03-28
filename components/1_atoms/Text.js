@@ -1,6 +1,5 @@
-import styled from 'styled-components'
 import media from '../0_helpers/viewportValues'
-
+import styled from 'styled-components'
 
 // Text
 const Text = styled.p`

@@ -1,10 +1,10 @@
+import Filtering from '../../components/2_molecules/Filtering';
 import Head from 'next/head'
-import { getSanityContent } from '../../lib/api'
-import { getSiteSettings } from '../../lib/query/settings'
-import Text from '../../components/1_atoms/Text'
-import Layout from '../../components/4_templates/Layout'
 import HeaderWrapper from '../../components/1_atoms/HeaderWrapper'
 import Intro from '../../components/1_atoms/Intro'
+import Layout from '../../components/4_templates/Layout'
+import Text from '../../components/1_atoms/Text'
+import { getSiteSettings } from '../../lib/query/settings'
 
 export default function Writings({settings}) {
   return (
@@ -17,6 +17,7 @@ export default function Writings({settings}) {
       </HeaderWrapper>
       <main>
         <Intro />
+        <Filtering />
       </main>
     </Layout>
   )

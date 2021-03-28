@@ -1,8 +1,7 @@
-import styled from 'styled-components'
+import { ArrowRight16 } from '@carbon/icons-react'
 import Link from 'next/link'
 import Text from './Text'
-import { ArrowRight16 } from '@carbon/icons-react'
-
+import styled from 'styled-components'
 
 const ExternalLinkAnchor = styled.a`
   display: flex;

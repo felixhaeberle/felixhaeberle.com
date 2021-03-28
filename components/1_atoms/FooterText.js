@@ -1,5 +1,5 @@
-import styled from 'styled-components'
 import Text from './Text'
+import styled from 'styled-components'
 
 const FooterText = styled(Text.Mono.Dark)`
   font-size: var(--fontSizeExtraSmall);

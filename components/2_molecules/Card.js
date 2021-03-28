@@ -1,8 +1,7 @@
-import Date from '../0_helpers/date';
-import Image from 'next/image'
+import Date from '../0_helpers/date'
 import Link from 'next/link'
 import Text from '../1_atoms/Text'
-import styled from 'styled-components';
+import styled from 'styled-components'
 import { urlFor } from '../../lib/sanity'
 
 export const CardItem = styled.div`
