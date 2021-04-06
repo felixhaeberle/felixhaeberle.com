@@ -1,13 +1,11 @@
-import styles from '../4_templates/layout.module.css'
-import Text from '../1_atoms/Text'
 import Navigation from './Navigation'
-import HeaderWrapper from '../1_atoms/HeaderWrapper'
+import ProfileImage from '../1_atoms/ProfileImage'
+import Text from '../1_atoms/Text'
+import media from 'styled-media-query'
+import styled from 'styled-components'
+import styles from '../4_templates/layout.module.css'
 
-
-export default function Header({ home, settings }) {
-
-  const homeText = 'Hi, I’m Felix, an interaction designer and frontend developer. I’m dedicated to Open Source and Accessibility.'
-
+export default function Header({ home, settings, pageTitle }) {
   const navigationItems = [
     {
       url: '/work',
@@ -27,11 +25,44 @@ export default function Header({ home, settings }) {
     },
   ]
 
+  const HeaderWrapper = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    ${media.lessThan('medium')`
+      flex-direction: column-reverse;
+      justify-content: flex-start;
+      align-items: flex-start;
+    `}
+`
+
+  const HeaderText = styled(Text.Large)`
+    margin-top: calc(var(--unit) *31);
+    margin-bottom: ${props => (props.isHome ? "calc(var(--unit) *12.75)" : "calc(var(--unit) *18.75)")};
+    max-width: 60%;
+
+    ${media.lessThan('medium')`
+      max-width: 90%;
+      margin-top: ${props => (props.isHome ? "calc(var(--unit) *10)" : "calc(var(--unit) *25)")};
+      margin-bottom: ${props => (props.isHome ? "calc(var(--unit) *12.75)" : "calc(var(--unit) *12.75)")};
+    `} 
+`
+
   return (
       <header className={styles.header}>
         <Navigation navigationItems={navigationItems} title={settings.title}/>
         <HeaderWrapper>
-            { home ? (<Text.Large>{settings.frontpage_text}</Text.Large>) : ''}
+            { home ? 
+            (
+            <>
+              <HeaderText isHome={home}>{settings.frontpage_text}</HeaderText>
+              <ProfileImage />
+            </>
+            ) : 
+            (
+              <HeaderText isHome={home}>{pageTitle}</HeaderText>
+            )}
         </HeaderWrapper>
       </header>
   )

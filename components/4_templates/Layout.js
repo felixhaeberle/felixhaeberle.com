@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Header from '../2_molecules/Header'
 import styles from './layout.module.css'
 
-export default function Layout({ children, settings, home }) {
+export default function Layout({ children, settings, home, pageTitle }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -22,7 +22,7 @@ export default function Layout({ children, settings, home }) {
         <meta name="og:title" content={settings.site_title} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <Header home={home} settings={settings}/>
+      <Header home={home} settings={settings} pageTitle={pageTitle}/>
       <main>{children}</main>
       <Footer settings={settings}/>
     </div>

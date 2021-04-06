@@ -3,12 +3,10 @@ import { format, parseISO } from 'date-fns'
 import Card from '../../components/2_molecules/Card'
 import Date from '../../components/0_helpers/date'
 import Head from 'next/head'
-import HeaderWrapper from '../../components/1_atoms/HeaderWrapper'
 import Intro from '../../components/1_atoms/Intro'
 import Layout from '../../components/4_templates/Layout'
 import React from 'react'
 import Text from '../../components/1_atoms/Text'
-import { getSanityContent } from '../../lib/api'
 import { getSiteSettings } from '../../lib/query/settings'
 import { getWork } from '../../lib/query/work'
 import styled from 'styled-components'
@@ -27,13 +25,10 @@ WorkItem.Year = styled(Text.Mono.Dark)`
 
 export default function Work({ projects, settings }) {
   return (
-    <Layout settings={settings}>
+    <Layout settings={settings} pageTitle={'Work'}>
       <Head>
         <title>Work</title>
       </Head>
-      <HeaderWrapper>
-          <Text.Large>Work</Text.Large>
-      </HeaderWrapper>
       <div>
         <Intro />
         <WorkItem.Wrapper>

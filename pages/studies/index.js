@@ -1,12 +1,7 @@
-import { format, parseISO } from 'date-fns'
-
 import CardStudies from '../../components/2_molecules/CardStudies'
 import Head from 'next/head'
-import HeaderWrapper from '../../components/1_atoms/HeaderWrapper'
 import Intro from '../../components/1_atoms/Intro'
 import Layout from '../../components/4_templates/Layout'
-import Text from '../../components/1_atoms/Text'
-import { getSanityContent } from '../../lib/api'
 import { getSiteSettings } from '../../lib/query/settings'
 import { getStudies } from '../../lib/query/studies'
 import styled from 'styled-components'
@@ -17,13 +12,10 @@ const Listing = styled.div`
 
 export default function Studies({ studyList, settings }) {
   return (
-    <Layout settings={settings}>
+    <Layout settings={settings} pageTitle={'Studies'}>
       <Head>
         <title>Studies</title>
       </Head>
-      <HeaderWrapper>
-          <Text.Large>Studies</Text.Large>
-      </HeaderWrapper>
       <div>
         <Intro />
         <Listing>

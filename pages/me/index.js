@@ -1,20 +1,16 @@
 import Button from '../../components/1_atoms/Button'
 import CVSection from '../../components/2_molecules/CVSection'
 import Head from 'next/head'
-import HeaderWrapper from '../../components/1_atoms/HeaderWrapper'
 import Image from 'next/image'
 import Layout from '../../components/4_templates/Layout'
 import Link from 'next/link'
 import Principle from '../../components/2_molecules/Principle'
 import Text from '../../components/1_atoms/Text'
 import cv from '../../content/me/cv.json'
-import { getSanityContent } from '../../lib/api'
 import { getSiteSettings } from '../../lib/query/settings'
 import styled from 'styled-components'
 
-const Listing = styled.div`
-  margin-top: calc(var(--rowGap)*1.5);
-`
+const Listing = styled.div``
 
 const ImageWrapper = styled.div`
   margin-bottom: calc(var(--unit)* 4.5);
@@ -33,13 +29,10 @@ const cvListing = [
 
 export default function Me({settings}) {
   return (
-    <Layout settings={settings}>
+    <Layout settings={settings} pageTitle={'About'}>
       <Head>
         <title>About</title>
       </Head>
-      <HeaderWrapper>
-          <Text.Large>About</Text.Large>
-      </HeaderWrapper>
       <div>
         <Listing>
           <r-grid columns="6">
