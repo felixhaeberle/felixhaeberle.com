@@ -1,9 +1,9 @@
-import { format } from 'date-fns'
-import styled from 'styled-components'
-import FooterText from '../1_atoms/FooterText'
 import FooterLink from '../1_atoms/FooterLink'
 import FooterLinks from '../1_atoms/FooterLinks'
+import FooterText from '../1_atoms/FooterText'
+import { format } from 'date-fns'
 import media from '../0_helpers/viewportValues';
+import styled from 'styled-components'
 
 export const FooterItem = styled.footer`
   display: flex;
@@ -25,16 +25,23 @@ FooterItem.Cell = styled.div`
   height: 100%;
 `
 
+let loadTime;
+if (typeof window !== 'undefined') {
+  loadTime = Date.now() - window.performance.timing.navigationStart; 
+}
+
 export default function Footer({settings}){
   let currentYear = format(new Date(), "yyyy");
 
   return (
     <FooterItem>
-      <FooterItem.Cell>
-        <FooterText.Dark>This is a text.</FooterText.Dark>
-        &nbsp;
-        <FooterLink link={'/'} text={'Details'} light/>
-      </FooterItem.Cell>
+      {loadTime ? (
+        <FooterItem.Cell>
+          <FooterText.Dark>This page loaded in {loadTime}ms. </FooterText.Dark>
+          &nbsp;
+          <FooterLink link={'/'} text={'Details'} light/>
+        </FooterItem.Cell>
+      ) : null}
       <FooterItem.Cell>
         <FooterLinks links={settings.social_links.slice(0, 3)} />
       </FooterItem.Cell>
