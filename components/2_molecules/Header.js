@@ -54,15 +54,11 @@ export default function Header({ home, settings, pageTitle }) {
         <Navigation navigationItems={navigationItems} title={settings.title}/>
         <HeaderWrapper>
             { home ? 
-            (
-            <>
+            (<>
               <HeaderText isHome={home}>{settings.frontpage_text}</HeaderText>
               <ProfileImage />
-            </>
-            ) : 
-            (
-              <HeaderText isHome={home}>{pageTitle}</HeaderText>
-            )}
+            </>) : 
+            (<HeaderText isHome={home}>{pageTitle}</HeaderText>)}
         </HeaderWrapper>
       </header>
   )
