@@ -6,7 +6,6 @@ import Head from 'next/head'
 import Layout from '../components/4_templates/Layout'
 import Link from 'next/link'
 import List from '../components/1_atoms/List'
-import ProfileImage from '../components/1_atoms/ProfileImage'
 import Text from '../components/1_atoms/Text'
 import { getSiteSettings } from '../lib/query/settings'
 import { getSortedData } from '../lib/content'
@@ -36,12 +35,12 @@ export default function Home({ writingsList, studiesList, workList, settings }) 
     
           <Text.Mono.Dark>Work</Text.Mono.Dark>
           <List>
-            {workList.slice(0, 5).map(({ link, title, releasedAt, description }, index) => (
+            {workList.slice(0, 5).map((work, index) => (
               <List.Item key={index}>
-                <Card link={link} 
-                      year={releasedAt} 
-                      title={title}
-                      text={description} />
+                <Card link={work.link} 
+                      year={work.releasedAt} 
+                      title={work.title}
+                      text={work.description} />
               </List.Item>
             ))}
           </List>

@@ -1,8 +1,8 @@
-import Link from '../1_atoms/Link'
-import { useRouter } from 'next/router'
+import ActiveLink from '../1_atoms/ActiveLink'
 import Text from '../1_atoms/Text'
-import styled from 'styled-components'
 import media from '../0_helpers/viewportValues'
+import styled from 'styled-components'
+import { useRouter } from 'next/router'
 
 const NavigationShell = styled.div`
   display: flex;
@@ -54,21 +54,21 @@ export default function Navigation({ navigationItems, title }) {
   return (
     <NavigationShell>
       <div>
-        <Link href="/" passHref>
+        <ActiveLink href="/" passHref>
           <a>
             <Text>{title}</Text>
           </a>
-        </Link>
+        </ActiveLink>
       </div>
       <nav>
         <NavigationWrapper>
         {navigationItems.map(({ url, title }) => (
           <NavigationItem key={title}>
-            <Link href={`${url}`} passHref>
+            <ActiveLink href={`${url}`} passHref>
               <a>
                 <Text>{title}</Text>
               </a>
-            </Link>
+            </ActiveLink>
           </NavigationItem>
           ))}
         </NavigationWrapper>

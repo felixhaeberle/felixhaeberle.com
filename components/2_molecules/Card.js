@@ -5,6 +5,8 @@ import styled from 'styled-components'
 import { urlFor } from '../../lib/sanity'
 
 export const CardItem = styled.div`
+  display: flex;
+  flex-direction: column;
   margin-bottom: calc(var(--unit)* 4.5);
 `;
 

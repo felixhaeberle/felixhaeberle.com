@@ -4,6 +4,11 @@ import React from 'react'
 import Text from '../1_atoms/Text'
 import styled from 'styled-components'
 
+const FilterWrapper = styled.div`
+  display: block;
+  margin-top: calc(var(--unit)*12.5);
+`
+
 const FilterItem = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -33,7 +38,7 @@ class Filtering extends React.Component {
 
   render() {
     return (
-      <> 
+      <FilterWrapper> 
         <Text.Mono.Dark>Filter by category</Text.Mono.Dark>
         <FilterItem>
           <Button title={'Frontend Development'} symbol={'Template24'} onClick={() => this.handleFilter('frontend')} className={this.state.filter.includes('frontend') ? 'active' : ''}/>
@@ -42,7 +47,7 @@ class Filtering extends React.Component {
           <Button title={'Accessibility'} symbol={'AccessibilityAlt24'} onClick={() => this.handleFilter('a11y')} className={this.state.filter.includes('a11y') ? 'active' : ''}/>
           <Button title={'The Web Of Tomorrow'} symbol={'Devices24'} onClick={() => this.handleFilter('tomorrow')} className={this.state.filter.includes('tomorrow') ? 'active' : ''}/>
         </FilterItem>
-      </>
+      </FilterWrapper>
     )
   } 
 }
