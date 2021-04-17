@@ -3,14 +3,15 @@
     "next/babel"
   ],
   "plugins": [
-    [
-      "babel-plugin-styled-components",
-      {
+    ["babel-plugin-styled-components", {
         "ssr": true,
         "displayName": true,
         "preprocess": false,
         "fileName": false
-      }
-    ]
+    }],
+    ["prismjs", {
+      "languages": ["javascript", "css", "html", "jsx", "sass"],
+      "plugins": ["line-numbers", "show-language"]
+    }]
   ]
 }
