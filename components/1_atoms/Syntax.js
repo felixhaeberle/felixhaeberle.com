@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
-import Prism from "Prismjs";
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import nord from 'react-syntax-highlighter/dist/cjs/styles/prism/nord';
 import { useEffect } from "react";
 import styled from 'styled-components'
 import Text from './Text'
@@ -26,14 +27,16 @@ SyntaxHighlighterItem.Text = styled(Text.Mono.Dark)`
 `
 
 SyntaxHighlighterItem.SyntaxWrapper = styled.pre`
-  min-width: 100%;
+  width: 100%;
   height: min(450px, 100%);
   overflow-y: scroll !important; 
 `
 
-export default function SyntaxHighlighter({ langCode, code }) {
+export default function Syntax({ langCode, code }) {
   useEffect(() => {
-    Prism.highlightAll();
+    dynamic(
+      () => import('react-syntax-highlighter/dist/cjs/languages/prism/' + langCode)
+      .then((langCode) => SyntaxHighlighter.registerLanguage(String(langCode), langCode)))
   }, [])
 
   const langCodeUppercase = String(langCode).toUpperCase();
@@ -46,9 +49,9 @@ export default function SyntaxHighlighter({ langCode, code }) {
         </SyntaxHighlighterItem.Text>
       </SyntaxHighlighterItem.Badge>
       <SyntaxHighlighterItem.SyntaxWrapper>
-        <code className={'language-' + langCode}>
+        <SyntaxHighlighter language={langCode} style={nord}>
           { code }
-        </code>
+        </SyntaxHighlighter>
       </SyntaxHighlighterItem.SyntaxWrapper> 
     </SyntaxHighlighterItem>
   )

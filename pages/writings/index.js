@@ -2,7 +2,7 @@ import BlogPostHeader from '../../components/2_molecules/BlogPostHeader'
 import BlogPostLayout from '../../components/3_organisms/BlogPostLayout'
 import BlogPostParagraph from '../../components/1_atoms/BlogPostParagraph'
 import BlogPostImage from '../../components/1_atoms/BlogPostImage'
-import SyntaxHighlighter from '../../components/1_atoms/SyntaxHighlighter'
+import Syntax from '../../components/1_atoms/Syntax'
 import CardWritings from '../../components/2_molecules/CardWritings'
 import Filtering from '../../components/2_molecules/Filtering'
 import Head from 'next/head'
@@ -13,24 +13,26 @@ import { getSiteSettings } from '../../lib/query/settings'
 export default function Writings({settings}) {
 
   const codeSnippet = 
-`export async function getStaticProps() {
-  const siteSettings = await getSiteSettings();
-
-  return {
-    props: {
-      settings: siteSettings
-    }
-  }
+`.colorInherit {
+  color: inherit;
 }
 
-export async function getStaticProps() {
-  const siteSettings = await getSiteSettings();
+.padding1px {
+  padding-top: 1px;
+}
 
-  return {
-    props: {
-      settings: siteSettings
-    }
-  }
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listItem {
+  margin: 0 0 1.25rem;
+}
+
+.lightText {
+  color: #666;
 }`
   
   const writings = [{
@@ -89,7 +91,7 @@ export async function getStaticProps() {
             image={'image-fe932a4080646bb7e7bb90974fbb4db32cadb32c-5472x3648-jpg'}
             imageAlt={'This is an rellay interesting subtitle with a lot of information in it.'}
             text={'This is an rellay interesting subtitle with a lot of information in it.'} />
-          <SyntaxHighlighter langCode={'js'} code={codeSnippet}/>
+          <Syntax langCode={'css'} code={codeSnippet}/>
         </BlogPostLayout>
       </main>
     </Layout>
