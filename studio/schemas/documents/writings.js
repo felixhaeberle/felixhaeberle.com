@@ -31,7 +31,9 @@ export default {
       name: 'content',
       type: 'array',
       of: [
-        {type: 'block'}
+        {type: 'block'},
+        {type: 'a11yImage'},
+        {type: 'code'}
       ]
     }
   ]

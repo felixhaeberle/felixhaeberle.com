@@ -1,15 +1,16 @@
-import dynamic from "next/dynamic";
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
-import nord from 'react-syntax-highlighter/dist/cjs/styles/prism/nord';
-import { useEffect } from "react";
-import styled from 'styled-components'
 import Text from './Text'
+import adjustedSyntaxStyles from '../0_helpers/syntaxStyles';
+import dynamic from "next/dynamic";
+import styled from 'styled-components'
+import syntaxStyles from 'react-syntax-highlighter/dist/cjs/styles/prism/dracula';
+import { useEffect } from "react";
 
 const SyntaxHighlighterItem = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin: 0 calc(var(--unit)*-4);
+  margin: 0 calc(var(--unit)*-4) calc(var(--unit)*9.375);
   width: calc(100% + calc(var(--unit)*8));
 `
 
@@ -20,6 +21,8 @@ SyntaxHighlighterItem.Badge = styled.span`
   width: calc(var(--unit)*9.375);
   height: calc(var(--unit)*4.375);
   margin-right: calc(var(--unit)*4);
+  background-color: rgba(var(--colorButtonBgRGB),0.7);
+  border-radius: 8px 8px 0 0;
 `
 
 SyntaxHighlighterItem.Text = styled(Text.Mono.Dark)`
@@ -39,7 +42,13 @@ export default function Syntax({ langCode, code }) {
       .then((langCode) => SyntaxHighlighter.registerLanguage(String(langCode), langCode)))
   }, [])
 
+  // Convert lang string for visual output
   const langCodeUppercase = String(langCode).toUpperCase();
+  
+  // Modify styling
+  const editedStyles = adjustedSyntaxStyles(syntaxStyles);
+  
+
 
   return(
     <SyntaxHighlighterItem>
@@ -49,7 +58,11 @@ export default function Syntax({ langCode, code }) {
         </SyntaxHighlighterItem.Text>
       </SyntaxHighlighterItem.Badge>
       <SyntaxHighlighterItem.SyntaxWrapper>
-        <SyntaxHighlighter language={langCode} style={nord}>
+        <SyntaxHighlighter 
+          language={langCode} 
+          style={editedStyles}
+          wrapLines={true}
+          codeTagProps={{style: {fontFamily: 'inherit'} }}>
           { code }
         </SyntaxHighlighter>
       </SyntaxHighlighterItem.SyntaxWrapper> 

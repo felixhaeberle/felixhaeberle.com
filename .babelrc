@@ -11,7 +11,7 @@
     }],
     ["prismjs", {
       "languages": ["javascript", "css", "html", "jsx", "sass"],
-      "plugins": ["line-numbers", "show-language"]
+      "plugins": ["line-numbers", "show-language", "line-highlight"]
     }]
   ]
 }
