@@ -1,13 +1,14 @@
-import { getAllPostIds, getPostData } from '../../lib/content'
 import { getWriting, getWritingsPaths } from '../../lib/query/writings'
 
+import BlogPostHeader from '../../components/2_molecules/BlogPostHeader'
 import BlogPostImage from '../../components/1_atoms/BlogPostImage'
 import BlogPostLayout from '../../components/3_organisms/BlogPostLayout'
 import BlogPostParagraph from '../../components/1_atoms/BlogPostParagraph'
 import Head from 'next/head'
 import { Headline } from '../../components/1_atoms/Headline'
+import Layout from '../../components/4_templates/Layout'
 import Syntax from '../../components/1_atoms/Syntax'
-import { getSanityContent } from '../../lib/api'
+import { getSiteSettings } from '../../lib/query/settings'
 
 export default function PostPage ({ writing, settings }){
   
@@ -29,18 +30,18 @@ export default function PostPage ({ writing, settings }){
   }
 
   return (
-    <Layout>
+    <Layout settings={settings}>
       <Head>
         <title>{writing.title}</title>
       </Head>
       <main>
         <BlogPostLayout>
             <BlogPostHeader 
-              title={'This is a really interesting topic I want to explain in detail about it with this post.'}
+              title={writing.title}
               date={'2021-03-18'}
               categories={[{title: 'Accessibility'}, {title: 'The Web Of Tomorrow'}]}
               />
-            <BlockContent blocks={article.body} serializers={serializers} />
+            {/* <BlockContent blocks={article.body} serializers={serializers} /> */}
           </BlogPostLayout>
       </main>
     </Layout>
@@ -48,7 +49,7 @@ export default function PostPage ({ writing, settings }){
 }
 
 export async function getStaticPaths() {
-  const paths = getWritingsPaths();
+  const paths = await getWritingsPaths();
   return {
     paths,
     fallback: false
@@ -61,7 +62,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
-      writing: writingData,
+      writing: writingData[0],
       settings: siteSettings
     }
   }
