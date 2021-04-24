@@ -36,16 +36,15 @@ SyntaxHighlighterItem.SyntaxWrapper = styled.pre`
 `
 
 export default function Syntax({ langCode, code }) {
-  useEffect(() => {
-    const LoadLanguage = dynamic(
-      () => import('react-syntax-highlighter/dist/cjs/languages/prism/' + langCode)
-      .then((langCode) => SyntaxHighlighter.registerLanguage(String(langCode), langCode)), {ssr: false})
-  }, [])
+  // useEffect(() => {
+  //   const LoadLanguage = dynamic(
+  //     () => import('react-syntax-highlighter/dist/cjs/languages/prism/' + langCode)
+  //     .then((langCode) => SyntaxHighlighter.registerLanguage(String(langCode), langCode)), {ssr: false})
+  // }, [])
 
   // Convert lang string for visual output
   const langCodeUppercase = String(langCode).toUpperCase();
-  console.log(style)
-  
+
   // Modify styling
   const editedStyles = adjustedSyntaxStyles(style);
 

@@ -44,7 +44,6 @@ export default function WritingPage ({ writing, settings }){
         <ol>{props.children}</ol>
       ),
     listItem: (props) =>
-      console.log("list", props) ||
       (props.type === "bullet" ? (
         <li>{props.children}</li>
       ) : (
