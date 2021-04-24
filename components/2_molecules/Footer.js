@@ -6,6 +6,7 @@ import FooterText from '../1_atoms/FooterText'
 import { format } from 'date-fns'
 import media from '../0_helpers/viewportValues'
 import styled from 'styled-components'
+import { withRouter } from 'next/router'
 
 export const FooterItem = styled.footer`
   display: flex;
@@ -28,7 +29,7 @@ FooterItem.Cell = styled.div`
 `
 
 
-export default function Footer({ settings }){
+function Footer({ settings }) {
   let currentYear = format(new Date(), "yyyy");
   const [loadTime, setLoadTime] = useState();
   const [showloadTime, setShowLoadTime] = useState(false);
@@ -57,3 +58,5 @@ export default function Footer({ settings }){
     </FooterItem>
   )
 }
+
+export default withRouter(Footer)
