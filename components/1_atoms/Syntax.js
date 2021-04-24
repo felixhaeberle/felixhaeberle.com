@@ -2,8 +2,8 @@ import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import Text from './Text'
 import adjustedSyntaxStyles from '../0_helpers/syntaxStyles';
 import dynamic from "next/dynamic";
+import style from 'react-syntax-highlighter/dist/cjs/styles/prism/dracula';
 import styled from 'styled-components'
-import syntaxStyles from 'react-syntax-highlighter/dist/cjs/styles/prism/dracula';
 import { useEffect } from "react";
 
 const SyntaxHighlighterItem = styled.div`
@@ -37,18 +37,17 @@ SyntaxHighlighterItem.SyntaxWrapper = styled.pre`
 
 export default function Syntax({ langCode, code }) {
   useEffect(() => {
-    dynamic(
+    const LoadLanguage = dynamic(
       () => import('react-syntax-highlighter/dist/cjs/languages/prism/' + langCode)
-      .then((langCode) => SyntaxHighlighter.registerLanguage(String(langCode), langCode)))
+      .then((langCode) => SyntaxHighlighter.registerLanguage(String(langCode), langCode)), {ssr: false})
   }, [])
 
   // Convert lang string for visual output
   const langCodeUppercase = String(langCode).toUpperCase();
+  console.log(style)
   
   // Modify styling
-  const editedStyles = adjustedSyntaxStyles(syntaxStyles);
-  
-
+  const editedStyles = adjustedSyntaxStyles(style);
 
   return(
     <SyntaxHighlighterItem>
