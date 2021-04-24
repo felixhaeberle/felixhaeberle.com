@@ -1,6 +1,6 @@
 import { getWriting, getWritingsPaths } from '../../lib/query/writings'
 
-import { SanityBlockContent as BlockContent } from '@sanity/block-content-to-react'
+import BlockContent from '@sanity/block-content-to-react'
 import BlogPostHeader from '../../components/2_molecules/BlogPostHeader'
 import BlogPostImage from '../../components/1_atoms/BlogPostImage'
 import BlogPostLayout from '../../components/3_organisms/BlogPostLayout'
@@ -12,25 +12,44 @@ import Syntax from '../../components/1_atoms/Syntax'
 import { getSiteSettings } from '../../lib/query/settings'
 
 export default function WritingPage ({ writing, settings }){
-  
+
   const serializers = {
     types: {
-      block: props => (
-        console.log(props)
-      ),
+      block: props => {
+        switch (props.node.style) {
+          case 'h1':
+            return <Headline.Large>{props.children}</Headline.Large>
+          case 'h2':
+            return <Headline.Medium>{props.children}</Headline.Medium>
+          default:
+            return <BlogPostParagraph>{props.children}</BlogPostParagraph>
+        }
+      },
       code: props => (
         <Syntax 
           langCode={String(props.node.language).toLowerCase()} 
-          code={props.node.code} 
-          highlightedRange={"1-10,15,20-22"} />
+          code={props.node.code} />
       ),
       a11yImage: props => (
         <BlogPostImage
-          image={props.node.id}
-          imageAlt={props.node.alt}
-          text={props.node.text} />
+          image={props.node.image.asset._ref}
+          imageAlt={props.node.alternative}
+          text={props.node.caption} />
       )
-    }
+    },
+    list: (props) =>
+      props.type === "bullet" ? (
+        <ul>{props.children}</ul>
+      ) : (
+        <ol>{props.children}</ol>
+      ),
+    listItem: (props) =>
+      console.log("list", props) ||
+      (props.type === "bullet" ? (
+        <li>{props.children}</li>
+      ) : (
+        <li>{props.children}</li>
+      ))
   }
 
   return (
