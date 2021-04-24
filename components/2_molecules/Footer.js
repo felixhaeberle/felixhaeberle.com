@@ -28,20 +28,17 @@ FooterItem.Cell = styled.div`
   height: 100%;
 `
 
+let loadTime = 0;
+if (typeof window !== 'undefined'){
+  loadTime = Date.now() - window.performance.timing.navigationStart
+}
 
-function Footer({ settings }) {
+export default function Footer({ settings }) {
   let currentYear = format(new Date(), "yyyy");
-  const [loadTime, setLoadTime] = useState();
-  const [showloadTime, setShowLoadTime] = useState(false);
-
-  useEffect(() => {
-    setLoadTime(window.performance.timing.domContentLoadedEventEnd- window.performance.timing.navigationStart);
-    setShowLoadTime(true); 
-  })
 
   return (
     <FooterItem>
-      {showloadTime ? (
+      {loadTime !== 0 ? (
         <FooterItem.Cell>
           <FooterText.Dark>This page loaded in {loadTime}ms. </FooterText.Dark>
           &nbsp;
@@ -58,5 +55,3 @@ function Footer({ settings }) {
     </FooterItem>
   )
 }
-
-export default withRouter(Footer)
