@@ -1,5 +1,6 @@
 import { getWriting, getWritingsPaths } from '../../lib/query/writings'
 
+import { SanityBlockContent as BlockContent } from '@sanity/block-content-to-react'
 import BlogPostHeader from '../../components/2_molecules/BlogPostHeader'
 import BlogPostImage from '../../components/1_atoms/BlogPostImage'
 import BlogPostLayout from '../../components/3_organisms/BlogPostLayout'
@@ -10,10 +11,13 @@ import Layout from '../../components/4_templates/Layout'
 import Syntax from '../../components/1_atoms/Syntax'
 import { getSiteSettings } from '../../lib/query/settings'
 
-export default function PostPage ({ writing, settings }){
+export default function WritingPage ({ writing, settings }){
   
   const serializers = {
     types: {
+      block: props => (
+        console.log(props)
+      ),
       code: props => (
         <Syntax 
           langCode={String(props.node.language).toLowerCase()} 
@@ -41,7 +45,7 @@ export default function PostPage ({ writing, settings }){
               date={'2021-03-18'}
               categories={[{title: 'Accessibility'}, {title: 'The Web Of Tomorrow'}]}
               />
-            {/* <BlockContent blocks={article.body} serializers={serializers} /> */}
+            <BlockContent blocks={writing.contentRaw} serializers={serializers} />
           </BlogPostLayout>
       </main>
     </Layout>
@@ -62,7 +66,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
-      writing: writingData[0],
+      writing: writingData,
       settings: siteSettings
     }
   }
