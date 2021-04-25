@@ -7,6 +7,7 @@ const BlogPostHeaderItem = styled.header`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: calc(var(--unit) *25);
   margin-bottom: calc(var(--unit)*11.875);
 `
 
@@ -14,6 +15,8 @@ BlogPostHeaderItem.Date = styled(Text.Mono.Dark)``
 
 BlogPostHeaderItem.Title = styled(Text.Large)`
   text-align: center;
+  width: 80%;
+  margin: 0 auto;
 `
 
 BlogPostHeaderItem.Categories = styled.div`

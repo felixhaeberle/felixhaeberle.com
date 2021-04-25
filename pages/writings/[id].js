@@ -1,18 +1,20 @@
+import { BlogPostList, BlogPostListItem } from '../../components/1_atoms/BlogPostLists'
 import { getWriting, getWritingsPaths } from '../../lib/query/writings'
 
 import BlockContent from '@sanity/block-content-to-react'
 import BlogPostHeader from '../../components/2_molecules/BlogPostHeader'
 import BlogPostImage from '../../components/1_atoms/BlogPostImage'
 import BlogPostLayout from '../../components/3_organisms/BlogPostLayout'
-import BlogPostParagraph from '../../components/1_atoms/BlogPostParagraph'
+import { BlogPostParagraph } from '../../components/1_atoms/BlogPostParagraph'
 import Head from 'next/head'
 import { Headline } from '../../components/1_atoms/Headline'
 import Layout from '../../components/4_templates/Layout'
+import Link from 'next/link'
 import Syntax from '../../components/1_atoms/Syntax'
 import { getSiteSettings } from '../../lib/query/settings'
 
 export default function WritingPage ({ writing, settings }){
-
+  //console.log(writing.contentRaw)
   const serializers = {
     types: {
       block: props => {
@@ -37,24 +39,28 @@ export default function WritingPage ({ writing, settings }){
           text={props.node.caption} />
       )
     },
-    list: (props) =>
-      props.type === "bullet" ? (
-        <ul>{props.children}</ul>
-      ) : (
-        <ol>{props.children}</ol>
-      ),
-    listItem: (props) =>
-      (props.type === "bullet" ? (
-        <li>{props.children}</li>
-      ) : (
-        <li>{props.children}</li>
-      ))
+    list: (props) => (<BlogPostList type={props.type}>{props.children}</BlogPostList>),
+    listItem: (props) => (<BlogPostListItem tag="li">{props.children}</BlogPostListItem>),
+    marks: {
+      strong: (props) => <BlogPostParagraph.Bold as="strong">{props.children}</BlogPostParagraph.Bold>,
+      em: (props) => <BlogPostParagraph.Italic as="em">{props.children}</BlogPostParagraph.Italic>,
+      code: (props) => <BlogPostParagraph.Code>{props.children}</BlogPostParagraph.Code>,
+      underline: (props) => <BlogPostParagraph.Underline as="span">{props.children}</BlogPostParagraph.Underline>,
+      link: (props) => {
+        return (
+          <Link href={props.mark.href}>
+            <BlogPostParagraph.Link as="a">{props.children}</BlogPostParagraph.Link>
+          </Link>
+        );
+      },
+    },
   }
 
   return (
     <Layout settings={settings}>
       <Head>
         <title>{writing.title}</title>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet" />
       </Head>
       <main>
         <BlogPostLayout>
@@ -89,33 +95,3 @@ export async function getStaticProps({ params }) {
     }
   }
 }
-
-
-
-// <>
-//   <BlogPostParagraph>
-//   This is a really interesting topic I want to explain in detail about it with this post. This is  a rellay interesting topic I want to explain in detail about it with this post. This is  a rellay interesting topic I want to explain in detail about it with this post.
-//   </BlogPostParagraph>
-//   <BlogPostParagraph>
-//   This is a really interesting topic I want to explain in detail about it with this post. This is  a rellay interesting topic I want to explain in detail about it with this post. This is  a rellay interesting topic I want to explain in detail about it with this post.
-//   </BlogPostParagraph>
-//   <BlogPostImage
-//     image={'image-fe932a4080646bb7e7bb90974fbb4db32cadb32c-5472x3648-jpg'}
-//     imageAlt={'This is an rellay interesting subtitle with a lot of information in it.'}
-//     text={'This is an rellay interesting subtitle with a lot of information in it.'} />
-//   <Syntax 
-//     langCode={'jsx'} 
-//     code={codeSnippet} />
-//   <Headline.Large>
-//   Tis is a really nice headline
-//   </Headline.Large>
-//   <BlogPostParagraph>
-//   This is a really interesting topic I want to explain in detail about it with this post. This is  a rellay interesting topic I want to explain in detail about it with this post. This is  a rellay interesting topic I want to explain in detail about it with this post.
-//   </BlogPostParagraph>
-//   <Headline.Medium>
-//   Tis is a really nice headline
-//   </Headline.Medium>
-//   <BlogPostParagraph>
-//   This is a really interesting topic I want to explain in detail about it with this post. This is  a rellay interesting topic I want to explain in detail about it with this post. This is  a rellay interesting topic I want to explain in detail about it with this post.
-//   </BlogPostParagraph>
-// </>

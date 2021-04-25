@@ -58,7 +58,9 @@ export default function Header({ home, settings, pageTitle }) {
               <HeaderText isHome={home}>{settings.frontpage_text}</HeaderText>
               <ProfileImage />
             </>) : 
-            (<HeaderText isHome={home}>{pageTitle}</HeaderText>)}
+            (pageTitle ? (
+              <HeaderText isHome={home}>{pageTitle}</HeaderText>
+            ) : null)}
         </HeaderWrapper>
       </header>
   )
