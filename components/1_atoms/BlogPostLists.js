@@ -14,7 +14,6 @@ export const BlogPostList = (props) => {
 }
 
 export const BlogPostListItem = (props) => {
-  console.log(props)
   return (
     <BlogPostListItemChild as={props.tag}>{props.children}</BlogPostListItemChild>
   )
