@@ -51,13 +51,3 @@ class Filtering extends React.Component {
 }
 
 export default React.memo(Filtering);
-
-export async function getStaticProps() {
-  
-
-  return {
-    props: {
-      categories: categories
-    }
-  }
-}
