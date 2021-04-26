@@ -9,9 +9,14 @@ export default {
       type: 'string',
     },
     {
-      name: 'description',
-      title: 'Description',
-      type: 'text',
+      name: 'handle',
+      title: 'Handle',
+      type: 'string',
     },
+    {
+      name: 'symbol',
+      title: 'Symbol',
+      type: 'string',
+    }
   ],
 }

@@ -3,9 +3,10 @@ import Filtering from '../../components/2_molecules/Filtering'
 import Head from 'next/head'
 import Intro from '../../components/1_atoms/Intro'
 import Layout from '../../components/4_templates/Layout'
+import { getCategory } from '../../lib/query/categories'
 import { getSiteSettings } from '../../lib/query/settings'
 
-export default function Writings({settings}) {
+export default function Writings({categories, settings}) {
   
   const writings = [{
     title: 'This is an interesting blog post',
@@ -34,7 +35,7 @@ export default function Writings({settings}) {
       </Head>
       <main>
         <Intro />
-        <Filtering />
+        <Filtering categories={categories}/>
         <r-grid columns="6" columns-s="2" columns-xs="1">
           {writings.map((writing, index) => (
             <CardWritings 
@@ -54,10 +55,12 @@ export default function Writings({settings}) {
 }
 
 export async function getStaticProps() {
+  const categories = await getCategory();
   const siteSettings = await getSiteSettings();
 
   return {
     props: {
+      categories: categories,
       settings: siteSettings
     }
   }

@@ -1,3 +1,5 @@
+import { writingCategories } from '../../../content/writings/categories'
+
 export default {
   title: 'Writings',
   name: 'writings',
@@ -6,7 +8,8 @@ export default {
     {
       title: 'Title',
       name: 'title',
-      type: 'string'
+      type: 'string',
+      validation: Rule => Rule.required()
     },
     {
       title: 'Slug',
@@ -14,12 +17,32 @@ export default {
       type: 'slug',
       options: {
         source: 'title'
-      }
+      },
+      validation: Rule => Rule.required()
+    },
+    {
+      title: 'Published at',
+      name: 'publishedAt',
+      type: 'datetime',
+      validation: Rule => Rule.required()
+    },
+    {
+      title: 'Categories',
+      name: 'categories',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'category' } }]
+    },
+    {
+      title: 'Small Teaser',
+      name: 'teaserSmall',
+      type: 'text',
+      validation: Rule => Rule.required()
     },
     {
       title: 'Teaser',
       name: 'teaser',
-      type: 'text'
+      type: 'text',
+      validation: Rule => Rule.required()
     },
     {
       title: 'Image',

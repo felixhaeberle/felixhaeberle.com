@@ -41,11 +41,9 @@ class Filtering extends React.Component {
       <FilterWrapper> 
         <Text.Mono.Dark>Filter by category</Text.Mono.Dark>
         <FilterItem>
-          <Button title={'Frontend Development'} symbol={'Template24'} onClick={() => this.handleFilter('frontend')} className={this.state.filter.includes('frontend') ? 'active' : ''}/>
-          <Button title={'Thinking & Design'} symbol={'Idea24'} onClick={() => this.handleFilter('thinkdesign')} className={this.state.filter.includes('thinkdesign') ? 'active' : ''}/>
-          <Button title={'Open Source'} symbol={'Api24'} onClick={() => this.handleFilter('opensource')} className={this.state.filter.includes('opensource') ? 'active' : ''}/>
-          <Button title={'Accessibility'} symbol={'AccessibilityAlt24'} onClick={() => this.handleFilter('a11y')} className={this.state.filter.includes('a11y') ? 'active' : ''}/>
-          <Button title={'The Web Of Tomorrow'} symbol={'Devices24'} onClick={() => this.handleFilter('tomorrow')} className={this.state.filter.includes('tomorrow') ? 'active' : ''}/>
+          {this.props.categories.map((category) => (
+            <Button title={category.title} symbol={category.symbol} onClick={() => this.handleFilter(category.handle)} className={this.state.filter.includes(category.handle) ? 'active' : ''}/>
+          ))}
         </FilterItem>
       </FilterWrapper>
     )
@@ -53,3 +51,13 @@ class Filtering extends React.Component {
 }
 
 export default React.memo(Filtering);
+
+export async function getStaticProps() {
+  
+
+  return {
+    props: {
+      categories: categories
+    }
+  }
+}

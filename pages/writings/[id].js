@@ -14,7 +14,7 @@ import Syntax from '../../components/1_atoms/Syntax'
 import { getSiteSettings } from '../../lib/query/settings'
 
 export default function WritingPage ({ writing, settings }){
-  //console.log(writing.contentRaw)
+  console.log(writing)
   const serializers = {
     types: {
       block: props => {
@@ -66,8 +66,8 @@ export default function WritingPage ({ writing, settings }){
         <BlogPostLayout>
             <BlogPostHeader 
               title={writing.title}
-              date={'2021-03-18'}
-              categories={[{title: 'Accessibility'}, {title: 'The Web Of Tomorrow'}]}
+              date={writing.publishedAt}
+              categories={writing.categories}
               />
             <BlockContent blocks={writing.contentRaw} serializers={serializers} />
           </BlogPostLayout>
