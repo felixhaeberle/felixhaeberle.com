@@ -75,7 +75,8 @@ class Filtering extends React.Component {
         {/* Writing List */}
         <r-grid columns="6" columns-s="2" columns-xs="1">
         {writings.map((writing, index) => (
-          <CardWritings 
+          <CardWritings
+            image={{source: writing.image, alt: writing.imageAlt }} 
             title={writing.title}
             link={'/writings/' + writing.slug}
             shortText={writing.teaserSmall}
