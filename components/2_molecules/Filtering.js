@@ -21,7 +21,6 @@ const FilterItem = styled.div`
   }
 `
 
-
 class Filtering extends React.Component {
   constructor(props) {
     super(props);
@@ -39,6 +38,7 @@ class Filtering extends React.Component {
 
   render() {
     
+    // Filter writings based on user selection
     let writings;
     if(this.state.filter.length === 0){
       writings = this.props.writings;
@@ -50,6 +50,11 @@ class Filtering extends React.Component {
         }
       })
     }
+
+    // Sort writings based on publish date
+    writings = writings.sort((a,b) => {
+      return new Date(b.publishedAt) - new Date(a.publishedAt);
+    });
 
     return (
       <>
