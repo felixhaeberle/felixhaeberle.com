@@ -41,8 +41,13 @@ class Filtering extends React.Component {
       <FilterWrapper> 
         <Text.Mono.Dark>Filter by category</Text.Mono.Dark>
         <FilterItem>
-          {this.props.categories.map((category) => (
-            <Button title={category.title} symbol={category.symbol} onClick={() => this.handleFilter(category.handle)} className={this.state.filter.includes(category.handle) ? 'active' : ''}/>
+          {this.props.categories.map((category, index) => (
+            <Button 
+              title={category.title} 
+              symbol={category.symbol} 
+              onClick={() => this.handleFilter(category.handle)} 
+              className={this.state.filter.includes(category.handle) ? 'active' : ''}
+              key={index} />
           ))}
         </FilterItem>
       </FilterWrapper>

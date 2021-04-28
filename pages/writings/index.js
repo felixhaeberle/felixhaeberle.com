@@ -5,28 +5,9 @@ import Intro from '../../components/1_atoms/Intro'
 import Layout from '../../components/4_templates/Layout'
 import { getCategory } from '../../lib/query/categories'
 import { getSiteSettings } from '../../lib/query/settings'
+import { getWritings } from '../../lib/query/writings'
 
-export default function Writings({categories, settings}) {
-  
-  const writings = [{
-    title: 'This is an interesting blog post',
-    link: '/some-link',
-    shortText: 'This is an short rext for this really interesting blog post lets talk',
-    longText: 'I have something more to say about this really good blog post with more insights and more interesting information with extra value.',
-    date: '2021-03-12'
-  },{
-    title: 'This is an interesting blog post',
-    link: '/some-link',
-    shortText: 'This is an short rext for this really interesting blog post lets talk',
-    longText: 'I have something more to say about this really good blog post with more insights and more interesting information with extra value.',
-    date: '2021-03-12'
-  },{
-    title: 'This is an interesting blog post',
-    link: '/some-link',
-    shortText: 'This is an short rext for this really interesting blog post lets talk',
-    longText: 'I have something more to say about this really good blog post with more insights and more interesting information with extra value.',
-    date: '2021-03-12'
-  }]
+export default function Writings({writings, categories, settings}) {
 
   return (
     <Layout settings={settings} pageTitle={'Writings'}>
@@ -40,10 +21,10 @@ export default function Writings({categories, settings}) {
           {writings.map((writing, index) => (
             <CardWritings 
               title={writing.title}
-              link={writing.link}
-              shortText={writing.shortText}
-              longText={writing.longText}
-              date={writing.date}
+              link={'/writings/' + writing.slug}
+              shortText={writing.teaserSmall}
+              longText={writing.teaser}
+              date={writing.publishedAt}
               key={index}
             />
           ))}
@@ -55,11 +36,13 @@ export default function Writings({categories, settings}) {
 }
 
 export async function getStaticProps() {
+  const writings = await getWritings();
   const categories = await getCategory();
   const siteSettings = await getSiteSettings();
 
   return {
     props: {
+      writings: writings,
       categories: categories,
       settings: siteSettings
     }

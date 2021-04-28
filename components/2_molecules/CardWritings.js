@@ -35,20 +35,20 @@ CardWritingsItem.Header = styled(CardItem.Header)`
 export default function CardWritings({title, link, shortText, longText, date}) {
   return (
     <r-cell span="2">
-      <CardWritingsItem>
-        <CardWritingsItem.Header>
-          <CardWritingsItem.TextSmall>
-            <Date dateString={date} formatString={'dd. MMMM yyyy'}/>
-          </CardWritingsItem.TextSmall>
-          <Link href={link}>
-            <a>
-              <Text>{title}</Text>
-            </a>
-          </Link>
-        </CardWritingsItem.Header>
-        <ShortText>{shortText}</ShortText>
-        <LongText>{longText}</LongText>
-      </CardWritingsItem>
+      <Link href={link} passHref>
+        <a>
+          <CardWritingsItem>
+            <CardWritingsItem.Header>
+              <CardWritingsItem.TextSmall>
+                <Date dateString={date} formatString={'dd. MMMM yyyy'}/>
+              </CardWritingsItem.TextSmall>
+                <Text>{title}</Text>
+            </CardWritingsItem.Header>
+            <ShortText>{shortText}</ShortText>
+            <LongText>{longText}</LongText>
+          </CardWritingsItem>
+        </a>
+      </Link>
     </r-cell>
   )
 }

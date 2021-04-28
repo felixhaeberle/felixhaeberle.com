@@ -14,7 +14,7 @@ import Syntax from '../../components/1_atoms/Syntax'
 import { getSiteSettings } from '../../lib/query/settings'
 
 export default function WritingPage ({ writing, settings }){
-  console.log(writing)
+
   const serializers = {
     types: {
       block: props => {
@@ -62,7 +62,7 @@ export default function WritingPage ({ writing, settings }){
         <title>{writing.title}</title>
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet" />
       </Head>
-      <main>
+      <main className={'blog'}>
         <BlogPostLayout>
             <BlogPostHeader 
               title={writing.title}
