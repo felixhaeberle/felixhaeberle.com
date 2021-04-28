@@ -1,5 +1,3 @@
-import { writingCategories } from '../../../content/writings/categories'
-
 export default {
   title: 'Writings',
   name: 'writings',
@@ -58,7 +56,8 @@ export default {
       of: [
         {type: 'block'},
         {type: 'a11yImage'},
-        {type: 'code'}
+        {type: 'code'},
+        {type: 'tweet'}
       ]
     }
   ]

@@ -11,6 +11,8 @@ import { Headline } from '../../components/1_atoms/Headline'
 import Layout from '../../components/4_templates/Layout'
 import Link from 'next/link'
 import Syntax from '../../components/1_atoms/Syntax'
+import TweetEmbed from 'react-tweet-embed'
+import TweetWrapper from '../../components/1_atoms/TweetWrapper'
 import { getSiteSettings } from '../../lib/query/settings'
 
 export default function WritingPage ({ writing, settings }){
@@ -37,6 +39,14 @@ export default function WritingPage ({ writing, settings }){
           image={props.node.image.asset._ref}
           imageAlt={props.node.alternative}
           text={props.node.caption} />
+      ),
+      tweet: props => (
+        <TweetWrapper>
+          <TweetEmbed
+            id={props.node.id}
+            placeholder={'loading'}
+            options={{theme: 'dark', align: 'center'}} />
+        </TweetWrapper>
       )
     },
     list: (props) => (<BlogPostList type={props.type}>{props.children}</BlogPostList>),

@@ -1,26 +1,24 @@
-// First, we must import the schema creator
-import createSchema from 'part:@sanity/base/schema-creator'
-
-// Then import schema types from any plugins that might expose them
-import schemaTypes from 'all:part:@sanity/base/schema-type'
-
-// We import object and document schemas
-import link from './documents/link.js'
-import siteSettings from './documents/siteSettings'
+import a11yImage from './documents/a11yImage'
+import author from './documents/author'
 import blockContent from './array/blockContent'
 import category from './documents/category'
-import a11yImage from './documents/a11yImage'
-import study from './documents/study'
-import project from './documents/project'
-import author from './documents/author'
+import columnText from './documents/columnText'
+// First, we must import the schema creator
+import createSchema from 'part:@sanity/base/schema-creator'
 import cv from './documents/cv'
 import cvItem from './documents/cvItem'
+// We import object and document schemas
+import link from './documents/link.js'
 import page from './documents/page'
-import columnText from './documents/columnText'
+import project from './documents/project'
+// Then import schema types from any plugins that might expose them
+import schemaTypes from 'all:part:@sanity/base/schema-type'
+import siteSettings from './documents/siteSettings'
+import study from './documents/study'
 import textCard from './documents/textCard'
 import textCards from './documents/textCards'
+import tweet from './documents/tweet'
 import writings from './documents/writings'
-
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -38,6 +36,7 @@ export default createSchema({
     textCard,
     textCards,
     a11yImage,
+    tweet,
     link,
     study,
     project,
