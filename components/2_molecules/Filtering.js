@@ -46,7 +46,6 @@ class Filtering extends React.Component {
       writings = this.props.writings.filter((writing) => {  
         const writingCategories = writing.categories.map((category) => category.handle)
         if (writingCategories.some(r=> this.state.filter.includes(r))){
-          console.log('match')
           return writing
         }
       })
