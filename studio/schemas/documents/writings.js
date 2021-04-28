@@ -30,7 +30,8 @@ export default {
       title: 'Categories',
       name: 'categories',
       type: 'array',
-      of: [{ type: 'reference', to: { type: 'category' } }]
+      of: [{ type: 'reference', to: { type: 'category' } }],
+      validation: Rule => Rule.required()
     },
     {
       title: 'Small Teaser',
@@ -47,7 +48,8 @@ export default {
     {
       title: 'Image',
       name: 'image',
-      type: 'a11yImage'
+      type: 'a11yImage',
+      validation: Rule => Rule.required()
     },
     {
       title: 'Content',
