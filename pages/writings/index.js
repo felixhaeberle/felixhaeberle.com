@@ -1,4 +1,3 @@
-import CardWritings from '../../components/2_molecules/CardWritings'
 import Filtering from '../../components/2_molecules/Filtering'
 import Head from 'next/head'
 import Intro from '../../components/1_atoms/Intro'
@@ -16,20 +15,7 @@ export default function Writings({writings, categories, settings}) {
       </Head>
       <main>
         <Intro />
-        <Filtering categories={categories}/>
-        <r-grid columns="6" columns-s="2" columns-xs="1">
-          {writings.map((writing, index) => (
-            <CardWritings 
-              title={writing.title}
-              link={'/writings/' + writing.slug}
-              shortText={writing.teaserSmall}
-              longText={writing.teaser}
-              date={writing.publishedAt}
-              key={index}
-            />
-          ))}
-        </r-grid>
-
+        <Filtering categories={categories} writings={writings}/>
       </main>
     </Layout>
   )
