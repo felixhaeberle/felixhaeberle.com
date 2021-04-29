@@ -72,9 +72,9 @@ export default function Home({ writingsList, studiesList, workList, settings }) 
         <r-cell span="2" span-m="6">
           <Text.Mono.Dark>Writings</Text.Mono.Dark>
           <List responsiveColumnView>
-            {writingsList.slice(0, 4).map(({ id, publishedAt, title, teaser }) => (
+            {writingsList.slice(0, 4).map(({ id, slug, publishedAt, title, teaser }) => (
               <List.Item key={id} responsiveColumnView>
-                <Card link={`/writings/${id}`} 
+                <Card link={`/writings/${slug}`} 
                       date={publishedAt} 
                       title={title}
                       text={teaser} />
