@@ -8,9 +8,9 @@ import Link from 'next/link'
 import List from '../components/1_atoms/List'
 import Text from '../components/1_atoms/Text'
 import { getSiteSettings } from '../lib/query/settings'
-import { getSortedData } from '../lib/content'
 import { getStudies } from '../lib/query/studies'
 import { getWork } from '../lib/query/work'
+import { getWritings } from '../lib/query/writings'
 import styled from 'styled-components'
 
 Text.Currently = styled(Text)`
@@ -72,12 +72,12 @@ export default function Home({ writingsList, studiesList, workList, settings }) 
         <r-cell span="2" span-m="6">
           <Text.Mono.Dark>Writings</Text.Mono.Dark>
           <List responsiveColumnView>
-            {writingsList.slice(0, 4).map(({ id, date, title, text }) => (
+            {writingsList.slice(0, 4).map(({ id, publishedAt, title, teaser }) => (
               <List.Item key={id} responsiveColumnView>
                 <Card link={`/writings/${id}`} 
-                      date={date} 
+                      date={publishedAt} 
                       title={title}
-                      text={text} />
+                      text={teaser} />
               </List.Item>
             ))}
           </List>
@@ -96,7 +96,7 @@ export async function getStaticProps() {
   const siteSettings = await getSiteSettings();
   const work = await getWork();
   const studies = await getStudies();
-  const allWritingsData = getSortedData('content/writings');
+  const writings = await getWritings();
 
   // sort newest work first
   const workSorted = work.sort((a, b) => (format(parseISO(a.releasedAt), 'yyyy') < format(parseISO(b.releasedAt), 'yyyy')) ? 1 : -1)
@@ -104,9 +104,12 @@ export async function getStaticProps() {
   // sort newest work first
   const studiesSorted = studies.sort((a, b) => (new Date(a.publishedAt) < new Date(b.publishedAt)) ? 1 : -1)
 
+  // sort newest writings first
+  const writingsSorted = writings.sort((a, b) => (new Date(a.publishedAt) < new Date(b.publishedAt)) ? 1 : -1)
+
   return {
     props: {
-      writingsList: allWritingsData,
+      writingsList: writingsSorted,
       studiesList: studiesSorted,
       workList: workSorted,
       settings: siteSettings

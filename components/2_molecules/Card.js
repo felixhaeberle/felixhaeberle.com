@@ -51,31 +51,35 @@ CardItem.Image = styled.img`
 
 export default function Card ({image, imageAlt, title, link, text, year, date}) {
   return (
-    <CardItem>
-      {image ? 
-        <CardItem.ImageWrapper>
-          <CardItem.Image {...( imageAlt && { alt: imageAlt })} className={'img-zoomable'} src={urlFor(image).width(350).height(150).url()} width="350" height="150" />
-        </CardItem.ImageWrapper> : ''}
-      <CardItem.Header>
-        {link ?
-          <Link href={link} passHref>
-          <a>
-            <Text>{title}</Text>
-          </a>
-        </Link> : ''}
-        {year ? 
-          <CardItem.Date>
-            <Date dateString={year} formatString={'yyyy'}/>
-          </CardItem.Date> : ''}     
-      </CardItem.Header>
-      {date ?
-        <CardItem.TextWrapper>
-          <CardItem.TextSmallDark>{text} </CardItem.TextSmallDark> 
-          <CardItem.TextSmall><Date dateString={date} formatString={'LLL, yyyy'}/></CardItem.TextSmall>
-        </CardItem.TextWrapper>
-         : <CardItem.TextWrapper>
-            <Text.Small.Dark>{text}</Text.Small.Dark>
-           </CardItem.TextWrapper> }
-    </CardItem>
+    <Link href={link} passHref>
+      <a>
+        <CardItem>
+          {image ? 
+            <CardItem.ImageWrapper>
+              <CardItem.Image {...( imageAlt && { alt: imageAlt })} className={'img-zoomable'} src={urlFor(image).width(350).height(150).url()} width="350" height="150" />
+            </CardItem.ImageWrapper> : ''}
+          <CardItem.Header>
+            {link ?
+              <Link href={link} passHref>
+              <a>
+                <Text>{title}</Text>
+              </a>
+            </Link> : ''}
+            {year ? 
+              <CardItem.Date>
+                <Date dateString={year} formatString={'yyyy'}/>
+              </CardItem.Date> : ''}     
+          </CardItem.Header>
+          {date ?
+            <CardItem.TextWrapper>
+              <CardItem.TextSmallDark>{text} </CardItem.TextSmallDark> 
+              <CardItem.TextSmall><Date dateString={date} formatString={'LLL, yyyy'}/></CardItem.TextSmall>
+            </CardItem.TextWrapper>
+            : <CardItem.TextWrapper>
+                <Text.Small.Dark>{text}</Text.Small.Dark>
+              </CardItem.TextWrapper> }
+        </CardItem>
+      </a>
+    </Link>
   )
 }
