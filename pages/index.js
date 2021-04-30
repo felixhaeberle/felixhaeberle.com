@@ -6,6 +6,7 @@ import Head from 'next/head'
 import Layout from '../components/4_templates/Layout'
 import Link from 'next/link'
 import List from '../components/1_atoms/List'
+import Stack from '../components/2_molecules/Stack'
 import Text from '../components/1_atoms/Text'
 import { getSiteSettings } from '../lib/query/settings'
 import { getStudies } from '../lib/query/studies'
@@ -88,6 +89,7 @@ export default function Home({ writingsList, studiesList, workList, settings }) 
           </Link>
         </r-cell>
       </r-grid>
+      <Stack />
     </Layout>
   )
 }
