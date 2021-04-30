@@ -46,6 +46,7 @@
     "chromatic": "^5.6.3",
     "css-loader": "^5.1.0",
     "file-loader": "^6.2.0",
+    "postcss": "^8.0.0",
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0"
   }
