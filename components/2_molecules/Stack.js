@@ -72,7 +72,7 @@ export default function Stack() {
         {/* Text */}
         <StackItem.TextWrapper>
           <Text.Mono.Dark>{'The Stack'}</Text.Mono.Dark>
-          <Text.Small.Dark>{'Lorem ipsum sit dolor amen und noch ein paar mehr Information zu meinen coolen Projekten. Über die man gerne mehr erfahren würde.'}</Text.Small.Dark>
+          <Text.Small.Dark>{`This website is an envolving experiment. I decided to open-source it – helping people all around the world learning how to code. If you have any questions to the stack feel free to ask in an issue.`}</Text.Small.Dark>
           <ExternalLink title={'github'} link={'https://github.com/felixhaeberle'} />
         </StackItem.TextWrapper>
         </r-cell>
