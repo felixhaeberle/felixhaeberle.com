@@ -21,7 +21,7 @@
     "@sanity/dashboard": "^2.7.0",
     "@sanity/default-layout": "^2.10.0",
     "@sanity/default-login": "^2.8.0",
-    "@sanity/desk-tool": "^2.10.0",
+    "@sanity/desk-tool": "^2.10.1",
     "@sanity/vision": "^2.10.0",
     "get-website-favicon": "^0.0.7",
     "prop-types": "^15.7",

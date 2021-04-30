@@ -14,3 +14,9 @@ Headline.Medium = styled(Headline.Large)`
   line-height: 1.4;
   margin-bottom: calc(var(--unit)*3);
 `
+
+Headline.Small = styled(Headline.Large)`
+  font-size: calc(var(--unit)*2.25);
+  line-height: 1.3;
+  margin-bottom: calc(var(--unit)*3);
+`

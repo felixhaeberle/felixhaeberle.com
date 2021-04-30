@@ -1,9 +1,9 @@
 import CVHeader from "./CVHeader";
 import Date from '../0_helpers/date'
-import Text from '../1_atoms/Text'
 import Link from 'next/link'
-import styled from 'styled-components'
+import Text from '../1_atoms/Text'
 import media from '../0_helpers/viewportValues'
+import styled from 'styled-components'
 import { useMediaQuery } from '../0_helpers/viewport';
 
 const CVItem = styled.div`
@@ -23,6 +23,7 @@ const CVItem = styled.div`
 
 CVItem.Column = styled.div`
   margin-right: var(--columnGap);
+  min-width: 150px;
 
   ${media.lessThan('small')`
     margin-right: 0;
@@ -32,11 +33,17 @@ CVItem.Column = styled.div`
 const CVText = styled(Text)`
   color: rgba(var(--colorTextRGB), 0.8);
   line-height: calc(var(--unit)*4);
-  font-weight: 400;
 `;
 
 CVText.Dark = styled(Text.Small.Dark)`
   line-height: calc(var(--unit)*4);
+`;
+
+CVText.Light = styled(Text)`
+  font-weight: 400;
+  line-height: calc(var(--unit)*3.75);
+  margin-top: calc(var(--unit)*1.25);
+  margin-bottom: calc(var(--unit)*2.75);
 `;
 
 const CVTextLink = styled(CVText)`
@@ -49,7 +56,7 @@ const CVTextLink = styled(CVText)`
 `;
 
 
-export default function CVSection({content}){
+export default function CVSection({ content }){
   const isSmallBreakpoint = useMediaQuery(640); // mediaSizes.small * 16 (base font size)
 
   return(
@@ -62,16 +69,59 @@ export default function CVSection({content}){
         <CVItem key={index}>
           {isSmallBreakpoint ? (
             <CVItem.Column>
-              <CVText.Dark as="span"><Date dateString={item.startDate} formatString={'MMM, yy'}></Date></CVText.Dark><CVText.Dark as="span"> – </CVText.Dark><CVText.Dark as="span"><Date dateString={item.endDate} formatString={'MMM, yy'}></Date></CVText.Dark><br/>
+              <CVText.Dark as="span">
+                <Date dateString={item.startDate} formatString={'MMM, yy'}></Date>
+              </CVText.Dark>
+              <CVText.Dark as="span"> – </CVText.Dark>
+              { item.ongoing ? (
+                <>
+                  <CVText.Dark as="span">
+                    {'Ongoing'}
+                  </CVText.Dark><br/>
+                </>
+              ) : (
+                item.endDate ? (
+                  <>
+                    <CVText.Dark as="span">
+                      <Date dateString={item.endDate} formatString={'MMM, yyyy'}></Date>
+                    </CVText.Dark><br/>
+                  </>
+                ) : null
+              ) }
             </CVItem.Column>
           ) : (
             <CVItem.Column>
-              <CVText.Dark as="span"><Date dateString={item.startDate} formatString={'MMM, yyyy'}></Date></CVText.Dark><CVText.Dark as="span"> – </CVText.Dark><CVText.Dark as="span"><Date dateString={item.endDate} formatString={'MMM, yyyy'}></Date></CVText.Dark><br/>
+              <CVText.Dark as="span">
+                <Date dateString={item.startDate} formatString={'MMM, yyyy'}></Date>
+              </CVText.Dark>
+              <CVText.Dark as="span"> – </CVText.Dark>
+              { item.ongoing ? (
+                <>
+                  <CVText.Dark as="span">
+                    {'Ongoing'}
+                  </CVText.Dark><br/>
+                </>
+              ) : (
+                item.endDate ? (
+                  <>
+                    <CVText.Dark as="span">
+                      <Date dateString={item.endDate} formatString={'MMM, yyyy'}></Date>
+                    </CVText.Dark><br/>
+                  </>
+                ) : null
+              ) }
             </CVItem.Column>
           )}
           <CVText key={index}>
-            {item.title}, {item.placeLink ? <Link href={item.placeLink} passHref><a><CVTextLink as="span">{item.place}</CVTextLink></a></Link> : item.place}, {item.location}
+            {item.title}, {item.placeLink ? 
+            <Link href={item.placeLink} passHref>
+              <a>
+                <CVTextLink as="span">{item.place}</CVTextLink>
+              </a>
+            </Link> : item.place}, {item.location}
+            <CVText.Light>{item.text}</CVText.Light>
           </CVText>
+         
         </CVItem>
       ))}
       </r-cell>

@@ -6,27 +6,32 @@ export default {
     {
       title: 'Title',
       name: 'title',
-      type: 'string'
+      type: 'string',
+      validation: Rule => Rule.required()
     },
     {
       title: 'Place',
       name: 'place',
-      type: 'string'    
+      type: 'string',
+      validation: Rule => Rule.required()    
     },
     {
       title: 'Place Link',
       name: 'placeLink',
-      type: 'string'    
+      type: 'string',
+      validation: Rule => Rule.required()    
     },
     {
       title: 'Location',
       name: 'location',
-      type: 'string'    
+      type: 'string',
+      validation: Rule => Rule.required()    
     },
     {
       title: 'Start Date',
       name: 'startDate',
-      type: 'date'
+      type: 'date',
+      validation: Rule => Rule.required()
     },
     {
       title: 'Ongoing',
@@ -37,6 +42,17 @@ export default {
       title: 'End Date',
       name: 'endDate',
       type: 'date'
+    },
+    {
+      title: 'Text',
+      name: 'text',
+      type: 'array',
+      of: [{
+        type: 'block'
+      }]
     }
-  ]
+  ],
+  initialValue: {
+    ongoing: false
+  },
 }

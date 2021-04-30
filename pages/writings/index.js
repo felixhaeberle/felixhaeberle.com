@@ -15,7 +15,9 @@ export default function Writings({writings, categories, settings}) {
       </Head>
       <main>
         <Intro />
-        <Filtering categories={categories} writings={writings}/>
+        <Filtering 
+          categories={categories} 
+          writings={writings}/>
       </main>
     </Layout>
   )
