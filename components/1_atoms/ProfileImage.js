@@ -10,7 +10,7 @@ const ProfileImageWrapper = styled.div`
 export default function ProfileImage() {
   return (
     <ProfileImageWrapper>
-      <Image src="/images/profile.svg" width="275" height="275" />
+      <Image src="/images/profile-2.svg" width="275" height="275" />
     </ProfileImageWrapper>
   )
 }
