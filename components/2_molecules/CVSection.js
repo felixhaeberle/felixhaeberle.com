@@ -65,7 +65,7 @@ export default function CVSection({ content }){
         <CVHeader title={content.title}/>
       </r-cell>
       <r-cell class="cv-section" span="4" span-m="6">
-      {content.data.map((item, index) => (
+      {content.data?.map((item, index) => (
         <CVItem key={index}>
           {isSmallBreakpoint ? (
             <CVItem.Column>

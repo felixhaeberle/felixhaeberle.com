@@ -6,7 +6,6 @@ import Layout from '../../components/4_templates/Layout'
 import Link from 'next/link'
 import Principle from '../../components/2_molecules/Principle'
 import Text from '../../components/1_atoms/Text'
-import cv from '../../content/me/cv.json'
 import { getSiteSettings } from '../../lib/query/settings'
 import styled from 'styled-components'
 
@@ -21,13 +20,13 @@ const SocialLinkWrapper = styled.div`
   justify-content: space-between;
 `
 
-const cvListing = [
-  {title: 'Professional Experience', data: cv.filter((item) => (item.type === "experience"))},
-  {title: 'Education', data: cv.filter((item) => (item.type === "education"))},
-  {title: 'Open Source', data: cv.filter((item) => (item.type === "open source"))}
-]
+export default function Me({ settings }) {
+  const cvListing = [
+    {title: 'Professional Experience', data: settings.cv.professional_experience},
+    {title: 'Education', data: settings.cv.education},
+    {title: 'Open Source', data: settings.cv.open_source}
+  ]
 
-export default function Me({settings}) {
   return (
     <Layout settings={settings} pageTitle={'About'}>
       <Head>
