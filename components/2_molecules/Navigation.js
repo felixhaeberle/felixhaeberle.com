@@ -2,7 +2,6 @@ import ActiveLink from '../1_atoms/ActiveLink'
 import Text from '../1_atoms/Text'
 import media from '../0_helpers/viewportValues'
 import styled from 'styled-components'
-import { useRouter } from 'next/router'
 
 const NavigationShell = styled.div`
   display: flex;
@@ -49,8 +48,6 @@ const NavigationItem = styled.li`
 `
 
 export default function Navigation({ navigationItems, title }) {
-  const router = useRouter();
-
   return (
     <NavigationShell>
       <div>

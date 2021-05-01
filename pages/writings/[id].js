@@ -3,20 +3,17 @@ import { getWriting, getWritingsPaths } from '../../lib/query/writings'
 
 import BlockContent from '@sanity/block-content-to-react'
 import BlogPostHeader from '../../components/2_molecules/BlogPostHeader'
-import BlogPostHeaderImage from '../../components/2_molecules/BlogPostHeaderImage'
 import BlogPostImage from '../../components/1_atoms/BlogPostImage'
 import BlogPostLayout from '../../components/3_organisms/BlogPostLayout'
 import { BlogPostParagraph } from '../../components/1_atoms/BlogPostParagraph'
 import Head from 'next/head'
 import { Headline } from '../../components/1_atoms/Headline'
-import Image from 'next/image'
 import Layout from '../../components/4_templates/Layout'
 import Link from 'next/link'
 import Syntax from '../../components/1_atoms/Syntax'
 import TweetEmbed from 'react-tweet-embed'
 import TweetWrapper from '../../components/1_atoms/TweetWrapper'
 import { getSiteSettings } from '../../lib/query/settings'
-import { urlFor } from '../../lib/sanity'
 
 export default function WritingPage ({ writing, settings }){
 
@@ -68,7 +65,7 @@ export default function WritingPage ({ writing, settings }){
       },
     },
   }
-  console.log(writing.image)
+
   return (
     <Layout settings={settings}>
       <Head>
@@ -77,14 +74,6 @@ export default function WritingPage ({ writing, settings }){
       </Head>
       <main className={'blog'}>        
         <BlogPostLayout>
-            {/* <BlogPostHeaderImage>
-              <Image 
-                src={urlFor(writing.image).quality(90).url()}
-                width={800}
-                height={400} 
-                objectFit={'cover'}
-                priority />
-            </BlogPostHeaderImage> */}
             <BlogPostHeader 
               title={writing.title}
               date={writing.publishedAt}

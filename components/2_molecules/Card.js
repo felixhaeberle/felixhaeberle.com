@@ -56,7 +56,12 @@ export default function Card ({image, imageAlt, title, link, text, year, date}) 
         <CardItem>
           {image ? 
             <CardItem.ImageWrapper>
-              <CardItem.Image {...( imageAlt && { alt: imageAlt })} className={'img-zoomable'} src={urlFor(image).width(350).height(150).url()} width="350" height="150" />
+              <CardItem.Image 
+                {...( imageAlt && { alt: imageAlt })} 
+                className={'img-zoomable'} 
+                src={urlFor(image).width(350).height(150).url()} 
+                width="350" 
+                height="150" />
             </CardItem.ImageWrapper> : ''}
           <CardItem.Header>
             {link ?

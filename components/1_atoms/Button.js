@@ -14,6 +14,7 @@ export const ButtonItem = styled.div`
   justify-content: space-between;
   align-items: center;
   background-color: var(--colorButtonBg);
+  border: 1px solid rgba(var(--colorTextDarkRBG),0.2);
   padding: calc(var(--unit)*2.25) calc(var(--unit)*2.5);
   margin-bottom: calc(var(--unit)* 4.5);
   width: 300px;

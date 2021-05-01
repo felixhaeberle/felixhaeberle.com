@@ -27,6 +27,12 @@ const HeaderText = styled(Text.Large)`
     margin-top: ${props => (props.isHome ? "calc(var(--unit) *10)" : "calc(var(--unit) *25)")};
     margin-bottom: ${props => (props.isHome ? "calc(var(--unit) *12.75)" : "calc(var(--unit) *12.75)")};
   `} 
+
+  ${media.lessThan('small')`
+    max-width: 90%;
+    margin-top: ${props => (props.isHome ? "calc(var(--unit) *5)" : "calc(var(--unit) *15)")};
+    margin-bottom: ${props => (props.isHome ? "calc(var(--unit) *8.75)" : "calc(var(--unit) *8.75)")};
+  `} 
 `
 
 const navigationItems = [
