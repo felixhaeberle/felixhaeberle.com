@@ -46,10 +46,7 @@ export default {
     {
       title: 'Text',
       name: 'text',
-      type: 'array',
-      of: [{
-        type: 'block'
-      }]
+      type: 'text'
     }
   ],
   initialValue: {
