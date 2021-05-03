@@ -1,6 +1,6 @@
-import styled from 'styled-components'
 import Text from '../1_atoms/Text'
-import media from '../0_helpers/viewportValues' 
+import media from '../0_helpers/viewportValues'
+import styled from 'styled-components'
 
 const PrincipleItem = styled.div`
   display: flex;
@@ -33,6 +33,7 @@ PrincipleItem.Header.Count = styled.span`
   width: calc(var(--unit)*6.25);
   background-color: var(--colorButtonBg);
   padding: calc(var(--unit)*2) calc(var(--unit)*2.5);
+  border: 1px solid rgba(var(--colorTextDarkRBG),0.2);
 `
 
 PrincipleItem.Header.Count.Text = styled(Text.Mono.Dark)`
