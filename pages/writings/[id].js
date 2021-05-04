@@ -58,7 +58,7 @@ export default function WritingPage ({ writing, settings }){
       underline: (props) => <BlogPostParagraph.Underline as="span">{props.children}</BlogPostParagraph.Underline>,
       link: (props) => {
         return (
-          <Link href={props.mark.href}>
+          <Link href={props.mark.href} passHref>
             <BlogPostParagraph.Link as="a">{props.children}</BlogPostParagraph.Link>
           </Link>
         );

@@ -18,7 +18,7 @@ export default function BlogPostImage({image, imageAlt, text}) {
       <BlogPostImageItem>
         <Image
           {...( imageAlt && { alt: imageAlt })}  
-          src={urlFor(image).quality(90).url()} 
+          src={urlFor(image).width(800).url()} 
           width={800} 
           height={420}
           objectFit={'cover'} />
