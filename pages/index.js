@@ -54,13 +54,13 @@ export default function Home({ writingsList, studiesList, workList, settings }) 
         <r-cell span="2" span-m="3" span-s="6">
           <Text.Mono.Dark>Studies</Text.Mono.Dark>
           <List>
-            {studiesList.slice(0, 3).map(({ _id, externalLink, title, description, image, image_alt }) => (
-              <List.Item key={_id}>
-                <Card link={externalLink} 
-                      title={title}
-                      text={description}
-                      image={image}
-                      imageAlt={image_alt} />
+            {studiesList.slice(0, 3).map((study, index) => (
+              <List.Item key={index}>
+                <Card link={study.externalLink} 
+                      title={study.title}
+                      text={study.description}
+                      image={study.image}
+                      imageAlt={study.image_alt} />
               </List.Item>
             ))}
           </List>
@@ -73,12 +73,12 @@ export default function Home({ writingsList, studiesList, workList, settings }) 
         <r-cell span="2" span-m="6">
           <Text.Mono.Dark>Writings</Text.Mono.Dark>
           <List responsiveColumnView>
-            {writingsList.slice(0, 4).map(({ id, slug, publishedAt, title, teaser }) => (
-              <List.Item key={id} responsiveColumnView>
-                <Card link={`/writings/${slug}`} 
-                      date={publishedAt} 
-                      title={title}
-                      text={teaser} />
+            {writingsList.slice(0, 4).map((writing, index) => (
+              <List.Item key={index} responsiveColumnView>
+                <Card link={`/writings/${writing.slug}`} 
+                      date={writing.publishedAt} 
+                      title={writing.title}
+                      text={writing.teaser} />
               </List.Item>
             ))}
           </List>
