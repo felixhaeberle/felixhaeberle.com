@@ -46,19 +46,19 @@ PrincipleItem.Header.Text = styled(Text.Mono.Dark)`
 `;
 
 
-export default function Principle(){
+export default function Principle({ card, index }){
   return (
     <PrincipleItem>
       <PrincipleItem.Header>
         <PrincipleItem.Header.Count>
           <PrincipleItem.Header.Count.Text>
-            1
+            { index }
           </PrincipleItem.Header.Count.Text>
         </PrincipleItem.Header.Count>
-        <PrincipleItem.Header.Text>This is an example</PrincipleItem.Header.Text>
+        <PrincipleItem.Header.Text>{ card.card_header_text }</PrincipleItem.Header.Text>
       </PrincipleItem.Header>
-      <Text>This is an example text with some example content.</Text>
-      <Text.Small.Dark>This is an example text with some example content. This is an example text with some example content.</Text.Small.Dark>
+      <Text>{ card.card_text }</Text>
+      <Text.Small.Dark>{ card.card_description }</Text.Small.Dark>
     </PrincipleItem>
   )
 }

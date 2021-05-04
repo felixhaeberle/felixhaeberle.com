@@ -60,15 +60,11 @@ export default function Me({ settings }) {
                 ))}
               </SocialLinkWrapper>
             </r-cell>
-            <r-cell span="2" span-m="3" span-s="6">
-              <Principle />
-            </r-cell>
-            <r-cell span="2" span-m="3" span-s="6">
-              <Principle />
-            </r-cell>
-            <r-cell span="2" span-m="3" span-s="6">
-              <Principle />
-            </r-cell>
+            {settings.cards.map((card, index) => (
+              <r-cell key={index} span="2" span-m="3" span-s="6">
+                <Principle card={card} index={index+1} />
+              </r-cell>
+            ))}
             {cvListing.map((item, index) => (
               <CVSection key={index} content={item} />
             ))}
@@ -81,7 +77,7 @@ export default function Me({ settings }) {
 
 export async function getStaticProps() {
   const siteSettings = await getSiteSettings();
-
+  
   return {
     props: {
       settings: siteSettings
