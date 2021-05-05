@@ -101,7 +101,7 @@ export async function getStaticProps() {
   const writings = await getWritings();
 
   // sort newest work first
-  const workSorted = work.sort((a, b) => (format(parseISO(a.releasedAt), 'yyyy') < format(parseISO(b.releasedAt), 'yyyy')) ? 1 : -1)
+  const workSorted = work.sort((a, b) => (new Date(a.releasedAt) < new Date(b.releasedAt)) ? 1 : -1)
 
   // sort newest work first
   const studiesSorted = studies.sort((a, b) => (new Date(a.publishedAt) < new Date(b.publishedAt)) ? 1 : -1)
