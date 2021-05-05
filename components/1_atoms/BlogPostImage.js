@@ -4,6 +4,19 @@ import styled from 'styled-components'
 import { urlFor } from '../../lib/sanity'
 
 const BlogPostImageItem = styled.div`
+  width: 100%;
+
+  >div {
+      position: unset !important;
+  }
+
+  .image {
+      object-fit: contain;
+      width: 100% !important;
+      position: relative !important;
+      height: unset !important;
+  }
+  
   max-width: min(800px, 100%);
   margin-top: calc(var(--unit)*9.375);
   margin-bottom: calc(var(--unit)*8.125);
@@ -18,10 +31,9 @@ export default function BlogPostImage({image, imageAlt, text}) {
       <BlogPostImageItem>
         <Image
           {...( imageAlt && { alt: imageAlt })}  
-          src={urlFor(image).width(800).url()} 
-          width={800} 
-          height={420}
-          objectFit={'cover'} />
+          src={urlFor(image).quality(90).url()} 
+          layout={'fill'}
+          className={'image'}  />
         <BlogPostImageItem.Text>{ text }</BlogPostImageItem.Text>
       </BlogPostImageItem>
   )

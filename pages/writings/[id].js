@@ -59,7 +59,7 @@ export default function WritingPage ({ writing, settings }){
       link: (props) => {
         return (
           <Link href={props.mark.href} passHref>
-            <BlogPostParagraph.Link as="a">{props.children}</BlogPostParagraph.Link>
+            <BlogPostParagraph.Link as="a" target="_blank">{props.children}</BlogPostParagraph.Link>
           </Link>
         );
       },
