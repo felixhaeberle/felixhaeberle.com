@@ -51,7 +51,8 @@ export default function Work({ projects, settings }) {
                     <Card link={link}
                       title={title}
                       text={description}
-                      key={index} />
+                      key={index} 
+                      isWork />
                   </r-cell>
                 </React.Fragment>
               )

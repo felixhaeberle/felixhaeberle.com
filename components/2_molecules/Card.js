@@ -44,6 +44,30 @@ CardItem.Date = styled(Text.Mono.Dark)`
 
 CardItem.ImageWrapper = styled.div`
   margin-bottom: calc(var(--unit)* 1.75);
+
+  &.screenshot {
+    background-color: var(--colorButtonBg);
+    position: relative;
+
+    ${CardItem.Image} {
+      position: absolute;
+      bottom: 0;
+      transform: translateX(50%,-50%);
+    }
+
+     &:before {
+       content: ' ';
+       height: 100%;
+       width: 100%;
+       position: absolute;
+       top: 0;
+       bottom: 0;
+       left: 0;
+       right: 0;
+       z-index: 1001;
+       background: linear-gradient(180deg, rgba(var(--colorButtonBgRGB), 0.2) 0%, var(--colorButtonBg) 100%);
+    }
+  }
 `
 
 CardItem.Image = styled.img`
@@ -54,20 +78,31 @@ CardItem.Image = styled.img`
   }
 `
 
-export default function Card ({image, imageAlt, title, link, text, year, date}) {
+export default function Card ({image, imageAlt, title, link, text, year, date, isWork}) {
   return (
     <Link href={link} passHref>
       <a>
         <CardItem>
-          {image ? 
-            <CardItem.ImageWrapper>
+          {image ? (
+             isWork ? (
+              <CardItem.ImageWrapper className={'screenshot'}>
+                <CardItem.Image 
+                  {...( imageAlt && { alt: imageAlt })} 
+                  src={urlFor(image).width(260).height(144).url()} 
+                  width="260" 
+                  height="144" />
+              </CardItem.ImageWrapper>
+            ) : (
+              <CardItem.ImageWrapper>
               <CardItem.Image 
                 {...( imageAlt && { alt: imageAlt })} 
                 className={'img-zoomable'} 
                 src={urlFor(image).width(350).height(150).url()} 
                 width="350" 
                 height="150" />
-            </CardItem.ImageWrapper> : ''}
+            </CardItem.ImageWrapper>
+            )
+          ) : ''}
           <CardItem.Header>
             {link ?
               <Link href={link} passHref>
