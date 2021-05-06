@@ -42,20 +42,35 @@ CardItem.Date = styled(Text.Mono.Dark)`
   margin-bottom: 0;
 `
 
+const CardImage = styled.img`
+  object-fit: cover;
+
+  &.opened {
+    object-fit: unset;
+  }
+`
+
 CardItem.ImageWrapper = styled.div`
   margin-bottom: calc(var(--unit)* 1.75);
 
-  &.screenshot {
+  &&.screenshot {
     background-color: var(--colorButtonBg);
     position: relative;
+    height: 180px;
+    max-width: 90%;
 
-    ${CardItem.Image} {
+    ${media.lessThan('small')`
+      max-width: 100%;
+    `}
+
+    ${CardImage} {
       position: absolute;
       bottom: 0;
-      transform: translateX(50%,-50%);
+      left: 50%;
+      transform: translateX(-50%);
     }
 
-     &:before {
+     &::before {
        content: ' ';
        height: 100%;
        width: 100%;
@@ -65,16 +80,8 @@ CardItem.ImageWrapper = styled.div`
        left: 0;
        right: 0;
        z-index: 1001;
-       background: linear-gradient(180deg, rgba(var(--colorButtonBgRGB), 0.2) 0%, var(--colorButtonBg) 100%);
+       background: linear-gradient(180deg, rgba(var(--colorButtonBgRGB), 0.1) 0%, var(--colorButtonBg) 100%);
     }
-  }
-`
-
-CardItem.Image = styled.img`
-  object-fit: cover;
-
-  &.opened {
-    object-fit: unset;
   }
 `
 
@@ -86,15 +93,15 @@ export default function Card ({image, imageAlt, title, link, text, year, date, i
           {image ? (
              isWork ? (
               <CardItem.ImageWrapper className={'screenshot'}>
-                <CardItem.Image 
+                <CardImage 
                   {...( imageAlt && { alt: imageAlt })} 
                   src={urlFor(image).width(260).height(144).url()} 
                   width="260" 
                   height="144" />
               </CardItem.ImageWrapper>
             ) : (
-              <CardItem.ImageWrapper>
-              <CardItem.Image 
+            <CardItem.ImageWrapper>
+              <CardImage 
                 {...( imageAlt && { alt: imageAlt })} 
                 className={'img-zoomable'} 
                 src={urlFor(image).width(350).height(150).url()} 
@@ -104,12 +111,7 @@ export default function Card ({image, imageAlt, title, link, text, year, date, i
             )
           ) : ''}
           <CardItem.Header>
-            {link ?
-              <Link href={link} passHref>
-              <a>
-                <Text>{title}</Text>
-              </a>
-            </Link> : ''}
+            <Text>{title}</Text>
             {year ? 
               <CardItem.Date>
                 <Date dateString={year} formatString={'yyyy'}/>

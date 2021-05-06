@@ -33,7 +33,7 @@ export default function Work({ projects, settings }) {
         <Intro />
         <WorkItem.Wrapper>
           <r-grid columns="6" columns-s="2" columns-xs="1">
-            {projects.map(({ title, description, link, releasedAt }, index, arr) => {
+            {projects.map(({ title, description, link, releasedAt, image, imageAlt }, index, arr) => {
               // Is it a new year?
               let newYear = false;
               if(arr[index] && arr[index-1]){
@@ -51,7 +51,9 @@ export default function Work({ projects, settings }) {
                     <Card link={link}
                       title={title}
                       text={description}
-                      key={index} 
+                      key={index}
+                      image={image}
+                      imageAlt={imageAlt}
                       isWork />
                   </r-cell>
                 </React.Fragment>
