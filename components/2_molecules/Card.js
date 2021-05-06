@@ -1,6 +1,7 @@
 import Date from '../0_helpers/date'
 import Link from 'next/link'
 import Text from '../1_atoms/Text'
+import media from '../0_helpers/viewportValues'
 import styled from 'styled-components'
 import { urlFor } from '../../lib/sanity'
 
@@ -20,6 +21,10 @@ CardItem.Header = styled.div`
 
 CardItem.TextWrapper = styled.div`
   max-width: 90%;
+
+  ${media.lessThan('small')`
+    max-width: 100%;
+  `}
 `
 
 CardItem.TextSmall = styled(Text.Small)`
