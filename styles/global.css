@@ -47,7 +47,7 @@
 
 @media (max-width: 64rem) {
   :root {
-    --fontSize: 14px;
+    --fontSize: 15px;
     --fontSizeExtraLarge: calc(var(--unit)*3.5); /* 20px */
 
     --body-padding-x: calc(var(--unit)*6);

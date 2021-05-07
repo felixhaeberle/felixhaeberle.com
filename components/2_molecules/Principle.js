@@ -47,6 +47,7 @@ PrincipleItem.Header.Text = styled(Text.Mono.Dark)`
 
 
 export default function Principle({ card, index }){
+  card.card_text = card.card_text.split(",").join(",<br />")
   return (
     <PrincipleItem>
       <PrincipleItem.Header>
@@ -57,7 +58,7 @@ export default function Principle({ card, index }){
         </PrincipleItem.Header.Count>
         <PrincipleItem.Header.Text>{ card.card_header_text }</PrincipleItem.Header.Text>
       </PrincipleItem.Header>
-      <Text>{ card.card_text }</Text>
+      <Text dangerouslySetInnerHTML={{__html: card.card_text}}></Text>
       <Text.Small.Dark>{ card.card_description }</Text.Small.Dark>
     </PrincipleItem>
   )

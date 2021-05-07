@@ -19,19 +19,19 @@ const HeaderWrapper = styled.div`
 
 const HeaderText = styled(Text.Large)`
   margin-top: calc(var(--unit) *31);
-  margin-bottom: ${props => (props.isHome ? "calc(var(--unit) *12.75)" : "calc(var(--unit) *18.75)")};
+  margin-bottom: ${props => (props.isHome ? "calc(var(--unit) *12.75)" : "calc(var(--unit) *8.75)")};
   max-width: 60%;
 
   ${media.lessThan('medium')`
     max-width: 90%;
-    margin-top: ${props => (props.isHome ? "calc(var(--unit) *10)" : "calc(var(--unit) *25)")};
-    margin-bottom: ${props => (props.isHome ? "calc(var(--unit) *12.75)" : "calc(var(--unit) *12.75)")};
+    margin-top: ${props => (props.isHome ? "calc(var(--unit) *10)" : "calc(var(--unit) *15)")};
+    margin-bottom: ${props => (props.isHome ? "calc(var(--unit) *12.75)" : "calc(var(--unit) *5.75)")};
   `} 
 
   ${media.lessThan('small')`
     max-width: 90%;
-    margin-top: ${props => (props.isHome ? "calc(var(--unit) *5)" : "calc(var(--unit) *15)")};
-    margin-bottom: ${props => (props.isHome ? "calc(var(--unit) *8.75)" : "calc(var(--unit) *8.75)")};
+    margin-top: ${props => (props.isHome ? "calc(var(--unit) *5)" : "calc(var(--unit) *11)")};
+    margin-bottom: ${props => (props.isHome ? "calc(var(--unit) *8.75)" : "calc(var(--unit) *4.75)")};
   `} 
 `
 

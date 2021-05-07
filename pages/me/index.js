@@ -53,7 +53,7 @@ export default function Me({ settings }) {
               <SocialLinkWrapper>
                 {settings.social_links.map(({link, text}, index) => (
                   <Link href={link} key={index} passHref>
-                    <a>
+                    <a target="_blank">
                       <Text>{text}</Text>
                     </a>
                   </Link>

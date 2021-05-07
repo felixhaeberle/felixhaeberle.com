@@ -4,6 +4,7 @@ import ExternalLink from '../1_atoms/ExternalLink'
 import Image from 'next/image'
 import Link from 'next/link'
 import Text from '../1_atoms/Text'
+import media from '../0_helpers/viewportValues'
 import styled from 'styled-components'
 import { urlFor } from '../../lib/sanity'
 
@@ -18,7 +19,7 @@ CardStudiesItem.Header = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: calc(var(--unit)* 1.25);
+  margin-bottom: calc(var(--unit)* 1.75);
 `
 
 CardStudiesItem.Year = styled(CardItem.Date)``
@@ -26,6 +27,14 @@ CardStudiesItem.Year = styled(CardItem.Date)``
 CardStudiesItem.TextSmallDark = styled(Text.Small.Dark)`
   max-width: 80%;
   padding-bottom: calc(var(--unit)*3.125);
+
+  ${media.lessThan('medium')`
+    max-width: 90%;
+  `} 
+
+  ${media.lessThan('small')`
+    max-width: 100%;
+  `} 
 `
 
 export default function CardStudies({title, text, date, link, image, imageAlt, index}){

@@ -19,6 +19,16 @@ CardItem.Header = styled.div`
   margin-bottom: calc(var(--unit)* 1.25);
 `
 
+CardItem.Text = styled(Text)`
+  ${media.lessThan('medium')`
+    max-width: 90%;
+  `} 
+
+  ${media.lessThan('small')`
+    max-width: 100%;
+  `} 
+`
+
 CardItem.TextWrapper = styled.div`
   max-width: 90%;
 
@@ -119,7 +129,7 @@ export default function Card ({image, imageAlt, title, link, text, year, date, i
             )
           ) : ''}
           <CardItem.Header>
-            <Text>{title}</Text>
+            <CardItem.Text>{title}</CardItem.Text>
             {year ? 
               <CardItem.Date>
                 <Date dateString={year} formatString={'yyyy'}/>
