@@ -59,6 +59,12 @@ CardItem.ImageWrapper = styled.div`
     height: 180px;
     max-width: 90%;
 
+    &:hover {
+      &::before {
+        opacity: 0.85;
+      }
+    }
+
     ${media.lessThan('small')`
       max-width: 100%;
     `}
@@ -80,7 +86,9 @@ CardItem.ImageWrapper = styled.div`
        left: 0;
        right: 0;
        z-index: 1001;
-       background: linear-gradient(180deg, rgba(var(--colorButtonBgRGB), 0.1) 0%, var(--colorButtonBg) 100%);
+       opacity: 1;
+       background: linear-gradient(180deg, rgba(var(--colorButtonBgRGB), 0.1) 50%, var(--colorButtonBg) 100%);
+       transition: 150ms opacity ease-in;
     }
   }
 `
@@ -88,14 +96,14 @@ CardItem.ImageWrapper = styled.div`
 export default function Card ({image, imageAlt, title, link, text, year, date, isWork}) {
   return (
     <Link href={link} passHref>
-      <a>
+      <a {...( isWork && { target: "_blank" })} >
         <CardItem>
           {image ? (
              isWork ? (
               <CardItem.ImageWrapper className={'screenshot'}>
                 <CardImage 
                   {...( imageAlt && { alt: imageAlt })} 
-                  src={urlFor(image).width(260).height(144).url()} 
+                  src={urlFor(image).width(390).height(216).url()} 
                   width="260" 
                   height="144" />
               </CardItem.ImageWrapper>
