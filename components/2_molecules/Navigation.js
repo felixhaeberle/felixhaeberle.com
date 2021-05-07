@@ -39,10 +39,14 @@ const NavigationItem = styled.li`
 
   ${media.lessThan('medium')`
     margin-left: unset;
-    margin-bottom: calc(var(--unit)*1);
+    padding: calc(var(--unit)*1) 0;
+
+    &:first-child {
+      margin-top: calc(var(--unit)*-1);
+    }
 
     &:last-child {
-      margin-bottom: 0;
+      margin-bottom: calc(var(--unit)*-1);
     }
   `}
 `
