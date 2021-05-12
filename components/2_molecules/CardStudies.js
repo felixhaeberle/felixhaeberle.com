@@ -46,7 +46,6 @@ export default function CardStudies({title, text, date, link, image, imageAlt, i
           <a>
             <CardStudiesItem>
               <CardStudiesItem.Header>
-
                   <Text>{title}</Text>
                 <CardStudiesItem.Year>
                   <Date dateString={date} formatString={'yyyy'} />
@@ -60,13 +59,14 @@ export default function CardStudies({title, text, date, link, image, imageAlt, i
       </r-cell>
       <r-cell span="6" span-s="1" order-s={index -1}>
         <Link href={link}>
-          <a>
+          <a style={{opacity: "0.9"}}>
             <Image
               {...( imageAlt && { alt: imageAlt })} 
-              height="450"
-              width="900"
+              height="900"
+              width="1800"
+              quality={100}
               objectFit="cover"
-              src={urlFor(image).width(900).url()} />
+              src={urlFor(image).width(1800).height(900).quality(100).url()} />
             </a>
         </Link>
       </r-cell>

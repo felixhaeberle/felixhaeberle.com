@@ -132,9 +132,9 @@ export default function Card ({image, imageAlt, title, link, text, year, date, i
               <CardImage 
                 {...( imageAlt && { alt: imageAlt })} 
                 className={'img-zoomable'} 
-                src={urlFor(image).width(350).height(150).url()} 
+                src={urlFor(image).width(350).height(175).quality(100).url()} 
                 width="350" 
-                height="150" />
+                height="175" />
             </CardItem.ImageWrapper>
             )
           ) : ''}
