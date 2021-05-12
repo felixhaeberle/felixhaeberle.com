@@ -60,7 +60,8 @@ export default function Home({ writingsList, studiesList, workList, settings }) 
                       title={study.title}
                       text={study.description}
                       image={study.image}
-                      imageAlt={study.image_alt} />
+                      imageAlt={study.image_alt}
+                      isStudy />
               </List.Item>
             ))}
           </List>
@@ -73,7 +74,7 @@ export default function Home({ writingsList, studiesList, workList, settings }) 
         <r-cell span="2" span-m="6">
           <Text.Mono.Dark>Writings</Text.Mono.Dark>
           <List responsiveColumnView>
-            {writingsList.slice(0, 4).map((writing, index) => (
+            {writingsList.slice(0, 5).map((writing, index) => (
               <List.Item key={index} responsiveColumnView>
                 <Card link={`/writings/${writing.slug}`} 
                       date={writing.publishedAt} 

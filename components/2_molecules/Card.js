@@ -46,6 +46,16 @@ CardItem.TextSmallDark = styled(Text.Small.Dark)`
   display: inline;
 `
 
+CardItem.BodyText = styled(Text.Small.Dark)`
+
+  ${props => props.isStudy ? (`
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+  `) : null}
+`
+
 CardItem.Date = styled(Text.Mono.Dark)`
   font-size: var(--fontSizeMedium);
   margin-left: calc(var(--unit)*2.5);
@@ -103,7 +113,7 @@ CardItem.ImageWrapper = styled.div`
   }
 `
 
-export default function Card ({image, imageAlt, title, link, text, year, date, isWork}) {
+export default function Card ({image, imageAlt, title, link, text, year, date, isWork, isStudy}) {
   return (
     <Link href={link} passHref>
       <a {...( isWork && { target: "_blank" })} >
@@ -141,7 +151,7 @@ export default function Card ({image, imageAlt, title, link, text, year, date, i
               <CardItem.TextSmall><Date dateString={date} formatString={'LLL, yyyy'}/></CardItem.TextSmall>
             </CardItem.TextWrapper>
             : <CardItem.TextWrapper>
-                <Text.Small.Dark>{text}</Text.Small.Dark>
+                <CardItem.BodyText isStudy={isStudy}>{text}</CardItem.BodyText>
               </CardItem.TextWrapper> }
         </CardItem>
       </a>
