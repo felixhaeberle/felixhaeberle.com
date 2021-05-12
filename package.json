@@ -16,7 +16,7 @@
     "@sanity/block-content-to-react": "^2.0.7",
     "date-fns": "^2.11.1",
     "gray-matter": "^4.0.2",
-    "next": "^10.0.0",
+    "next": "^10.2.0",
     "next-sanity": "^0.1.10",
     "parse-numeric-range": "^1.2.0",
     "prismjs": "^1.23.0",
