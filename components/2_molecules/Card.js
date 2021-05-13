@@ -62,16 +62,23 @@ CardItem.Date = styled(Text.Mono.Dark)`
   margin-bottom: 0;
 `
 
-const CardImage = styled.img`
-  object-fit: cover;
-
-  &.opened {
-    object-fit: unset;
-  }
-`
+const CardImage = styled.img``
 
 CardItem.ImageWrapper = styled.div`
-  margin-bottom: calc(var(--unit)* 1.75);
+  margin-bottom: calc(var(--unit)* 2);
+
+  &&.preview {
+    img {
+      opacity: 0.8;
+      border: 1px solid rgba(var(--colorTextDarkRBG),0.2);
+      transition: opacity 220ms ease-in;
+      will-change: opacity;
+
+      &:hover {
+        opacity: 0.9;
+      } 
+    }
+  }
 
   &&.screenshot {
     background-color: var(--colorButtonBg);
@@ -116,22 +123,21 @@ CardItem.ImageWrapper = styled.div`
 export default function Card ({image, imageAlt, title, link, text, year, date, isWork, isStudy}) {
   return (
     <Link href={link} passHref>
-      <a {...( isWork && { target: "_blank" })} >
+      <a {...( isWork && { target: "_blank" })}>
         <CardItem>
           {image ? (
              isWork ? (
-              <CardItem.ImageWrapper className={'screenshot'}>
+              <CardItem.ImageWrapper className="screenshot">
                 <CardImage 
-                  {...( imageAlt && { alt: imageAlt })} 
+                  {...( imageAlt && {alt: imageAlt})} 
                   src={urlFor(image).width(390).height(216).url()} 
                   width="260" 
                   height="144" />
               </CardItem.ImageWrapper>
             ) : (
-            <CardItem.ImageWrapper>
+            <CardItem.ImageWrapper className="preview">
               <CardImage 
-                {...( imageAlt && { alt: imageAlt })} 
-                className={'img-zoomable'} 
+                {...( imageAlt && {alt: imageAlt})}
                 src={urlFor(image).width(350).height(175).quality(100).url()} 
                 width="350" 
                 height="175" />

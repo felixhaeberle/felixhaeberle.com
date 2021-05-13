@@ -80,23 +80,23 @@ export default function Stack() {
         {/* Logos */}
         <StackItem.LogoWrapper>
           <LogoItem>
-            <Image src="/images/stack/logos/carbon.svg" height={imageSize} width={imageSize} />
+            <Image src="/images/stack/logos/carbon.svg" height={imageSize} width={imageSize} alt="Carbon" />
             <LogoItem.Text>Carbon</LogoItem.Text>
           </LogoItem>
           <LogoItem>
-            <Image src="/images/stack/logos/sanity.svg" height={imageSize} width={imageSize} />
+            <Image src="/images/stack/logos/sanity.svg" height={imageSize} width={imageSize} alt="Sanity" />
             <LogoItem.Text>Sanity</LogoItem.Text>
           </LogoItem>
           <LogoItem>
-            <Image src="/images/stack/logos/next.svg" height={imageSize} width={imageSize} />
+            <Image src="/images/stack/logos/next.svg" height={imageSize} width={imageSize} alt="Next" />
             <LogoItem.Text>Next.js</LogoItem.Text>
           </LogoItem>
           <LogoItem>
-            <Image src="/images/stack/logos/styled-components.svg" height={imageSize} width={imageSize} />
+            <Image src="/images/stack/logos/styled-components.svg" height={imageSize} width={imageSize} alt="Styled" />
             <LogoItem.Text>Styled Components</LogoItem.Text>
           </LogoItem>
           <LogoItem>
-            <Image src="/images/stack/logos/storybook.svg" height={imageSize} width={imageSize} />
+            <Image src="/images/stack/logos/storybook.svg" height={imageSize} width={imageSize} alt="Storybook" />
             <LogoItem.Text>Storybook</LogoItem.Text>
           </LogoItem>
         </StackItem.LogoWrapper>

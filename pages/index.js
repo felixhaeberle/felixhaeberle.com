@@ -60,7 +60,7 @@ export default function Home({ writingsList, studiesList, workList, settings }) 
                       title={study.title}
                       text={study.description}
                       image={study.image}
-                      imageAlt={study.image_alt}
+                      imageAlt={study.imageAlt}
                       isStudy />
               </List.Item>
             ))}

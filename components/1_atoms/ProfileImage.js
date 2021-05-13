@@ -19,9 +19,10 @@ export default function ProfileImage() {
     <ProfileImageWrapper>
       <Image 
         src="/images/profile-2.svg" 
-        width={imageSize} 
-        height={imageSize}
-        priority />
+        width={imageSize ? imageSize : 275} 
+        height={imageSize ? imageSize : 275}
+        priority
+        alt={'profile picture'} />
     </ProfileImageWrapper>
   )
 }
