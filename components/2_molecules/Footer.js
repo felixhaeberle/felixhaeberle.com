@@ -1,12 +1,9 @@
-import { useEffect, useState } from 'react'
-
 import FooterLink from '../1_atoms/FooterLink'
 import FooterLinks from '../1_atoms/FooterLinks'
 import FooterText from '../1_atoms/FooterText'
 import { format } from 'date-fns'
 import media from '../0_helpers/viewportValues'
 import styled from 'styled-components'
-import { withRouter } from 'next/router'
 
 export const FooterItem = styled.footer`
   display: flex;
