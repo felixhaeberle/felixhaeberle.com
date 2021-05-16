@@ -47,7 +47,7 @@ PrincipleItem.Header.Text = styled(Text.Mono.Dark)`
 
 
 export default function Principle({ card, index }){
-  card.card_text = card.card_text.split(",").join(",<br />")
+  card.card_text = card.card_text.includes('<br') ? card.card_text : card.card_text.split(",").join(",<br />")
   return (
     <PrincipleItem>
       <PrincipleItem.Header>
