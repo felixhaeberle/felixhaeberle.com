@@ -48,7 +48,7 @@ export default function SiteNotice({ settings }) {
   return (
     <Layout settings={settings} pageTitle={'Site Notice / Impressum'}>
       <Head>
-        <title>About</title>
+        <title>Site Notice / Impressum</title>
       </Head>
       <Main>
         <r-grid columns="6">
