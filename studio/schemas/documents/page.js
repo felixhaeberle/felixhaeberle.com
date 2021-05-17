@@ -15,7 +15,10 @@ export default {
     {
       title: 'Content',
       name: 'content',
-      type: 'text'
+      type: 'array',
+      of: [
+        {type: 'block'}
+      ]
     }
   ],
   preview: {
