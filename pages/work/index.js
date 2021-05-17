@@ -7,6 +7,7 @@ import Intro from '../../components/1_atoms/Intro'
 import Layout from '../../components/4_templates/Layout'
 import React from 'react'
 import Text from '../../components/1_atoms/Text'
+import { getPage } from '../../lib/query/page'
 import { getSiteSettings } from '../../lib/query/settings'
 import { getWork } from '../../lib/query/work'
 import styled from 'styled-components'
@@ -23,14 +24,14 @@ WorkItem.Year = styled(Text.Mono.Dark)`
   margin-bottom: 0;
 `
 
-export default function Work({ projects, settings }) {
+export default function Work({ page, projects, settings }) {
   return (
     <Layout settings={settings} pageTitle={'Work'}>
       <Head>
         <title>Work</title>
       </Head>
       <div>
-        <Intro />
+        <Intro page={page}/>
         <WorkItem.Wrapper>
           <r-grid columns="6" columns-s="2" columns-xs="1">
             {projects.map(({ title, description, link, releasedAt, image, imageAlt }, index, arr) => {
@@ -67,6 +68,7 @@ export default function Work({ projects, settings }) {
 }
 
 export async function getStaticProps() {
+  const page = await getPage('Work');
   const siteSettings = await getSiteSettings();
   const work = await getWork();
 
@@ -75,6 +77,7 @@ export async function getStaticProps() {
 
   return {
     props: {
+      page: page,
       projects: workSorted,
       settings: siteSettings
     }

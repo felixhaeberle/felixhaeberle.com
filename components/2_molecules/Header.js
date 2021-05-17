@@ -18,8 +18,8 @@ const HeaderWrapper = styled.div`
 `
 
 const HeaderText = styled(Text.Large)`
-  margin-top: calc(var(--unit) *31);
-  margin-bottom: ${props => (props.isHome ? "calc(var(--unit) *12.75)" : "calc(var(--unit) *8.75)")};
+  margin-top: ${props => (props.isHome ? "calc(var(--unit) *31)" : "calc(var(--unit) *22)")};
+  margin-bottom: ${props => (props.isHome ? "calc(var(--unit) *12.75)" : "calc(var(--unit) *6.75)")};
   max-width: 60%;
 
   ${media.lessThan('medium')`
