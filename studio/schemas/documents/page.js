@@ -1,5 +1,6 @@
-import React from 'react'
 import { format, parseISO } from 'date-fns'
+
+import React from 'react'
 
 export default {
   title: 'Page',
@@ -14,10 +15,7 @@ export default {
     {
       title: 'Content',
       name: 'content',
-      type: 'array',
-      of: [
-        {type: 'block'}
-      ]
+      type: 'text'
     }
   ],
   preview: {
