@@ -1,5 +1,6 @@
 import Button from '../../components/1_atoms/Button'
 import CVSection from '../../components/2_molecules/CVSection'
+import Gallery from '../../components/2_molecules/Gallery'
 import Head from 'next/head'
 import Image from 'next/image'
 import Layout from '../../components/4_templates/Layout'
@@ -68,6 +69,9 @@ export default function Me({ settings }) {
             {cvListing.map((item, index) => (
               <CVSection key={index} content={item} />
             ))}
+            <r-cell span="6">
+              <Gallery />
+            </r-cell>
           </r-grid>
         </Listing>
       </div>
