@@ -49,7 +49,8 @@ export default function Work({ page, projects, settings }) {
                   {newYear ? <r-cell span="row"><WorkItem.Year><Date dateString={releasedAt} formatString={'yyyy'}/></WorkItem.Year></r-cell> : ''}
                   {/* Project */}
                   <r-cell span="2" span-s="1">
-                    <Card link={link}
+                    <Card 
+                      link={link}
                       title={title}
                       text={description}
                       key={index}
@@ -73,7 +74,7 @@ export async function getStaticProps() {
   const work = await getWork();
 
   // sort newest work first
-  const workSorted = work.sort((a, b) => (format(parseISO(a.releasedAt), 'yyyy') < format(parseISO(b.releasedAt), 'yyyy')) ? 1 : -1)
+  const workSorted = work.sort((a, b) => (parseISO(a.releasedAt) < parseISO(b.releasedAt)) ? 1 : -1)
 
   return {
     props: {
