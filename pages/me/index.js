@@ -70,7 +70,7 @@ export default function Me({ settings }) {
               <CVSection key={index} content={item} />
             ))}
             <r-cell span="6">
-              <Gallery />
+              <Gallery title={"Fun Facts"} />
             </r-cell>
           </r-grid>
         </Listing>

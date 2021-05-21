@@ -56,11 +56,11 @@ GalleryItem.Text = styled(Text.Small.Dark)`
 `
 
 
-export default function Gallery() {
+export default function Gallery({ title }) {
 
   return (
     <GalleryItem>
-      <GalleryItem.Headline>Fun Facts</GalleryItem.Headline>
+      <GalleryItem.Headline>{ title }</GalleryItem.Headline>
       <r-grid columns="12" columns-s="4">
         <r-cell span="5" span-s="4" class="imageCell">
           <GalleryItem.Image src="images/fun-facts/firefighter.jpg"/>
