@@ -13,6 +13,16 @@ const CardStudiesItem = styled.div`
   flex-direction: column;
   border-top: 1px solid var(--colorTextDark);
   padding-top: calc(var(--unit)*3.125);
+  
+  .external-link-icon {
+    transition: transform 160ms ease-in; 
+  }
+
+  &:hover {
+    .external-link-icon {
+      transform: rotate(-45deg) translate(calc(var(--unit)* 0.25),calc(var(--unit)* 0.10));
+    }
+  }
 `
 
 CardStudiesItem.Header = styled.div`
@@ -42,8 +52,8 @@ export default function CardStudies({title, text, date, link, image, imageAlt, i
   return(
     <> 
       <r-cell span="4" span-s="1" order-s={index}>
-        <Link href={link}>
-          <a>
+        <Link href={link} passHref>
+          <a {...{target: "_blank", rel: "noopener noreferrer"}}>
             <CardStudiesItem>
               <CardStudiesItem.Header>
                   <Text>{title}</Text>
@@ -52,14 +62,14 @@ export default function CardStudies({title, text, date, link, image, imageAlt, i
                 </CardStudiesItem.Year>
               </CardStudiesItem.Header>
               <CardStudiesItem.TextSmallDark>{text}</CardStudiesItem.TextSmallDark>
-              <ExternalLink title={'external link'} link={link}/>
+              <ExternalLink title={'external link'} link={link} {...{target: "_blank", rel: "noopener noreferrer"}} />
             </CardStudiesItem>
           </a>
         </Link>
       </r-cell>
       <r-cell span="6" span-s="1" order-s={index -1}>
-        <Link href={link}>
-          <a style={{opacity: "0.9"}}>
+        <Link href={link} passHref>
+          <a style={{opacity: "0.9"}} {...{target: "_blank", rel: "noopener noreferrer"}}>
             <Image
               {...( imageAlt && { alt: imageAlt })} 
               height="900"
