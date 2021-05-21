@@ -10,6 +10,9 @@ const GalleryItem = styled.div`
 
   ${media.lessThan('small')`
     padding: calc(var(--unit)*3.75) var(--body-padding-y);
+    margin: 0 calc(var(--body-padding-y) *-1);
+    border-left: none;
+    border-right: none;
 
     .videoCell {
       display: flex;
