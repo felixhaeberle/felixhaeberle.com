@@ -33,6 +33,10 @@ CVItem.Column = styled.div`
 const CVText = styled(Text)`
   color: rgba(var(--colorTextRGB), 0.8);
   line-height: calc(var(--unit)*4);
+
+  ${media.lessThan('small')`
+    line-height: calc(var(--unit)*3);
+  `}
 `;
 
 CVText.Dark = styled(Text.Small.Dark)`
@@ -44,6 +48,11 @@ CVText.Light = styled(Text)`
   line-height: calc(var(--unit)*3.75);
   margin-top: calc(var(--unit)*1.25);
   margin-bottom: calc(var(--unit)*2.75);
+
+  ${media.lessThan('small')`
+    line-height: calc(var(--unit)*3.25);
+    font-size: var(--fontSizeSmall);
+  `}
 `;
 
 const CVTextLink = styled(CVText)`
