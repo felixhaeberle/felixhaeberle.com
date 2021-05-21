@@ -18,6 +18,10 @@ WorkItem.Wrapper = styled.div`
   margin-top: calc(var(--rowGap)*1.5);
   padding-top: calc(var(--rowGap));
   border-top: 1px solid var(--colorTextDark);
+
+  /* .work-grid {
+    grid-row-gap: calc(var(--rowGap)/2);
+  } */
 `
 
 WorkItem.Year = styled(Text.Mono.Dark)`
@@ -33,7 +37,7 @@ export default function Work({ page, projects, settings }) {
       <div>
         <Intro page={page}/>
         <WorkItem.Wrapper>
-          <r-grid columns="6" columns-s="2" columns-xs="1">
+          <r-grid columns="6" columns-m="6" columns-s="2" class="work-grid">
             {projects.map(({ title, description, link, releasedAt, image, imageAlt }, index, arr) => {
               // Is it a new year?
               let newYear = false;
@@ -48,7 +52,7 @@ export default function Work({ page, projects, settings }) {
                   {/* Year */}
                   {newYear ? <r-cell span="row"><WorkItem.Year><Date dateString={releasedAt} formatString={'yyyy'}/></WorkItem.Year></r-cell> : ''}
                   {/* Project */}
-                  <r-cell span="2" span-s="1">
+                  <r-cell span="2" span-m="3" span-s="2">
                     <Card 
                       link={link}
                       title={title}

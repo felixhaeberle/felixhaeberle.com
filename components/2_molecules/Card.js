@@ -9,6 +9,10 @@ export const CardItem = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: calc(var(--unit)* 4.5);
+
+  ${props => props.isWork ? (`
+    margin-bottom: 0;
+  `) : null}
 `;
 
 CardItem.Header = styled.div`
@@ -83,7 +87,7 @@ CardItem.ImageWrapper = styled.div`
   &&.screenshot {
     background-color: var(--colorButtonBg);
     position: relative;
-    height: 180px;
+    height: min(11vw, 160px);
     max-width: 90%;
 
     &:hover {
@@ -92,7 +96,13 @@ CardItem.ImageWrapper = styled.div`
       }
     }
 
+    ${media.lessThan('medium')`
+      height: min(20vw, 190px);
+      max-width: 100%;
+    `}
+
     ${media.lessThan('small')`
+      height: min(36vw, 220px);
       max-width: 100%;
     `}
 
@@ -101,6 +111,9 @@ CardItem.ImageWrapper = styled.div`
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);
+      padding: 10% 20% 0 20%;
+      width: 100%;
+      height: auto;
     }
 
      &::before {
@@ -124,7 +137,7 @@ export default function Card ({image, imageAlt, title, link, text, year, date, i
   return (
     <Link href={link} passHref>
       <a {...( isWork && { target: "_blank" })}>
-        <CardItem>
+        <CardItem {...( isWork && { isWork })}>
           {image ? (
              isWork ? (
               <CardItem.ImageWrapper className="screenshot">
