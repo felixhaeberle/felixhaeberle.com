@@ -15,10 +15,8 @@ export default function Intro({ page }){
   }
   
   return (
-    <r-grid columns="6">
-      <r-cell span="2" span-m="4" span-s="6">
-        { page && <BlockContent blocks={page.contentRaw} serializers={serializers} /> }
-      </r-cell>
-    </r-grid>
+    <>
+      { page && <BlockContent blocks={page.contentRaw} serializers={serializers} /> }
+    </>
   )
 }

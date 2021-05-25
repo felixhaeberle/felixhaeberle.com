@@ -118,6 +118,7 @@ img {
 }
 @media (min-width: 64rem) {
   .cv-image {
+    margin-top: calc(var(--unit)* -18);
     justify-self: end;
   }
 }

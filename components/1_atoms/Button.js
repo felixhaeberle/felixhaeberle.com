@@ -17,7 +17,7 @@ export const ButtonItem = styled.div`
   border: 1px solid rgba(var(--colorTextDarkRBG),0.2);
   padding: calc(var(--unit)*2.25) calc(var(--unit)*2.5);
   margin-bottom: calc(var(--unit)* 4.5);
-  width: 300px;
+  width: ${props => props.autoWidth ? "100%" : "300px"};
 
   &:hover {
     cursor: pointer;
@@ -53,7 +53,7 @@ class Button extends React.Component {
     let ButtonItemSymbol = dynamic(() => import('@carbon/icons-react').then((mod) => mod[this.props.symbol]))
 
     return (
-      <ButtonItem onClick={this.props.onClick} className={this.props.className}>
+      <ButtonItem onClick={this.props.onClick} className={this.props.className} {...( this.props.autoWidth && { autoWidth: true })}>
         <ButtonItemText>{this.props.title}</ButtonItemText>
         <ButtonItemSymbol className="button-icon"></ButtonItemSymbol>
       </ButtonItem>

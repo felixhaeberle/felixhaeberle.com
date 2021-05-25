@@ -15,7 +15,11 @@ export default function Writings({page, writings, categories, settings}) {
         <title>Writings</title>
       </Head>
       <div>
-        <Intro page={page} />
+        <r-grid columns="6">
+          <r-cell span="2" span-m="4" span-s="6">
+            <Intro page={page} />
+          </r-cell>
+        </r-grid>
         <Filtering 
           categories={categories} 
           writings={writings} />

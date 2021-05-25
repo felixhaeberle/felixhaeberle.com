@@ -35,7 +35,11 @@ export default function Work({ page, projects, settings }) {
         <title>Work</title>
       </Head>
       <div>
-        <Intro page={page}/>
+        <r-grid columns="6">
+          <r-cell span="2" span-m="4" span-s="6">
+            <Intro page={page} />
+          </r-cell>
+        </r-grid>
         <WorkItem.Wrapper>
           <r-grid columns="6" columns-m="6" columns-s="2" class="work-grid">
             {projects.map(({ title, description, link, releasedAt, image, imageAlt }, index, arr) => {
