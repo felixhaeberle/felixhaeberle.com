@@ -1,4 +1,3 @@
-import { LogoGithub24, LogoLinkedin24, LogoTwitter24 } from '@carbon/icons-react';
 import React, { Component } from 'react';
 
 import Button from '../../components/1_atoms/Button'
