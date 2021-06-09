@@ -17,7 +17,8 @@
     "@sanity/dashboard",
     "dashboard-widget-document-list",
     "asset-source-unsplash",
-    "@sanity/code-input"
+    "@sanity/code-input",
+    "vercel-deploy"
   ],
   "env": {
     "development": {

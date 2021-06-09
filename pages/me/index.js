@@ -63,7 +63,8 @@ export default function Me({ page, settings }) {
                 <Image src="/images/profile.jpg" className="avatar" width="600px" height="686px" />
                 <style jsx global>{`
                   .avatar {
-                    filter: grayscale(10%)
+                    filter: brightness(80%);
+                    opacity: 0.85;
                   }
                 `}</style>
               </ImageWrapper>

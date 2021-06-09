@@ -2276,6 +2276,12 @@ axios@^0.18.0:
     follow-redirects "1.5.10"
     is-buffer "^2.0.2"
 
+axios@^0.21.1:
+  version "0.21.1"
+  resolved "https://registry.npmjs.org/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
+  dependencies:
+    follow-redirects "^1.10.0"
+
 babel-code-frame@^6.26.0:
   version "6.26.0"
   resolved "https://registry.npmjs.org/babel-code-frame/-/babel-code-frame-6.26.0.tgz#63fd43f7dc1e3bb7ce35947db8fe369a3f58c74b"
@@ -3604,6 +3610,10 @@ depd@^1.1.2, depd@~1.1.2:
   version "1.1.2"
   resolved "https://registry.npmjs.org/depd/-/depd-1.1.2.tgz#9bcd52e14c097763e749b274c4346ed2e560b5a9"
 
+dequal@2.0.2:
+  version "2.0.2"
+  resolved "https://registry.npmjs.org/dequal/-/dequal-2.0.2.tgz#85ca22025e3a87e65ef75a7a437b35284a7e319d"
+
 des.js@^1.0.0:
   version "1.0.1"
   resolved "https://registry.npmjs.org/des.js/-/des.js-1.0.1.tgz#5382142e1bdc53f85d86d53e5f4aa7deb91e0843"
@@ -4336,6 +4346,10 @@ follow-redirects@1.5.10:
   resolved "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.5.10.tgz#7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a"
   dependencies:
     debug "=3.1.0"
+
+follow-redirects@^1.10.0:
+  version "1.14.1"
+  resolved "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.14.1.tgz#d9114ded0a1cfdd334e164e6662ad02bfd91ff43"
 
 follow-redirects@^1.2.4:
   version "1.14.0"
@@ -5890,6 +5904,10 @@ nano-pubsub@^2.0.0:
 nanoid@^3.1.12, nanoid@^3.1.9:
   version "3.1.22"
   resolved "https://registry.npmjs.org/nanoid/-/nanoid-3.1.22.tgz#b35f8fb7d151990a8aebd5aa5015c03cf726f844"
+
+nanoid@^3.1.20:
+  version "3.1.23"
+  resolved "https://registry.npmjs.org/nanoid/-/nanoid-3.1.23.tgz#f744086ce7c2bc47ee0a8472574d5c78e4183a81"
 
 nanomatch@^1.2.9:
   version "1.2.13"
@@ -7868,6 +7886,17 @@ sanity-plugin-dashboard-widget-vercel@^0.1.5:
     unfetch "4.2.0"
     xstate "4.14.0"
 
+sanity-plugin-vercel-deploy@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.npmjs.org/sanity-plugin-vercel-deploy/-/sanity-plugin-vercel-deploy-2.0.1.tgz#40272e99b9ba83e9ca1ec23262115227664194ff"
+  dependencies:
+    "@babel/runtime" "^7.12.5"
+    axios "^0.21.1"
+    nanoid "^3.1.20"
+    prop-types "^15.7.2"
+    spacetime "^6.16.0"
+    swr "^0.5.6"
+
 sax@~1.2.4:
   version "1.2.4"
   resolved "https://registry.npmjs.org/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
@@ -8133,6 +8162,10 @@ source-map@^0.7.3:
 space-separated-tokens@^1.0.0:
   version "1.1.5"
   resolved "https://registry.npmjs.org/space-separated-tokens/-/space-separated-tokens-1.1.5.tgz#85f32c3d10d9682007e917414ddc5c26d1aa6899"
+
+spacetime@^6.16.0:
+  version "6.16.1"
+  resolved "https://registry.npmjs.org/spacetime/-/spacetime-6.16.1.tgz#e032dc77bea494367a7a321a03458ebbf8f625b0"
 
 spdx-correct@^3.0.0:
   version "3.1.1"
@@ -8438,6 +8471,12 @@ svgo@^1.0.0:
     stable "^0.1.8"
     unquote "~1.1.1"
     util.promisify "~1.0.0"
+
+swr@^0.5.6:
+  version "0.5.6"
+  resolved "https://registry.npmjs.org/swr/-/swr-0.5.6.tgz#70bfe9bc9d7ac49a064be4a0f4acf57982e55a31"
+  dependencies:
+    dequal "2.0.2"
 
 symbol-observable@^1.2.0:
   version "1.2.0"
