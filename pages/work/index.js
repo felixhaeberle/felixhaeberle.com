@@ -10,6 +10,7 @@ import Text from '../../components/1_atoms/Text'
 import { getPage } from '../../lib/query/page'
 import { getSiteSettings } from '../../lib/query/settings'
 import { getWork } from '../../lib/query/work'
+import media from '../../components/0_helpers/viewportValues'
 import styled from 'styled-components'
 
 const WorkItem = styled.div``;
@@ -28,16 +29,37 @@ WorkItem.Year = styled(Text.Mono.Dark)`
   margin-bottom: 0;
 `
 
+const Wrapper = styled.div`
+  .heroImage {
+    max-height: 25rem;
+    
+    ${media.greaterThan('small')`
+      position: relative;
+      top: -8rem;
+      margin-bottom: -8rem;
+    `}
+  }
+
+  .hide-s {
+    ${media.lessThan('medium')`
+      display: none;
+    `}
+  }
+`
+
 export default function Work({ page, projects, settings }) {
   return (
     <Layout settings={settings} pageTitle={'Work'}>
       <Head>
         <title>Work</title>
       </Head>
-      <div>
+      <Wrapper>
         <r-grid columns="6">
-          <r-cell span="2" span-m="4" span-s="6">
+          <r-cell span="1-2" span-m="1-4" span-s="1-6">
             <Intro page={page} />
+          </r-cell>
+          <r-cell span="5-6" span-m="5-6" class="hide-s">
+            <img className="heroImage" src="/images/lineart/phone.svg" />
           </r-cell>
         </r-grid>
         <WorkItem.Wrapper>
@@ -71,7 +93,7 @@ export default function Work({ page, projects, settings }) {
             })}
           </r-grid>
         </WorkItem.Wrapper>
-      </div>
+      </Wrapper>
     </Layout>
   )
 }

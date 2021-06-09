@@ -6,6 +6,20 @@ import { getCategory } from '../../lib/query/categories'
 import { getPage } from '../../lib/query/page'
 import { getSiteSettings } from '../../lib/query/settings'
 import { getWritings } from '../../lib/query/writings'
+import media from '../../components/0_helpers/viewportValues'
+import styled from 'styled-components'
+
+const Listing = styled.div`
+  padding-top: calc(var(--rowGap));
+`
+
+const Hero = styled.div`
+  .hide-s {
+    ${media.lessThan('medium')`
+      display: none;
+    `}
+  }
+`
 
 export default function Writings({page, writings, categories, settings}) {
 
@@ -14,16 +28,21 @@ export default function Writings({page, writings, categories, settings}) {
       <Head>
         <title>Writings</title>
       </Head>
-      <div>
+      <Hero>
         <r-grid columns="6">
-          <r-cell span="2" span-m="4" span-s="6">
-            <Intro page={page} />
-          </r-cell>
-        </r-grid>
+          <r-cell span="1-2" span-m="1-4" span-s="1-6">
+              <Intro page={page} />
+            </r-cell>
+            <r-cell span="5-6" span-m="5-6" class="hide-s">
+              <img className="heroImage" src="/images/lineart/hand.svg" />
+            </r-cell>
+          </r-grid>
+      </Hero>
+      <Listing>
         <Filtering 
           categories={categories} 
           writings={writings} />
-      </div>
+      </Listing>
     </Layout>
   )
 }
