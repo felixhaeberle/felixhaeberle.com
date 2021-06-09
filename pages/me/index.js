@@ -60,7 +60,12 @@ export default function Me({ page, settings }) {
             </r-cell>
             <r-cell span="2" span-m="2" span-s="6" class="cv-image">
               <ImageWrapper>
-                <Image src="/images/profile.png" width="300px" height="300px" />
+                <Image src="/images/profile.jpg" className="avatar" width="600px" height="686px" />
+                <style jsx global>{`
+                  .avatar {
+                    filter: grayscale(10%)
+                  }
+                `}</style>
               </ImageWrapper>
               <Link href="/me">
                 <a>
