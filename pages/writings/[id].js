@@ -70,6 +70,12 @@ export default function WritingPage ({ writing, settings }){
     <Layout settings={settings}>
       <Head>
         <title>{writing.title}</title>
+        <meta
+          property="og:image"
+          content={urlFor(writing.image.source).width(500).url()}
+        />
+        <meta name="og:title" content={writing.title} />
+        <meta name="description" content="Felix Häberle – Portfolio" />
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet" />
       </Head>
       <main className={'blog'}>        
