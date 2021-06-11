@@ -14,9 +14,9 @@ export default function Layout({ children, settings, home, pageTitle }) {
         <meta name="robots" content="noindex"></meta>
         <meta
           property="og:image"
-          content={`https://og-image.felixhaeberle.vercel.app/${pageTitle ? + (encodeURI(
+          content={`https://og-image.felixhaeberle.vercel.app/${pageTitle ? encodeURI(
             'Felix Häberle – **' + pageTitle + '**'
-          )) : 'Felix Häberle – Portfolio'}.png?theme=dark&md=1&fontSize=75px&images=https%3A%2F%2Ffelixhaeberle.com%2F_next%2Fimage%3Furl%3D%252Fimages%252Fprofile-2.svg%26w%3D640%26q%3D75&widths=450&heights=450`}
+          ) : 'Felix Häberle – Portfolio'}.png?theme=dark&md=1&fontSize=75px&images=https%3A%2F%2Ffelixhaeberle.com%2F_next%2Fimage%3Furl%3D%252Fimages%252Fprofile-2.svg%26w%3D640%26q%3D75&widths=450&heights=450`}
         />
         <meta name="og:title" content={pageTitle ? pageTitle : 'Felix Häberle – Portfolio'} />
         <meta name="twitter:card" content="summary_large_image" />
