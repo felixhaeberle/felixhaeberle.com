@@ -24,7 +24,7 @@ const ExternalLinkItem = styled(Text.Mono.Dark)`
 export default function ExternalLink (props) {
   return (
     <Link href={props.link} passHref>
-      <ExternalLinkAnchor {...props} title>
+      <ExternalLinkAnchor {...props} title={props.title}>
         <ExternalLinkItem>{props.title}</ExternalLinkItem><ArrowRight16 className="external-link-icon"/>
       </ExternalLinkAnchor>
     </Link>

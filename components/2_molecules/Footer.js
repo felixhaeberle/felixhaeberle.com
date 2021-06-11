@@ -38,8 +38,6 @@ export default function Footer({ settings }) {
       {loadTime !== 0 ? (
         <FooterItem.Cell>
           <FooterText.Dark>This page loaded in {loadTime}ms. </FooterText.Dark>
-          &nbsp;
-          <FooterLink link={'/'} text={'Details'} light/>
         </FooterItem.Cell>
       ) : null}
       <FooterItem.Cell>

@@ -71,9 +71,9 @@ export default function Stack() {
         <r-cell span="2" span-s="6">
         {/* Text */}
         <StackItem.TextWrapper>
-          <Text.Mono.Dark>{'The Stack'}</Text.Mono.Dark>
-          <Text.Small.Dark>{`This website is an envolving experiment. I decided to open-source it – helping people all around the world learning how to code. If you have any questions to the stack feel free to ask in an issue.`}</Text.Small.Dark>
-          <ExternalLink title={'github'} link={'https://github.com/felixhaeberle'} />
+          <Text.Mono.Dark>The Stack</Text.Mono.Dark>
+          <Text.Small.Dark>This website is an envolving experiment. I decided to open-source it – helping people all around the world learning how to code. If you have any questions to the stack feel free to ask in an issue.</Text.Small.Dark>
+          <ExternalLink title="github" link="https://github.com/felixhaeberle" />
         </StackItem.TextWrapper>
         </r-cell>
         <r-cell span="4" span-s="6">
