@@ -14,6 +14,7 @@ import Syntax from '../../components/1_atoms/Syntax'
 import TweetEmbed from 'react-tweet-embed'
 import TweetWrapper from '../../components/1_atoms/TweetWrapper'
 import { getSiteSettings } from '../../lib/query/settings'
+import { urlFor } from '../../lib/sanity'
 
 export default function WritingPage ({ writing, settings }){
 
