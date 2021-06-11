@@ -19,7 +19,7 @@ const CardWritingsItem = styled(CardItem)`
 
 CardWritingsItem.Text = styled(Text)``;
 CardWritingsItem.TextSmall = styled(CardItem.TextSmall)``;
-CardWritingsItem.ImageWrapper = styled.div``
+CardWritingsItem.ImageWrapper = styled.div``;
 
 CardWritingsItem.Header = styled(CardItem.Header)`
   display: flex;
@@ -36,7 +36,7 @@ CardWritingsItem.Header = styled(CardItem.Header)`
   ${CardWritingsItem.Text} {
     margin-bottom: calc(var(--unit)*1.25);
   }
-`
+`;
 
 
 export default function CardWritings({image, title, link, shortText, longText, date}) {
