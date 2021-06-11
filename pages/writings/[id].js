@@ -73,7 +73,7 @@ export default function WritingPage ({ writing, settings }){
         <title>{writing.title}</title>
         <meta
           property="og:image"
-          content={urlFor(writing.image.source).width(500).url()}
+          content={urlFor(writing.image).width(500).url()}
         />
         <meta name="og:title" content={writing.title} />
         <meta name="description" content="Felix Häberle – Portfolio" />
