@@ -31,7 +31,7 @@ export default function BlogPostImage({image, imageAlt, text}) {
       <BlogPostImageItem>
         <Image
           {...( imageAlt && { alt: imageAlt })}  
-          src={urlFor(image).quality(90).url()} 
+          src={urlFor(image).width(1000).quality(80).url()} 
           layout={'fill'}
           className={'image'}  />
         <BlogPostImageItem.Text>{ text }</BlogPostImageItem.Text>
