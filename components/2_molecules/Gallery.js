@@ -2,6 +2,7 @@ import Badge from '../1_atoms/Badge'
 import Text from '../1_atoms/Text'
 import media from '../0_helpers/viewportValues'
 import styled from 'styled-components'
+import { useMediaQuery } from '../0_helpers/viewport'
 
 const GalleryItem = styled.div`
   padding: calc(var(--unit)*5.75) var(--body-padding-y);
@@ -42,6 +43,10 @@ GalleryItem.BadgeWrapper = styled.div`
   position: absolute;
   bottom: calc(var(--unit)*2);
   left: calc(var(--unit)*2.5);
+
+  ${media.lessThan('small')`
+    display: none;
+  `}
 `
 
 GalleryItem.Video = styled.video`
@@ -60,8 +65,9 @@ GalleryItem.Text = styled(Text.Small.Dark)`
 
 
 export default function Gallery({ title }) {
+  const isSmallBreakpoint = useMediaQuery(640); // mediaSizes.small * 16 (base font size)
 
-  return (
+  return ( 
     <GalleryItem>
       <GalleryItem.Headline>{ title }</GalleryItem.Headline>
       <r-grid columns="12" columns-s="4">
@@ -78,7 +84,8 @@ export default function Gallery({ title }) {
             <GalleryItem.Video 
               onMouseOver={event => event.target.play()}
               onMouseOut={event => event.target.pause()}
-              muted loop playsinline 
+              muted loop playsinline
+              {...(isSmallBreakpoint ? {controls: true} : {})}
               preload="none" poster="images/fun-facts/poster.jpg">
               <source src="images/fun-facts/movie-small.mp4" type="video/mp4" />
               Your browser does not support the video tag.

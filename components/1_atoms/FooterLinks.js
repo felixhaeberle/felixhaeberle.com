@@ -19,9 +19,7 @@ export default function FooterLinks({links}) {
         links.map(({text, link}, index) => {
           return ( 
             <FooterLinksItem.Child key={index}>
-              &nbsp;
-                <FooterLink {...{text, link}}/>
-              &nbsp;
+              <FooterLink {...{text, link}}/>
               {index !== links.length -1 ? <FooterText.Dark>/</FooterText.Dark> : ''}
             </FooterLinksItem.Child>
           )

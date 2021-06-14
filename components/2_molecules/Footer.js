@@ -23,6 +23,10 @@ FooterItem.Cell = styled.div`
   display: flex;
   flex-direction: row;
   height: 100%;
+
+  ${media.lessThan('medium')`
+    margin-bottom: calc(var(--unit)*0.5);
+  `}
 `
 
 let loadTime = 0;
