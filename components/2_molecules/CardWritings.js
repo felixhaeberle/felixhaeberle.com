@@ -11,32 +11,27 @@ const ShortText = styled(CardItem.TextSmallDark)``,
 
 const CardWritingsItem = styled(CardItem)`
   margin-top: calc(var(--unit)*7.5);
-
+  
   ${ShortText} {
     margin-bottom: calc(var(--unit)*2);
   }
-`;
+`
 
-CardWritingsItem.Text = styled(Text)``;
-CardWritingsItem.TextSmall = styled(CardItem.TextSmall)``;
-CardWritingsItem.ImageWrapper = styled.div``;
-
+CardWritingsItem.Text = styled(Text)`
+  margin-bottom: calc(var(--unit)*1.25);
+`
+CardWritingsItem.TextSmall = styled(CardItem.TextSmall)`
+  margin: calc(var(--unit)*2) 0;
+`
+CardWritingsItem.ImageWrapper = styled.div`
+  opacity: 0.9;
+`
 CardWritingsItem.Header = styled(CardItem.Header)`
-  display: flex;
-  flex-direction: column;
-
-  ${CardWritingsItem.ImageWrapper} {
-    opacity: 0.9;
+  &&& {
+    display: flex;
+    flex-direction: column;
   }
-
-  ${CardWritingsItem.TextSmall} {
-    margin: calc(var(--unit)*2) 0;
-  }
-
-  ${CardWritingsItem.Text} {
-    margin-bottom: calc(var(--unit)*1.25);
-  }
-`;
+`
 
 
 export default function CardWritings({image, title, link, shortText, longText, date}) {
