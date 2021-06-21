@@ -10,7 +10,7 @@ const ShortText = styled(CardItem.TextSmallDark)``,
       LongText = styled(CardItem.TextSmallDark)``;
 
 const CardWritingsItem = styled(CardItem)`
-  margin-top: calc(var(--unit)*7.5);
+  margin-bottom: 0;
   
   ${ShortText} {
     margin-bottom: calc(var(--unit)*2);

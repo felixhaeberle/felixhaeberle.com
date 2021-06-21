@@ -19,9 +19,13 @@ export default function FooterLink({text, link, light}){
   <>
     { text && link ? 
       (<Link href={link} passHref>
-        <FooterLinkAnchor>
-          {light ? <FooterText>&nbsp;{text}&nbsp;</FooterText> : <FooterText.Dark>&nbsp;{text}&nbsp;</FooterText.Dark> } 
-        </FooterLinkAnchor>
+        <>
+          &nbsp;
+            <FooterLinkAnchor>
+              {light ? <FooterText>{text}</FooterText> : <FooterText.Dark>{text}</FooterText.Dark> } 
+            </FooterLinkAnchor>
+          &nbsp;
+        </>
        </Link>) : ''
     }
   </>

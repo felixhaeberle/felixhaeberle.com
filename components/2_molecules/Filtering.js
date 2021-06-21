@@ -5,6 +5,12 @@ import React from 'react'
 import Text from '../1_atoms/Text'
 import styled from 'styled-components'
 
+const FilteringItem = styled.div`
+  .writings-grid {
+    margin-top: calc(var(--unit)*7.5);
+  }
+`
+
 const FilterWrapper = styled.div`
   display: block;
   margin-top: calc(var(--unit)*12.5);
@@ -57,7 +63,7 @@ class Filtering extends React.Component {
     });
 
     return (
-      <>
+      <FilteringItem>
         {/* Filtering */}
         <FilterWrapper> 
           <Text.Mono.Dark>Filter by category</Text.Mono.Dark>
@@ -73,7 +79,7 @@ class Filtering extends React.Component {
           </FilterItem>
         </FilterWrapper>
         {/* Writing List */}
-        <r-grid columns="6" columns-s="2" columns-xs="1">
+        <r-grid columns="6" columns-s="2" columns-xs="1" class={'writings-grid'}>
         {writings.map((writing, index) => (
           <CardWritings
             image={{source: writing.image, alt: writing.imageAlt }} 
@@ -86,7 +92,7 @@ class Filtering extends React.Component {
           />
         ))}
       </r-grid>
-    </>
+    </FilteringItem>
   )
   } 
 }
