@@ -1,6 +1,7 @@
 # My portfolio [felixhaeberle.com](felixhaeberle.com) 🤟
 
 Have fun exploring my personal site and leave a comment or feedback if you want to! 🤙
+
 Built with **Nextjs**, **Sanity**, **Styled Components**, **IBM Carbon Icons** & more.
 
 
