@@ -16,7 +16,7 @@ export default function Layout({ children, settings, home, pageTitle }) {
         <meta name="theme-color" content="#ffffff"></meta>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet" />
-        <meta name="robots" content="noindex"></meta>
+        <meta name="robots" content="index"></meta>
         <meta
           property="og:image"
           content={`https://og-image.felixhaeberle.vercel.app/${pageTitle ? encodeURI(
