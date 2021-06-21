@@ -1,7 +1,12 @@
 import { BlogPostParagraph } from './BlogPostParagraph'
+import media from '../0_helpers/viewportValues'
 import styled from 'styled-components'
 
-const BlogPostListItemWrapper = styled.div``
+const BlogPostListItemWrapper = styled.div`
+  ${media.lessThan('medium')`
+    margin: 0 0 calc(var(--unit)*6.375) calc(var(--unit)*4)
+  `}
+`
 
 const BlogPostListItemChild = styled(BlogPostParagraph)``
 

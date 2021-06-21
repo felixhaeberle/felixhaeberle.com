@@ -49,6 +49,7 @@ BlogPostParagraph.Link = styled(BlogPostParagraph)`
   text-decoration-color: rgba(var(--colorTextDarkRBG), 0.7);
   transition: 0.25s;
   cursor: pointer;
+  word-wrap:break-word;
 
   &:hover {
     cursor: pointer;

@@ -7,7 +7,7 @@ const BlogPostHeaderItem = styled.header`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: calc(var(--unit) *25);
+  margin-top: calc(var(--unit) *15);
   margin-bottom: calc(var(--unit)*11.875);
 `
 
