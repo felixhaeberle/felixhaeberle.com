@@ -1,4 +1,5 @@
 import Date from '../0_helpers/date'
+import Image from 'next/image'
 import Link from 'next/link'
 import Text from '../1_atoms/Text'
 import media from '../0_helpers/viewportValues'
@@ -136,7 +137,7 @@ CardItem.ImageWrapper = styled.div`
 export default function Card ({image, imageAlt, title, link, text, year, date, isWork, isStudy}) {
   return (
     <Link href={link} passHref>
-      <a {...( isWork && { target: "_blank" })}>
+      <a {...( isWork || isStudy && { target: "_blank" })}>
         <CardItem {...( isWork && { isWork })}>
           {image ? (
              isWork ? (
@@ -149,9 +150,9 @@ export default function Card ({image, imageAlt, title, link, text, year, date, i
               </CardItem.ImageWrapper>
             ) : (
             <CardItem.ImageWrapper className="preview">
-              <CardImage 
+              <Image
                 {...( imageAlt && {alt: imageAlt})}
-                src={urlFor(image).width(350).height(175).quality(100).url()} 
+                src={urlFor(image).width(350).height(175).quality(100).url()}
                 width="350" 
                 height="175" />
             </CardItem.ImageWrapper>
