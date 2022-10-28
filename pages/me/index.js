@@ -14,6 +14,8 @@ import { getPage } from '../../lib/query/page'
 import { getSiteSettings } from '../../lib/query/settings'
 import media from '../../components/0_helpers/viewportValues'
 import styled from 'styled-components'
+import useSWR from 'swr';
+import fetcher from '../../lib/fetcher';
 
 const Listing = styled.div``
 
@@ -41,6 +43,9 @@ const SocialLinkWrapper = styled.div`
 `
 
 export default function Me({ page, settings }) {
+  const playing = useSWR('/api/spotify', fetcher);
+  console.log(playing);
+
   const cvListing = [
     {title: 'Professional Experience', data: settings.cv.professional_experience},
     {title: 'Education', data: settings.cv.education},
@@ -68,7 +73,7 @@ export default function Me({ page, settings }) {
                   }
                 `}</style>
               </ImageWrapper>
-              <Link href="/me">
+              <Link href="mailto:kontakt@felixhaeberle.de?subject=%F0%9F%91%8B%20Hi%2C%20lets%20talk!">
                 <a>
                   <Button title={"Let's talk"} symbol={'Voicemail24'} autoWidth/>
                 </a>
@@ -104,7 +109,7 @@ export default function Me({ page, settings }) {
 export async function getStaticProps() {
   const page = await getPage("That's me");
   const siteSettings = await getSiteSettings();
-  
+
   return {
     props: {
       page: page,
