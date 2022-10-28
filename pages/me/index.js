@@ -43,8 +43,8 @@ const SocialLinkWrapper = styled.div`
 `
 
 export default function Me({ page, settings }) {
-  const playing = useSWR('/api/spotify', fetcher);
-  console.log(playing);
+  const nowPlaying = useSWR('/api/now-playing', fetcher);
+  const topTracks = useSWR('/api/top-tracks', fetcher);
 
   const cvListing = [
     {title: 'Professional Experience', data: settings.cv.professional_experience},
