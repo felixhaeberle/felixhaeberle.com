@@ -1,4 +1,4 @@
-import { getNowPlaying } from 'lib/spotify';
+import { getNowPlaying } from "../../lib/spotify";
 
 export const config = {
   runtime: 'experimental-edge'
