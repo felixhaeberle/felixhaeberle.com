@@ -11,7 +11,7 @@ import { urlFor } from '../../lib/sanity'
 const CardStudiesItem = styled.div`
   display: flex;
   flex-direction: column;
-  border-top: 1px solid var(--colorTextDark);
+  border-top: 1px solid rgba(var(--colorTextDarkRBG),0.2);
   padding-top: calc(var(--unit)*3.125);
   
   .external-link-icon {

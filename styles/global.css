@@ -18,19 +18,19 @@
   --row-gap-compact: calc(var(--unit)*2);
 
   /* Colors */
-  --colorBg: rgba(4,13,33,1);
-  --colorText: rgba(239,246,255,1);
-  --colorTextDark: rgba(129,147,178,1);
-  --colorTextLight: rgba(233,233,233,1);
-  --colorTextDarker: rgba(177,186,201,1);
-  --colorButtonBg: rgba(13,27,56,1);
+  --colorBg: rgb(255, 255, 255);
+  --colorText: rgb(65, 78, 92);
+  --colorTextDark: rgb(107, 106, 106);
+  --colorTextLight: rgb(50, 50, 50);
+  --colorTextDarker: rgb(245, 245, 245);
+  --colorButtonBg: rgb(245, 245, 245);
  
-  --colorBgRGB: 4,13,33;
-  --colorTextRGB: 239,246,255;
-  --colorTextDarkRBG: 129,147,178;
-  --colorTextLightRGB: 233,233,233;
-  --colorTextDarkerRGB: 177,186,201;
-  --colorButtonBgRGB: 13,27,56;
+  --colorBgRGB: 255, 255, 255;
+  --colorTextRGB: 65, 78, 92;
+  --colorTextDarkRBG: 107, 106, 106;
+  --colorTextLightRGB: 50, 50, 50;
+  --colorTextDarkerRGB: 245, 245, 245;
+  --colorButtonBgRGB: 245, 245, 245;
 
   /* Fonts */
   --fontSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;

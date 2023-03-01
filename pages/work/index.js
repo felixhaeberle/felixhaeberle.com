@@ -32,6 +32,7 @@ WorkItem.Year = styled(Text.Mono.Dark)`
 const Wrapper = styled.div`
   .heroImage {
     max-height: 25rem;
+    filter: grayscale(100%);
     
     ${media.greaterThan('small')`
       position: relative;

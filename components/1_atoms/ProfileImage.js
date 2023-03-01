@@ -6,6 +6,10 @@ const ProfileImageWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  img {
+    border: 1px solid rgba(var(--colorTextDarkRBG),0.2) !important;
+  }
 `
 
 export default function ProfileImage() {
@@ -17,8 +21,9 @@ export default function ProfileImage() {
 
   return (
     <ProfileImageWrapper>
-      <Image 
-        src="/images/profile-2.svg" 
+      <Image
+        style={{ border: '1px solid rgba(var(--colorTextDarkRGB), 0,2)' }} 
+        src="/images/profile-nobackground.png" 
         width={imageSize ? imageSize : 275} 
         height={imageSize ? imageSize : 275}
         priority

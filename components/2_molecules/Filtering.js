@@ -89,6 +89,7 @@ class Filtering extends React.Component {
             longText={writing.teaser}
             date={writing.publishedAt}
             key={index}
+            itemNumber={index}
           />
         ))}
       </r-grid>

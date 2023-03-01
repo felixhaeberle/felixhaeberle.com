@@ -12,6 +12,10 @@ const Listing = styled.div`
   margin-top: calc(var(--rowGap)*1.5);
   padding-top: calc(var(--rowGap));
 
+  img {
+    border: 1px solid rgba(var(--colorTextDarkRBG),0.2) !important;
+  }
+
   ${media.lessThan('medium')`
     r-grid {
       grid-row-gap: calc(var(--rowGap) / 2);
@@ -45,6 +49,11 @@ export default function Studies({ page, studyList, settings }) {
             </r-cell>
             <r-cell span="5-6" span-m="5-6" class="hide-s">
               <img className="heroImage" src="/images/lineart/book.svg" />
+              <style jsx global>{`
+                .heroImage {
+                  filter: grayscale(100%);
+                }
+              `}</style>
             </r-cell>
           </r-grid>
         </Hero>

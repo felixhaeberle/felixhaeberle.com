@@ -4,6 +4,6 @@ module.exports = {
     defaultLocale: 'en-US'
   },
   images: {
-    domains: ['images.unsplash.com', 'cdn.sanity.io'],
+    domains: ['images.unsplash.com', 'cdn.sanity.io', 'i.scdn.co'],
   },
 }

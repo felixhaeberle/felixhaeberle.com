@@ -34,7 +34,7 @@ CardWritingsItem.Header = styled(CardItem.Header)`
 `
 
 
-export default function CardWritings({image, title, link, shortText, longText, date, key}) {
+export default function CardWritings({image, title, link, shortText, longText, date, itemNumber}) {
   return (
     <r-cell span="2">
       <Link href={link} passHref>
@@ -48,7 +48,7 @@ export default function CardWritings({image, title, link, shortText, longText, d
                   objectFit={'cover'} 
                   src={urlFor(image.source).width(500).url()}
                   {...( image.alt && { alt: image.alt })} 
-                  {...(key <= 3 && { priority: true })} />
+                  {...(itemNumber <= 3 && { priority: true })} />
               </CardWritingsItem.ImageWrapper>
               <CardWritingsItem.TextSmall>
                 <Date dateString={date} formatString={'dd. MMMM yyyy'}/>

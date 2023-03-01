@@ -7,19 +7,19 @@ const BlogPostImageItem = styled.div`
   width: 100%;
 
   >div {
-      position: unset !important;
+      /* position: unset !important; */
   }
 
   .image {
-      object-fit: contain;
+      /* object-fit: contain;
       width: 100% !important;
       position: relative !important;
-      height: unset !important;
+      height: unset !important; */
   }
   
-  max-width: min(800px, 100%);
+  /* max-width: min(800px, 100%);
   margin-top: calc(var(--unit)*9.375);
-  margin-bottom: calc(var(--unit)*8.125);
+  margin-bottom: calc(var(--unit)*8.125); */
 `
 
 BlogPostImageItem.Text = styled(Text.Small.Dark)`
@@ -33,7 +33,8 @@ export default function BlogPostImage({image, imageAlt, text}) {
           {...( imageAlt && { alt: imageAlt })}  
           src={urlFor(image).width(1000).quality(80).url()} 
           layout={'fill'}
-          className={'image'}  />
+          //className={'image'}  
+        />
         <BlogPostImageItem.Text>{ text }</BlogPostImageItem.Text>
       </BlogPostImageItem>
   )

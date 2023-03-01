@@ -17,6 +17,7 @@
     "date-fns": "^2.11.1",
     "gray-matter": "^4.0.2",
     "isomorphic-unfetch": "^3.1.0",
+    "motion": "^10.14.2",
     "next": "^12.0.0",
     "next-sanity": "^0.1.10",
     "parse-numeric-range": "^1.2.0",

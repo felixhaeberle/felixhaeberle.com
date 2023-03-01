@@ -31,7 +31,7 @@ CVItem.Column = styled.div`
 `
 
 const CVText = styled(Text)`
-  color: rgba(var(--colorTextRGB), 0.8);
+  //color: rgba(var(--colorTextRGB), 0.8);
   line-height: calc(var(--unit)*4);
 
   ${media.lessThan('small')`
@@ -121,7 +121,7 @@ export default function CVSection({ content }){
               ) }
             </CVItem.Column>
           )}
-          <CVText key={index}>
+          <CVText key={index} as="span">
             {item.title}, {item.placeLink ? 
             <Link href={item.placeLink} passHref>
               <a>

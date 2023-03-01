@@ -38,7 +38,7 @@ BlogPostParagraph.Italic = styled(BlogPostParagraph)`
   font-weight: 500;
   letter-spacing: -0.75px;
   font-size: 0.95em;
-  color: #F9F871;
+  color: #0f57d3;
 `
 
 BlogPostParagraph.Link = styled(BlogPostParagraph)`

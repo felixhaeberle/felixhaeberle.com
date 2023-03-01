@@ -35,6 +35,11 @@ export default function Writings({page, writings, categories, settings}) {
             </r-cell>
             <r-cell span="5-6" span-m="5-6" class="hide-s">
               <img className="heroImage" src="/images/lineart/hand.svg" />
+              <style jsx global>{`
+                .heroImage {
+                  filter: grayscale(100%);
+                }
+              `}</style>
             </r-cell>
           </r-grid>
       </Hero>

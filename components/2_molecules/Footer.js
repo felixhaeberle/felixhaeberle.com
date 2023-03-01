@@ -25,6 +25,7 @@ FooterItem.Cell = styled.div`
   height: 100%;
 
   ${media.lessThan('medium')`
+    flex-direction: column;
     margin-bottom: calc(var(--unit)*0.5);
   `}
 `
@@ -39,17 +40,19 @@ export default function Footer({ settings }) {
 
   return (
     <FooterItem>
-      {loadTime !== 0 ? (
+      {typeof window !== 'undefined' && 
         <FooterItem.Cell>
-          <FooterText.Dark>This page loaded in {loadTime}ms. </FooterText.Dark>
+          <FooterText.Dark>{`This page loaded in ${loadTime}ms.`}</FooterText.Dark>
         </FooterItem.Cell>
-      ) : null}
+      }
       <FooterItem.Cell>
         <FooterLinks links={settings.social_links.slice(0, 3)} />
       </FooterItem.Cell>
       <FooterItem.Cell>
-        <FooterText.Dark>{currentYear} © {settings.title}&nbsp;</FooterText.Dark>
-        <FooterLinks links={settings.legal_links} />
+        <FooterText.Dark>{`${currentYear} © ${settings.title}`}</FooterText.Dark>
+      </FooterItem.Cell>
+      <FooterItem.Cell>
+        <FooterLinks links={settings.legal_links} />&nbsp;
       </FooterItem.Cell>
     </FooterItem>
   )

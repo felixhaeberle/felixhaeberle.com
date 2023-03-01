@@ -2,7 +2,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import Text from './Text'
 import adjustedSyntaxStyles from '../0_helpers/syntaxStyles';
 import dynamic from "next/dynamic";
-import style from 'react-syntax-highlighter/dist/cjs/styles/prism/dracula';
+import style from 'react-syntax-highlighter/dist/cjs/styles/prism/prism';
 import styled from 'styled-components'
 
 const SyntaxHighlighterItem = styled.div`

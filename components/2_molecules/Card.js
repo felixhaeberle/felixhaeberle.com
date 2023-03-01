@@ -74,8 +74,7 @@ CardItem.ImageWrapper = styled.div`
 
   &&.preview {
     img {
-      opacity: 0.8;
-      border: 1px solid rgba(var(--colorTextDarkRBG),0.2);
+      border: 1px solid rgba(var(--colorTextDarkRBG),0.2) !important;
       transition: opacity 220ms ease-in;
       will-change: opacity;
 
