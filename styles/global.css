@@ -22,14 +22,14 @@
   --colorText: rgb(65, 78, 92);
   --colorTextDark: rgb(107, 106, 106);
   --colorTextLight: rgb(50, 50, 50);
-  --colorTextDarker: rgb(245, 245, 245);
+  --colorTextDarker: rgb(168, 168, 168);
   --colorButtonBg: rgb(245, 245, 245);
  
   --colorBgRGB: 255, 255, 255;
   --colorTextRGB: 65, 78, 92;
   --colorTextDarkRBG: 107, 106, 106;
   --colorTextLightRGB: 50, 50, 50;
-  --colorTextDarkerRGB: 245, 245, 245;
+  --colorTextDarkerRGB: 168, 168, 168;
   --colorButtonBgRGB: 245, 245, 245;
 
   /* Fonts */
