@@ -88,7 +88,7 @@ export default function Me({ page, settings }) {
               </ImageWrapper>
               <Link href="mailto:kontakt@felixhaeberle.de?subject=%F0%9F%91%8B%20Hi%2C%20lets%20talk!">
                 <a>
-                  <Button title={"Let's talk"} symbol={'Voicemail24'} autoWidth/>
+                  <Button title={"Let's talk"} symbol={'Email24'} autoWidth/>
                 </a>
               </Link>
               <SocialLinkWrapper>

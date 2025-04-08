@@ -30,7 +30,7 @@ export default function Home({ writingsList, studiesList, workList, settings }) 
           <Text.Currently>{settings.currently}</Text.Currently>
           <Link href="mailto:kontakt@felixhaeberle.de?subject=%F0%9F%91%8B%20Hi%2C%20lets%20talk!">
             <a>
-              <Button title={"Let's talk"} symbol={'Voicemail24'}/>
+              <Button title={"Let's talk"} symbol={'Email24'}/>
             </a>
           </Link>
     
