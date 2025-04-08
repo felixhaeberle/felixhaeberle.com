@@ -1,10 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   /* Into */
   --HEY_HELLO_🤙__Happy_that_you_came_here: '🏆';
   --Enjoy_the_view_and_reach_out: '📱';
   --Lets_build_something_together: '🥳';
   
-  /* General */
+  /* General - These remain for backwards compatibility */
   --fontSize: 16px;
   --unit: calc(var(--fontSize)*0.5);
 
@@ -17,7 +21,7 @@
   --column-gap-compact: calc(var(--unit)*4);
   --row-gap-compact: calc(var(--unit)*2);
 
-  /* Colors */
+  /* Colors - Kept for backwards compatibility */
   --colorBg: rgb(255, 255, 255);
   --colorText: rgb(65, 78, 92);
   --colorTextDark: rgb(107, 106, 106);
@@ -32,7 +36,7 @@
   --colorTextDarkerRGB: 168, 168, 168;
   --colorButtonBgRGB: 245, 245, 245;
 
-  /* Fonts */
+  /* Fonts - Kept for backwards compatibility */
   --fontSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   --fontMono: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier, monospace;
   --fontSizeExtraSmall: calc(var(--unit)*1.5); /* 12px */
