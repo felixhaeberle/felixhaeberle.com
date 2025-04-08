@@ -42,6 +42,7 @@
     "@storybook/addon-links": "^8.6.12",
     "@storybook/react": "^8.6.12",
     "@storybook/theming": "^8.6.12",
+    "autoprefixer": "^10.4.21",
     "babel-loader": "^10.0.0",
     "babel-plugin-prismjs": "^2.1.0",
     "babel-plugin-styled-components": "^2.1.4",
@@ -50,7 +51,8 @@
     "file-loader": "^6.2.0",
     "postcss": "^8.5.3",
     "sass-loader": "^16.0.5",
+    "storybook": "^8.6.12",
     "style-loader": "^4.0.0",
-    "storybook": "^8.6.12"
+    "tailwindcss": "^4.1.3"
   }
 }
