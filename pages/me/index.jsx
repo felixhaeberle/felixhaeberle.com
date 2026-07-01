@@ -18,22 +18,25 @@ import fetcher from '../../lib/fetcher';
 
 const storyImages = [
   {
+    src: '/images/about-story-3.jpg',
+    width: 3024,
+    height: 4032,
+    alt: 'Personal moment from Felix',
+    caption: 'Berlin, Park am Nordbahnhof',
+  },
+  {
     src: '/images/about-story-1.jpg',
     width: 4284,
     height: 5712,
     alt: 'Outdoor moment from Felix',
+    caption: 'Berliner Döner',
   },
   {
     src: '/images/about-story-2.jpg',
     width: 3024,
     height: 4032,
     alt: 'Personal visual note from Felix',
-  },
-  {
-    src: '/images/about-story-3.jpg',
-    width: 3024,
-    height: 4032,
-    alt: 'Personal moment from Felix',
+    caption: 'Twin Peaks, SF',
   },
 ]
 
@@ -119,6 +122,9 @@ export default function Me({ page, settings }) {
                     height={image.height}
                     alt={image.alt}
                   />
+                  <p className="font-mono text-xs text-textDark font-medium tracking-normal mt-3">
+                    {image.caption}
+                  </p>
                 </div>
               ))}
             </div>
