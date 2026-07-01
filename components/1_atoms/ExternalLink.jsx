@@ -2,13 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
-import dynamic from 'next/dynamic'
-
-// Dynamically import Carbon icons to ensure they're only loaded on the client
-const ArrowRight16 = dynamic(
-  () => import('@carbon/icons-react').then((mod) => mod.ArrowRight16),
-  { ssr: false, loading: () => <span className="w-4 h-4 inline-block" /> }
-)
+import { ArrowRight } from '@carbon/icons-react'
 
 export default function ExternalLink(props) {
   return (
@@ -29,7 +23,7 @@ export default function ExternalLink(props) {
       >
         {props.title}
       </span>
-      <ArrowRight16 className="external-link-icon"/>
+      <ArrowRight className="external-link-icon"/>
     </Link>
   )
 }
