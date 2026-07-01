@@ -60,7 +60,7 @@ export default function Card({image, imageAlt, title, link, text, year, date, is
       href={link} 
       target={linkTarget}
       rel={linkRel}
-      className="block"
+      className={isWork ? 'work-card-link block' : 'block'}
     >
       <div className={`
         flex flex-col 

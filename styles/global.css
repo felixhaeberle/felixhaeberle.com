@@ -295,6 +295,15 @@ img {
     display: none;
   }
 
+  .site-work-list .screenshot {
+    height: min(48vw, 220px);
+    overflow: hidden;
+  }
+
+  .work-card-link {
+    margin-bottom: calc(var(--unit) * 6);
+  }
+
 }
 
 .button-icon {
