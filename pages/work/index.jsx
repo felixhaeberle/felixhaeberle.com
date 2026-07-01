@@ -31,7 +31,7 @@ export default function Work({ page, projects, settings }) {
       <div>
         <div className="site-split site-split--hide-media-medium">
           <div className="space-y-6 md:space-y-8">
-            <h1 className="font-sans text-xl text-textLight font-medium mb-3 md:mb-4">Work</h1>
+            <h1 className="site-page-title font-sans text-xl text-textLight font-medium mb-3 md:mb-4">Work</h1>
             <Intro page={page} />
           </div>
           <div className="site-split__media">

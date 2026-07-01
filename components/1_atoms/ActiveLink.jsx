@@ -11,7 +11,7 @@ export default function ActiveLink({ children, href }) {
   // We extract the className from the child and then create a properly styled Link
   const childProps = React.Children.only(children).props
   const className = isCurrentPath ? 
-    `${childProps.className || ''} underline` : 
+    `${childProps.className || ''} font-semibold` : 
     childProps.className || ''
   
   return (

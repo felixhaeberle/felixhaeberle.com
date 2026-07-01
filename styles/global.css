@@ -275,6 +275,10 @@ img {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .site-page-title {
+    margin-top: calc(var(--unit) * 5);
+  }
+
   .site-home-hero {
     min-height: calc(100vh - calc(var(--unit) * 16));
     min-height: calc(100dvh - calc(var(--unit) * 16));
@@ -296,8 +300,16 @@ img {
   }
 
   .site-work-list .screenshot {
-    height: min(48vw, 220px);
+    aspect-ratio: 16 / 9;
+    height: auto;
     overflow: hidden;
+  }
+
+  .site-work-list .screenshot img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: calc(var(--unit) * 2.5) calc(var(--unit) * 3) 0;
   }
 
   .work-card-link {

@@ -66,7 +66,7 @@ export default function Me({ page, settings }) {
         <div className="flex flex-col gap-y-16 md:gap-y-20 lg:gap-y-24">
           <div className="site-split">
             <div className="lg:w-2/3 space-y-6 md:space-y-8">
-              <h1 className="font-sans text-xl text-textLight font-medium mb-3 md:mb-4">About</h1>
+              <h1 className="site-page-title font-sans text-xl text-textLight font-medium mb-3 md:mb-4">About</h1>
               <Intro page={page} />
             </div>
             <div>
