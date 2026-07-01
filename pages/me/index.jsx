@@ -16,6 +16,27 @@ import { getSiteSettings } from '../../lib/query/settings'
 import useSWR from 'swr';
 import fetcher from '../../lib/fetcher';
 
+const storyImages = [
+  {
+    src: '/images/about-story-1.jpg',
+    width: 4284,
+    height: 5712,
+    alt: 'Outdoor moment from Felix',
+  },
+  {
+    src: '/images/about-story-2.jpg',
+    width: 3024,
+    height: 4032,
+    alt: 'Personal visual note from Felix',
+  },
+  {
+    src: '/images/about-story-3.jpg',
+    width: 3024,
+    height: 4032,
+    alt: 'Personal moment from Felix',
+  },
+]
+
 export default function Me({ page, settings }) {
   // const nowPlaying = useSWR('/api/now-playing', fetcher);
   // const topTracks = useSWR('/api/top-tracks', fetcher);
@@ -84,6 +105,24 @@ export default function Me({ page, settings }) {
               </div>
             ))}
           </div>
+          <section className="space-y-6 md:space-y-8">
+            <p className="font-sans text-base text-text font-medium max-w-[36rem]">
+              Happy places
+            </p>
+            <div className="site-grid site-grid--three site-grid--compact">
+              {storyImages.map((image) => (
+                <div key={image.src}>
+                  <Image
+                    src={image.src}
+                    className="border border-textDark/20 w-full h-auto"
+                    width={image.width}
+                    height={image.height}
+                    alt={image.alt}
+                  />
+                </div>
+              ))}
+            </div>
+          </section>
           {cvListing.map((item, index) => (
             <CVSection key={index} content={item} />
           ))}
