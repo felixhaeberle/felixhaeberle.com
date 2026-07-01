@@ -1,7 +1,6 @@
 /* Global CSS */
 import '../styles/global.css'
 /* Grid */
-import '../styles/raster2.css'
 /* Prism.js Syntax Highlighter */
 import "../styles/prism-dracula.css";
 

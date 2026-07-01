@@ -9,9 +9,7 @@
     "clean": "rm -rf .next",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "type-check": "tsc --noEmit",
-    "storybook": "storybook dev -p 6006 -s ./",
-    "storybook:build": "storybook build"
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@carbon/icons-react": "^11.57.0",
@@ -20,6 +18,7 @@
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/image-url": "^1.1.0",
     "date-fns": "^4.1.0",
+    "fast-xml-parser": "^5.3.3",
     "gray-matter": "^4.0.3",
     "isomorphic-unfetch": "^4.0.2",
     "motion": "^12.6.3",
@@ -40,11 +39,6 @@
   "devDependencies": {
     "@babel/core": "^7.26.10",
     "@eslint/js": "^9.0.0",
-    "@storybook/addon-actions": "^8.6.12",
-    "@storybook/addon-essentials": "^8.6.12",
-    "@storybook/addon-links": "^8.6.12",
-    "@storybook/react": "^8.6.12",
-    "@storybook/theming": "^8.6.12",
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^22.14.0",
@@ -55,7 +49,6 @@
     "autoprefixer": "^10.4.21",
     "babel-loader": "^10.0.0",
     "babel-plugin-prismjs": "^2.1.0",
-    "chromatic": "^11.28.0",
     "css-loader": "^7.1.2",
     "eslint": "^9.24.0",
     "eslint-plugin-import": "^2.31.0",
@@ -64,7 +57,6 @@
     "file-loader": "^6.2.0",
     "postcss": "^8.5.3",
     "sass-loader": "^16.0.5",
-    "storybook": "^8.6.12",
     "style-loader": "^4.0.0",
     "tailwindcss": "3.4.1",
     "typescript": "^5.8.3",

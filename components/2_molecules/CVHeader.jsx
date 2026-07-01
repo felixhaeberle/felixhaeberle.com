@@ -1,5 +1,4 @@
 import React from 'react'
-import Text from '../1_atoms/Text.jsx'
 
 export default function CVHeader({title, className}){
   return (
@@ -9,9 +8,9 @@ export default function CVHeader({title, className}){
       pt-[calc(var(--unit)*2.5)]
       ${className || ''}
     `}>
-      <Text.Mono.Dark className="m-0">
+      <p className="font-mono text-lg text-text font-medium tracking-custom uppercase mb-unit-4.5 text-textDark m-0">
         {title}
-      </Text.Mono.Dark>
+      </p>
     </div>
   )
 }

@@ -14,17 +14,22 @@ export default function Studies({ page, studyList, settings }) {
       </Head>
       <div>
         <div>
-          <r-grid columns="6">
-            <r-cell span="1-2" span-m="1-4" span-s="1-6">
+          <div className="site-split site-split--hide-media-medium">
+            <div className="space-y-6 md:space-y-8">
+              <h1 className="font-sans text-xl text-textLight font-medium mb-3 md:mb-4">Studies</h1>
               <Intro page={page} />
-            </r-cell>
-            <r-cell span="5-6" span-m="5-6" className="md:block hidden">
-              <img className="grayscale" src="/images/lineart/book.svg" alt="Book illustration" />
-            </r-cell>
-          </r-grid>
+            </div>
+            <div className="site-split__media">
+              <img
+                className="site-split__image"
+                src="/images/lineart/book.svg"
+                alt="Book illustration"
+              />
+            </div>
+          </div>
         </div>
-        <div className="mt-[calc(var(--rowGap)*1.5)] pt-row-gap">
-          <r-grid columns="10" columns-s="1" className="md:gap-y-[calc(var(--rowGap)/2)]">
+        <div className="site-study-list">
+          <div className="flex flex-col gap-y-12 md:gap-y-16">
             {studyList.map(({ title, description, image, imageAlt, publishedAt, externalLink }, index) => (
               <CardStudies  
                 date={publishedAt} 
@@ -36,7 +41,7 @@ export default function Studies({ page, studyList, settings }) {
                 key={index}
                 index={index} />
             ))}
-          </r-grid>
+          </div>
         </div>
       </div>
     </Layout>

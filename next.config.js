@@ -5,7 +5,7 @@ const nextConfig = {
     defaultLocale: 'en-US'
   },
   images: {
-    domains: ['images.unsplash.com', 'cdn.sanity.io', 'i.scdn.co'],
+    domains: ['images.unsplash.com', 'cdn.sanity.io', 'i.scdn.co', 'substackcdn.com'],
   },
   // Configure webpack for proper file resolution
   webpack: (config, { isServer }) => {

@@ -1,7 +1,6 @@
 import React from 'react'
 import Button from '../1_atoms/Button.tsx'
 import CardWritings from './CardWritings.jsx'
-import Text from '../1_atoms/Text.jsx'
 
 class Filtering extends React.Component {
   constructor(props) {
@@ -26,7 +25,7 @@ class Filtering extends React.Component {
       writings = this.props.writings;
     } else {
       writings = this.props.writings.filter((writing) => {  
-        const writingCategories = writing.categories.map((category) => category.handle)
+        const writingCategories = (writing.categories || []).map((category) => category.handle)
         if (writingCategories.some(r=> this.state.filter.includes(r))){
           return writing
         }
@@ -42,7 +41,7 @@ class Filtering extends React.Component {
       <div>
         {/* Filtering */}
         <div className="block mt-[calc(var(--unit)*12.5)]"> 
-          <Text.Mono.Dark>Filter by category</Text.Mono.Dark>
+          <p className="font-mono text-lg text-text font-medium tracking-custom uppercase mb-unit-4.5 text-textDark">Filter by category</p>
           <div className="flex flex-wrap max-w-[90%]">
             {this.props.categories.map((category, index) => (
               <div key={index} className="mr-[calc(var(--unit)*2.5)] mb-[calc(var(--unit)*2.5)]">
@@ -57,20 +56,26 @@ class Filtering extends React.Component {
           </div>
         </div>
         {/* Writing List */}
-        <r-grid columns="6" columns-s="2" columns-xs="1" className="mt-[calc(var(--unit)*7.5)]">
+        <div className="
+          mt-[calc(var(--unit)*7.5)]
+          flex flex-wrap
+          gap-6 md:gap-8 lg:gap-12
+        ">
           {writings.map((writing, index) => (
-            <CardWritings
-              image={{source: writing.image, alt: writing.imageAlt }} 
-              title={writing.title}
-              link={'/writings/' + writing.slug}
-              shortText={writing.teaserSmall}
-              longText={writing.teaser}
-              date={writing.publishedAt}
-              key={index}
-              itemNumber={index}
-            />
+            <div key={index} className="w-full sm:flex-[0_0_calc(50%-1.5rem)] lg:flex-[0_0_calc(33.333%-2rem)]">
+              <CardWritings
+                image={writing.image}
+                imageAlt={writing.imageAlt}
+                title={writing.title}
+                text={writing.teaserSmall || writing.teaser}
+                link={writing.externalLink || '/writings/' + writing.slug}
+                isExternal={Boolean(writing.externalLink)}
+                date={writing.publishedAt}
+                itemNumber={index}
+              />
+            </div>
           ))}
-        </r-grid>
+        </div>
       </div>
     )
   } 

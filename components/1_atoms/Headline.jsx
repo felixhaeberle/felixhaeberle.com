@@ -1,10 +1,9 @@
 import React from 'react'
-import Text from './Text.jsx'
-
 export function Headline({ children, className, ...props }) {
   return (
-    <Text 
+    <p 
       className={`
+        font-sans text-base text-text font-medium
         text-[calc(var(--unit)*3.5)] 
         leading-[1.3] 
         mb-[calc(var(--unit)*4)]
@@ -13,7 +12,7 @@ export function Headline({ children, className, ...props }) {
       {...props}
     >
       {children}
-    </Text>
+    </p>
   )
 }
 

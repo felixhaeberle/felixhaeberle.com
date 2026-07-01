@@ -1,6 +1,5 @@
 import React from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import Text from './Text.jsx'
 import adjustedSyntaxStyles from '../0_helpers/syntaxStyles';
 import style from 'react-syntax-highlighter/dist/cjs/styles/prism/prism';
 
@@ -24,9 +23,9 @@ export default function Syntax({ langCode, code }) {
         bg-buttonBg/70
         rounded-t-lg
       ">
-        <Text.Mono.Dark className="mb-0">
+        <span className="font-mono text-lg text-text font-medium tracking-custom uppercase text-textDark mb-0">
           {langCodeUppercase}
-        </Text.Mono.Dark>
+        </span>
       </span>
       <pre className="w-full h-[min(450px,100%)] overflow-y-scroll">
         <SyntaxHighlighter 

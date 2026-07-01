@@ -1,4 +1,3 @@
-import { format, parseISO } from 'date-fns'
 import dynamic from 'next/dynamic'
 
 import Button from '../components/1_atoms/Button.jsx'
@@ -7,7 +6,7 @@ import Head from 'next/head'
 import Layout from '../components/4_templates/Layout.jsx'
 import Link from 'next/link'
 import List from '../components/1_atoms/List.jsx'
-import Text from '../components/1_atoms/Text.jsx'
+import ProfileImage from '../components/1_atoms/ProfileImage.jsx'
 import { getSiteSettings } from '../lib/query/settings'
 import { getStudies } from '../lib/query/studies'
 import { getWork } from '../lib/query/work'
@@ -19,11 +18,7 @@ const Stack = dynamic(() => import('../components/2_molecules/Stack.jsx'), {
   loading: () => <div className="py-20 text-center">Loading stack...</div>
 })
 
-// Using Tailwind classes instead of styled components
-const CurrentlyText = ({ children, ...props }) => (
-  <Text className="mb-[calc(var(--unit)*4.5)]" {...props}>{children}</Text>
-)
-Text.Currently = CurrentlyText
+const frontpageHeroText = 'Hi, I’m Felix — a design engineer building tasteful AI products and interfaces.'
 
 export default function Home({ writingsList, studiesList, workList, settings }) {
   return (
@@ -31,31 +26,44 @@ export default function Home({ writingsList, studiesList, workList, settings }) 
       <Head>
         <title>{settings?.site_title || 'Felix Häberle'}</title>
       </Head>
-      <r-grid columns="6" columns-m="6" columns-xs="2">
-        <r-cell span="2" span-m="3" span-s="6">
-          <Text.Mono.Dark>Currently</Text.Mono.Dark>
-          <Text.Currently>{settings?.currently}</Text.Currently>
+      <section className="
+        site-home-hero
+        flex flex-col lg:flex-row lg:items-center lg:justify-between
+        gap-y-6 md:gap-y-8
+        gap-x-8 md:gap-x-12 lg:gap-x-16
+      ">
+        <h1 className="font-sans text-xl text-textLight font-medium max-w-[90%] lg:max-w-[60%]">
+          {frontpageHeroText}
+        </h1>
+        <ProfileImage />
+      </section>
+      <div className="site-grid site-grid--three">
+        <div>
+          <p className="font-mono text-lg text-text font-medium tracking-custom uppercase mb-unit-4.5 text-textDark">Currently</p>
+          <p className="font-sans text-base text-text font-medium mb-[calc(var(--unit)*4.5)]">{settings?.currently}</p>
           <Link href="mailto:kontakt@felixhaeberle.de?subject=%F0%9F%91%8B%20Hi%2C%20lets%20talk!">
-            <Button title={"Let's talk"} symbol={'Voicemail24'}/>
+            <Button title={"Let's talk"} symbol={'Voicemail'}/>
           </Link>
     
-          <Text.Mono.Dark>Work</Text.Mono.Dark>
+          <p className="font-mono text-lg text-text font-medium tracking-custom uppercase mb-unit-4.5 text-textDark">Work</p>
           <List>
             {workList?.slice(0, 5).map((work, index) => (
-              <List.Item key={index}>
-                <Card link={work.link} 
-                      year={work.releasedAt} 
-                      title={work.title}
-                      text={work.description} />
+              <List.Item key={work._id || index}>
+                <Card
+                  link={work.link}
+                  title={work.title}
+                  text={work.description}
+                  year={work.releasedAt}
+                />
               </List.Item>
             ))}
           </List>
           <Link href="/work">
             <Button title={'Explore all ' + workList?.length + ' projects'} symbol={'ArrowRight24'}/>
           </Link>
-        </r-cell >
-        <r-cell span="2" span-m="3" span-s="6">
-          <Text.Mono.Dark>Studies</Text.Mono.Dark>
+        </div>
+        <div>
+          <p className="font-mono text-lg text-text font-medium tracking-custom uppercase mb-unit-4.5 text-textDark">Studies</p>
           <List>
             {studiesList?.slice(0, 3).map((study, index) => (
               <List.Item key={index}>
@@ -64,21 +72,23 @@ export default function Home({ writingsList, studiesList, workList, settings }) 
                       text={study.description}
                       image={study.image}
                       imageAlt={study.imageAlt}
-                      isStudy />
+                      isStudy
+                      imageSpacing="mb-unit-3" />
               </List.Item>
             ))}
           </List>
           <Link href="/studies">
             <Button title={'Explore all ' + studiesList?.length + ' studies'} symbol={'ArrowRight24'}/>
           </Link>
-        </r-cell>
-        <r-cell span="2" span-m="6">
-          <Text.Mono.Dark>Writings</Text.Mono.Dark>
-          <List responsiveColumnView>
+        </div>
+        <div className="site-grid__full-medium lg:col-auto">
+          <p className="font-mono text-lg text-text font-medium tracking-custom uppercase mb-unit-4.5 text-textDark">Writings</p>
+          <List>
             {writingsList?.slice(0, 5).map((writing, index) => (
-              <List.Item key={index} responsiveColumnView>
-                <Card link={`/writings/${writing.slug}`} 
-                      date={writing.publishedAt} 
+              <List.Item key={index}>
+                <Card link={writing.externalLink || `/writings/${writing.slug}`}
+                      isExternal={Boolean(writing.externalLink)}
+                      date={writing.publishedAt}
                       title={writing.title}
                       text={writing.teaser} />
               </List.Item>
@@ -87,8 +97,8 @@ export default function Home({ writingsList, studiesList, workList, settings }) 
           <Link href="/writings">
             <Button title={'Explore all ' + writingsList?.length + ' writings'} symbol={'ArrowRight24'}/>
           </Link>
-        </r-cell>
-      </r-grid>
+        </div>
+      </div>
       <Stack />
     </Layout>
   )

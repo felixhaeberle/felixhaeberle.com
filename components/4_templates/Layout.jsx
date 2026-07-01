@@ -39,8 +39,8 @@ export default function Layout({ children, settings, home, pageTitle }) {
         <meta name="description" content={pageTitle ? ('Felix Häberle – '  + pageTitle) : 'Felix Häberle – Portfolio'} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <Header home={home} settings={siteSettings} pageTitle={pageTitle}/>
-      <main>{children}</main>
+      <Header settings={siteSettings} />
+      <main className="space-y-16 md:space-y-20 lg:space-y-24">{children}</main>
       <Footer settings={siteSettings}/>
     </div>
   )

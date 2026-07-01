@@ -1,5 +1,4 @@
 import React from 'react'
-import Text from './Text'
 import { ArrowRight, Email, Voicemail } from '@carbon/icons-react'
 
 interface ButtonItemTextProps {
@@ -11,9 +10,12 @@ interface ButtonItemTextProps {
 
 export const ButtonItemText: React.FC<ButtonItemTextProps> = ({ children, className = '', ...props }) => {
   return (
-    <Text className={`text-textDark ${className}`} {...props}>
+    <span
+      className={`font-sans text-base text-text font-medium text-textDark ${className}`}
+      {...props}
+    >
       {children}
-    </Text>
+    </span>
   )
 }
 

@@ -1,10 +1,9 @@
 import React from 'react'
-import Text from './Text.jsx'
-
 export function BlogPostParagraph({ children, className, ...props }) {
   return (
-    <Text 
+    <p 
       className={`
+        font-sans text-base text-text font-medium
         font-normal 
         text-[calc(var(--unit)*2.25)] 
         leading-[calc(var(--unit)*3.75)] 
@@ -14,7 +13,7 @@ export function BlogPostParagraph({ children, className, ...props }) {
       {...props}
     >
       {children}
-    </Text>
+    </p>
   )
 }
 

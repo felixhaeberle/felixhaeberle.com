@@ -1,5 +1,4 @@
 import React from 'react'
-import Text from './Text.jsx'
 import { urlFor } from '../../lib/sanity'
 
 export default function BlogPostImage({image, imageAlt, text}) {
@@ -15,9 +14,9 @@ export default function BlogPostImage({image, imageAlt, text}) {
         src={urlFor(image).width(1000).quality(80).url()} 
         className="object-cover w-full" 
       />
-      <Text.Small.Dark className="mt-[calc(var(--unit)*2)]">
+      <p className="font-sans text-sm text-text leading-small-text font-medium text-textDark mt-[calc(var(--unit)*2)]">
         {text}
-      </Text.Small.Dark>
+      </p>
     </div>
   )
 }

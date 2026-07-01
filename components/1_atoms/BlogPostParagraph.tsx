@@ -1,13 +1,13 @@
 import React from 'react'
-import Text from './Text'
 import { BaseProps } from '../../types/components'
 
 interface BlogPostParagraphProps extends BaseProps {}
 
 export function BlogPostParagraph({ children, className, ...props }: BlogPostParagraphProps) {
   return (
-    <Text 
+    <p 
       className={`
+        font-sans text-base text-text font-medium
         font-normal 
         text-[calc(var(--unit)*2.25)] 
         leading-[calc(var(--unit)*3.75)] 
@@ -17,7 +17,7 @@ export function BlogPostParagraph({ children, className, ...props }: BlogPostPar
       {...props}
     >
       {children}
-    </Text>
+    </p>
   )
 }
 

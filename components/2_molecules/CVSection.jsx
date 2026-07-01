@@ -2,18 +2,22 @@ import React from 'react'
 import CVHeader from "./CVHeader"
 import Date from '../0_helpers/date'
 import Link from 'next/link'
-import Text from '../1_atoms/Text'
 import { useMediaQuery } from '../0_helpers/viewport'
 
 export default function CVSection({ content }){
   const isSmallBreakpoint = useMediaQuery(640) // mediaSizes.small * 16 (base font size)
 
   return(
-    <>
-      <r-cell className="cv-section header" span="2" span-m="row">
+    <div className="
+      flex flex-col lg:flex-row
+      gap-x-8 md:gap-x-12 lg:gap-x-16
+      gap-y-8 md:gap-y-10
+      mt-12 md:mt-16 lg:mt-20 first:mt-0
+    ">
+      <div className="lg:w-1/3">
         <CVHeader title={content.title}/>
-      </r-cell>
-      <r-cell className="cv-section" span="4" span-m="6">
+      </div>
+      <div className="lg:w-2/3">
       {content.data?.map((item, index) => (
         <div 
           key={index}
@@ -25,53 +29,53 @@ export default function CVSection({ content }){
         >
           {isSmallBreakpoint ? (
             <div className="mr-0">
-              <Text.Small.Dark as="span">
+              <span className="font-sans text-sm text-text leading-small-text font-medium text-textDark">
                 <Date dateString={item.startDate} formatString={'MMM, yy'}></Date>
-              </Text.Small.Dark>
-              <Text.Small.Dark as="span"> – </Text.Small.Dark>
+              </span>
+              <span className="font-sans text-sm text-text leading-small-text font-medium text-textDark"> – </span>
               { item.ongoing ? (
                 <>
-                  <Text.Small.Dark as="span">
+                  <span className="font-sans text-sm text-text leading-small-text font-medium text-textDark">
                     {'Ongoing'}
-                  </Text.Small.Dark><br/>
+                  </span><br/>
                 </>
               ) : (
                 item.endDate ? (
                   <>
-                    <Text.Small.Dark as="span">
+                    <span className="font-sans text-sm text-text leading-small-text font-medium text-textDark">
                       <Date dateString={item.endDate} formatString={'MMM, yyyy'}></Date>
-                    </Text.Small.Dark><br/>
+                    </span><br/>
                   </>
                 ) : null
               ) }
             </div>
           ) : (
-            <div className="mr-[var(--columnGap)] min-w-[150px] sm:mr-0">
-              <Text.Small.Dark as="span">
+            <div className="mr-8 md:mr-12 lg:mr-16 min-w-[150px] sm:mr-0">
+              <span className="font-sans text-sm text-text leading-small-text font-medium text-textDark">
                 <Date dateString={item.startDate} formatString={'MMM, yyyy'}></Date>
-              </Text.Small.Dark>
-              <Text.Small.Dark as="span"> – </Text.Small.Dark>
+              </span>
+              <span className="font-sans text-sm text-text leading-small-text font-medium text-textDark"> – </span>
               { item.ongoing ? (
                 <>
-                  <Text.Small.Dark as="span">
+                  <span className="font-sans text-sm text-text leading-small-text font-medium text-textDark">
                     {'Ongoing'}
-                  </Text.Small.Dark><br/>
+                  </span><br/>
                 </>
               ) : (
                 item.endDate ? (
                   <>
-                    <Text.Small.Dark as="span">
+                    <span className="font-sans text-sm text-text leading-small-text font-medium text-textDark">
                       <Date dateString={item.endDate} formatString={'MMM, yyyy'}></Date>
-                    </Text.Small.Dark><br/>
+                    </span><br/>
                   </>
                 ) : null
               ) }
             </div>
           )}
-          <Text 
-            key={index} 
-            as="span"
+          <span
+            key={index}
             className="
+              font-sans text-base text-text font-medium
               leading-[calc(8px*4)]
               sm:leading-[calc(8px*3)]
             "
@@ -83,21 +87,20 @@ export default function CVSection({ content }){
             >
               {item.place}
             </Link> : item.place}, {item.location}
-            <Text 
-              as="div"
+            <div
               className="
-              font-normal 
+              font-sans text-base text-text font-normal
               leading-[calc(8px*3.75)] 
               mt-[calc(8px*1.25)] 
               mb-[calc(8px*2.75)]
               sm:leading-[calc(8px*3.25)]
               sm:text-sm
-            ">{item.text}</Text>
-          </Text>
+            ">{item.text}</div>
+          </span>
        
         </div>
       ))}
-      </r-cell>
-    </>
+      </div>
+    </div>
   )
 }

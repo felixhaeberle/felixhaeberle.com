@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react'
 import ExternalLink from '../1_atoms/ExternalLink.jsx'
 import Image from 'next/image'
-import Text from '../1_atoms/Text.jsx'
 
 /**
  * Client-side only wrapper component
@@ -60,100 +59,64 @@ function StackContent() {
 
   return (
     <div className="
-      flex flex-row 
-      my-[calc(8px*8.75)] 
-      py-[calc(8px*3.75)] px-[calc(8px*3.375)]
+      site-stack
+      my-16 md:my-20
+      py-10 md:py-12 px-8 md:px-10
       bg-buttonBg border border-textDark/20
-      [&_r-grid]:w-full [&_r-grid]:grid-row-gap-[calc(var(--rowGap)*0.75)]
     ">
-      <r-grid columns="6" columns-m="6" columns-xs="2">
-        <r-cell span="2" span-s="6">
-          {/* Text */}
-          <div className="[&>p]:max-w-[calc(8px*43.75)] [&>p]:mb-[calc(8px*3.75)] [&>p.mono]:mb-[calc(8px*3.5)]">
-            <Text.Mono.Dark>The Stack</Text.Mono.Dark>
-            <Text.Small.Dark>This website is an evolving experiment. I decided to open-source it – helping people all around the world learning how to code. If you have any questions to the stack feel free to ask in an issue.</Text.Small.Dark>
-            <ExternalLink title="github" link="https://github.com/felixhaeberle" />
-          </div>
-        </r-cell>
-        <r-cell span="4" span-s="6">
-          {/* Logos */}
-          <div className="
-            flex flex-row justify-evenly items-center h-full
-            sm:flex-wrap
+      {/* Text */}
+      <div className="[&>p]:max-w-[calc(8px*43.75)] [&>p]:mb-6 md:[&>p]:mb-8">
+        <p className="font-mono text-lg text-text font-medium tracking-custom uppercase mb-unit-4.5 text-textDark">The Stack</p>
+        <p className="font-sans text-sm text-text leading-small-text font-medium text-textDark">This website is an evolving experiment. I decided to open-source it – helping people all around the world learning how to code. If you have any questions to the stack feel free to ask in an issue.</p>
+        <ExternalLink title="github" link="https://github.com/felixhaeberle" />
+      </div>
+      {/* Logos */}
+      <div className="site-stack__logos">
+        <div className="site-stack__logo">
+          <Image src="/images/stack/logos/carbon.svg" height={imageSize} width={imageSize} alt="Carbon" />
+          <p className="
+            font-sans text-sm text-text leading-small-text font-medium text-textDark
+            mt-[calc(8px*2.625)]
+            max-w-[calc(8px*12.5)]
+            text-center
           ">
-            <div className="
-              flex flex-col items-center justify-center 
-              filter grayscale 
-              sm:w-1/3 sm:mt-[calc(8px*2.5)]
-            ">
-              <Image src="/images/stack/logos/carbon.svg" height={imageSize} width={imageSize} alt="Carbon" />
-              <Text.Small.Dark className="
-                mt-[calc(8px*2.625)] 
-                max-w-[calc(8px*12.5)]
-                text-center
-              ">
-                Carbon
-              </Text.Small.Dark>
-            </div>
-            <div className="
-              flex flex-col items-center justify-center 
-              filter grayscale 
-              sm:w-1/3 sm:mt-[calc(8px*2.5)]
-            ">
-              <Image src="/images/stack/logos/sanity.svg" height={imageSize} width={imageSize} alt="Sanity" />
-              <Text.Small.Dark className="
-                mt-[calc(8px*2.625)] 
-                max-w-[calc(8px*12.5)]
-                text-center
-              ">
-                Sanity
-              </Text.Small.Dark>
-            </div>
-            <div className="
-              flex flex-col items-center justify-center 
-              filter grayscale 
-              sm:w-1/3 sm:mt-[calc(8px*2.5)]
-            ">
-              <Image src="/images/stack/logos/next.svg" height={imageSize} width={imageSize} alt="Next" />
-              <Text.Small.Dark className="
-                mt-[calc(8px*2.625)] 
-                max-w-[calc(8px*12.5)]
-                text-center
-              ">
-                Next.js
-              </Text.Small.Dark>
-            </div>
-            <div className="
-              flex flex-col items-center justify-center 
-              filter grayscale 
-              sm:w-1/3 sm:mt-[calc(8px*2.5)]
-            ">
-              <Image src="/images/stack/logos/styled-components.svg" height={imageSize} width={imageSize} alt="Styled" />
-              <Text.Small.Dark className="
-                mt-[calc(8px*2.625)] 
-                max-w-[calc(8px*12.5)]
-                text-center
-              ">
-                Tailwind CSS
-              </Text.Small.Dark>
-            </div>
-            <div className="
-              flex flex-col items-center justify-center 
-              filter grayscale 
-              sm:w-1/3 sm:mt-[calc(8px*2.5)]
-            ">
-              <Image src="/images/stack/logos/storybook.svg" height={imageSize} width={imageSize} alt="Storybook" />
-              <Text.Small.Dark className="
-                mt-[calc(8px*2.625)] 
-                max-w-[calc(8px*12.5)]
-                text-center
-              ">
-                Storybook
-              </Text.Small.Dark>
-            </div>
-          </div>
-        </r-cell>
-      </r-grid>
+            Carbon
+          </p>
+        </div>
+        <div className="site-stack__logo">
+          <Image src="/images/stack/logos/sanity.svg" height={imageSize} width={imageSize} alt="Sanity" />
+          <p className="
+            font-sans text-sm text-text leading-small-text font-medium text-textDark
+            mt-[calc(8px*2.625)]
+            max-w-[calc(8px*12.5)]
+            text-center
+          ">
+            Sanity
+          </p>
+        </div>
+        <div className="site-stack__logo">
+          <Image src="/images/stack/logos/next.svg" height={imageSize} width={imageSize} alt="Next" />
+          <p className="
+            font-sans text-sm text-text leading-small-text font-medium text-textDark
+            mt-[calc(8px*2.625)]
+            max-w-[calc(8px*12.5)]
+            text-center
+          ">
+            Next.js
+          </p>
+        </div>
+        <div className="site-stack__logo">
+          <Image src="/images/stack/logos/styled-components.svg" height={imageSize} width={imageSize} alt="Styled" />
+          <p className="
+            font-sans text-sm text-text leading-small-text font-medium text-textDark
+            mt-[calc(8px*2.625)]
+            max-w-[calc(8px*12.5)]
+            text-center
+          ">
+            Tailwind CSS
+          </p>
+        </div>
+      </div>
     </div>
   )
 }

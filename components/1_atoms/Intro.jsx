@@ -1,6 +1,5 @@
 import React from 'react'
 import BlockContent from '@sanity/block-content-to-react'
-import Text from './Text.jsx'
 
 export default function Intro({ page }){
   const serializers = {
@@ -8,7 +7,11 @@ export default function Intro({ page }){
       block: props => {
         switch (props.node.style) {
           default:
-            return <Text.Intro>{props.children}</Text.Intro>
+            return (
+              <p className="font-sans text-base text-text font-normal leading-normal mb-unit-1.5">
+                {props.children}
+              </p>
+            )
         }
       }
     }

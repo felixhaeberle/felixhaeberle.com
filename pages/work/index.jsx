@@ -6,7 +6,6 @@ import Date from '../../components/0_helpers/date.jsx'
 import Head from 'next/head'
 import Intro from '../../components/1_atoms/Intro.jsx'
 import Layout from '../../components/4_templates/Layout.jsx'
-import Text from '../../components/1_atoms/Text.jsx'
 import { getPage } from '../../lib/query/page'
 import { getSiteSettings } from '../../lib/query/settings'
 import { getWork } from '../../lib/query/work'
@@ -14,10 +13,12 @@ import { getWork } from '../../lib/query/work'
 // Define the WorkItem components
 const WorkItem = {
   Year: ({ children }) => (
-    <Text.Mono.Dark className="py-[calc(var(--unit)*3)] mb-unit-2">{children}</Text.Mono.Dark>
+    <p className="font-mono text-lg text-text font-medium tracking-custom uppercase mb-unit-4.5 text-textDark py-[calc(var(--unit)*1)] mb-[calc(var(--unit)*0.75)]">
+      {children}
+    </p>
   ),
   Wrapper: ({ children }) => (
-    <div className="mt-[calc(var(--rowGap)*1.5)] pt-row-gap">{children}</div>
+    <div className="site-work-list">{children}</div>
   )
 };
 
@@ -28,16 +29,21 @@ export default function Work({ page, projects, settings }) {
         <title>Work</title>
       </Head>
       <div>
-        <r-grid columns="6">
-          <r-cell span="1-2" span-m="1-4" span-s="1-6">
+        <div className="site-split site-split--hide-media-medium">
+          <div className="space-y-6 md:space-y-8">
+            <h1 className="font-sans text-xl text-textLight font-medium mb-3 md:mb-4">Work</h1>
             <Intro page={page} />
-          </r-cell>
-          <r-cell span="5-6" span-m="5-6" className="md:block hidden">
-            <img className="heroImage" src="/images/lineart/phone.svg" alt="Phone illustration" />
-          </r-cell>
-        </r-grid>
+          </div>
+          <div className="site-split__media">
+            <img
+              className="site-split__image heroImage"
+              src="/images/lineart/phone.svg"
+              alt="Phone illustration"
+            />
+          </div>
+        </div>
         <WorkItem.Wrapper>
-          <r-grid columns="6" columns-m="6" columns-s="2" className="work-grid">
+          <div className="site-grid site-grid--three site-grid--compact">
             {projects.map(({ title, description, link, releasedAt, image, imageAlt }, index, arr) => {
               // Is it a new year?
               let newYear = false;
@@ -50,9 +56,15 @@ export default function Work({ page, projects, settings }) {
               return(
                 <React.Fragment key={index}>
                   {/* Year */}
-                  {newYear ? <r-cell span="row"><WorkItem.Year><Date dateString={releasedAt} formatString={'yyyy'}/></WorkItem.Year></r-cell> : ''}
+                  {newYear ? (
+                    <div className="site-grid__full">
+                      <WorkItem.Year>
+                        <Date dateString={releasedAt} formatString={'yyyy'}/>
+                      </WorkItem.Year>
+                    </div>
+                  ) : null}
                   {/* Project */}
-                  <r-cell span="2" span-m="3" span-s="2">
+                  <div>
                     <Card 
                       link={link}
                       title={title}
@@ -61,11 +73,11 @@ export default function Work({ page, projects, settings }) {
                       image={image}
                       imageAlt={imageAlt}
                       isWork />
-                  </r-cell>
+                  </div>
                 </React.Fragment>
               )
             })}
-          </r-grid>
+          </div>
         </WorkItem.Wrapper>
       </div>
     </Layout>
@@ -87,4 +99,4 @@ export async function getStaticProps() {
       settings: siteSettings
     }
   }
-} 
+}

@@ -2,7 +2,6 @@
 
 import React from 'react'
 import Link from 'next/link'
-import Text from './Text.jsx'
 import dynamic from 'next/dynamic'
 
 // Dynamically import Carbon icons to ensure they're only loaded on the client
@@ -32,15 +31,16 @@ const ExternalLink: React.FC<ExternalLinkProps> = ({
       target={target}
       rel={rel}
     >
-      <Text.Mono.Dark 
+      <span
         className="
-          text-sm normal-case font-normal 
-          tracking-normal mb-0 mr-[calc(8px*1)]
+          font-mono text-lg text-text font-medium tracking-custom uppercase
+          text-textDark text-sm normal-case font-normal tracking-normal
+          mb-0 mr-[calc(8px*1)]
           hover:cursor-pointer
         "
       >
         {title}
-      </Text.Mono.Dark>
+      </span>
       <ArrowRight16 className="external-link-icon"/>
     </Link>
   )

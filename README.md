@@ -13,9 +13,6 @@ pnpm install
 # Run development server
 pnpm -w run dev
 
-# Run Storybook
-pnpm -w run storybook
-
 # Build for production
 pnpm -w run build
 ```

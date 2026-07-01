@@ -11,7 +11,6 @@ import Intro from '../../components/1_atoms/Intro.jsx'
 import Layout from '../../components/4_templates/Layout.jsx'
 import Link from 'next/link'
 import Principle from '../../components/2_molecules/Principle.jsx'
-import Text from '../../components/1_atoms/Text.jsx'
 import { getPage } from '../../lib/query/page'
 import { getSiteSettings } from '../../lib/query/settings'
 import useSWR from 'swr';
@@ -40,83 +39,57 @@ export default function Me({ page, settings }) {
         <title>About</title>
       </Head>
       <div>
-        <div>
-          <r-grid columns="6">
-            <r-cell span="4" flow-cols="2" span-m="4" flow-cols-m="1" span-s="6">
+        <div className="flex flex-col gap-y-16 md:gap-y-20 lg:gap-y-24">
+          <div className="site-split">
+            <div className="lg:w-2/3 space-y-6 md:space-y-8">
+              <h1 className="font-sans text-xl text-textLight font-medium mb-3 md:mb-4">About</h1>
               <Intro page={page} />
-            </r-cell>
-            <r-cell span="2" span-m="2" span-s="6" className="cv-image">
-              <div className="mb-unit-4.5">
-                <Image 
-                  src="/images/profile-nobackground.png" 
-                  className="avatar border border-textDark/20 brightness-80 opacity-85" 
-                  width={600} 
-                  height={600}
-                  alt="Profile picture" 
-                />
-              </div>
-              <Link href="mailto:kontakt@felixhaeberle.de?subject=%F0%9F%91%8B%20Hi%2C%20lets%20talk!" className="block">
-                <Button title={"Let's talk"} symbol={'Email'} autoWidth/>
-              </Link>
-              <div className="flex justify-between md:flex-col md:space-y-unit sm:flex-row sm:space-y-0">
-                {settings.social_links.map(({link, text}, index) => (
-                  <Link 
-                    href={link} 
-                    key={index} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="block"
-                  >
-                    <Text>{text}</Text>
+            </div>
+            <div>
+              <div className="site-about-aside flex flex-col gap-y-6 md:gap-y-8">
+                <div className="site-about-image">
+                  <Image
+                    src="/images/profile.png"
+                    className="avatar border border-textDark/20 w-full h-auto"
+                    width={1364}
+                    height={1310}
+                    alt="Profile picture"
+                  />
+                </div>
+                <div className="flex flex-col gap-y-4 md:gap-y-5">
+                  <Link href="mailto:kontakt@felixhaeberle.de?subject=%F0%9F%91%8B%20Hi%2C%20lets%20talk!" className="block w-full">
+                    <Button title={"Let's talk"} symbol={'Email'} autoWidth/>
                   </Link>
-                ))}
-              </div>
-            </r-cell>
-            {settings.cards.map((card, index) => (
-              <r-cell key={index} span="2" span-m="3" span-s="6">
-                <Principle card={card} index={index+1} />
-              </r-cell>
-            ))}
-            {/* {nowPlayingData && (
-              <r-cell span="2" span-m="2" flow-cols-m="2" span-s="6">
-                <div>
-                  <Text type="h3">Now Playing</Text>
-                  <Image style={{ paddingTop: '30px' }} src={nowPlayingData.albumImageUrl} width="300px" height="300px" />
-                  <div style={{ paddingTop: '15px' }}>
-                    <Text type="h4">{nowPlayingData.title}</Text>
-                    <Text.Small.Dark type="h4">{nowPlayingData.artist}</Text.Small.Dark>
+                  <div className="site-social-links">
+                    {settings.social_links.map(({link, text}, index) => (
+                      <Link
+                        href={link}
+                        key={index}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block"
+                      >
+                        <p className="font-sans text-base text-text font-medium">{text}</p>
+                      </Link>
+                    ))}
                   </div>
                 </div>
-              </r-cell>
-            )}
-            {topTracksData && (
-              <r-cell span="4" span-m="4" flow-cols="2" flow-cols-m="4" span-s="6" gap="20">
-                  <Text type="h3">Top Tracks</Text>
-                  <div style={{ paddingTop: '30px' }}>
-                  {topTracksData.tracks.map((track, index) => (
-                    // spotify svg
-                    <div key={index} style={{ display: 'flex', alignItems: 'center', marginBottom: '30px' }}>
-                      <div style={{ height: '20px', width: '20px', marginRight: '20px' }}>
-                        <svg fill="#1DB954" height="100%" id="Layer_1" width="100%" viewBox="0 0 2931 2931" xmlns="http://www.w3.org/2000/svg">
-                          <path className="st0" d="M1465.5 0C656.1 0 0 656.1 0 1465.5S656.1 2931 1465.5 2931 2931 2274.9 2931 1465.5C2931 656.2 2274.9.1 1465.5 0zm672.1 2113.6c-26.3 43.2-82.6 56.7-125.6 30.4-344.1-210.3-777.3-257.8-1287.4-141.3-49.2 11.3-98.2-19.5-109.4-68.7-11.3-49.2 19.4-98.2 68.7-109.4C1242.1 1697.1 1721 1752 2107.3 1988c43 26.5 56.7 82.6 30.3 125.6zm179.3-398.9c-33.1 53.8-103.5 70.6-157.2 37.6-393.8-242.1-994.4-312.2-1460.3-170.8-60.4 18.3-124.2-15.8-142.6-76.1-18.2-60.4 15.9-124.1 76.2-142.5 532.2-161.5 1193.9-83.3 1646.2 194.7 53.8 33.1 70.8 103.4 37.7 157.1zm15.4-415.6c-472.4-280.5-1251.6-306.3-1702.6-169.5-72.4 22-149-18.9-170.9-91.3-21.9-72.4 18.9-149 91.4-171 517.7-157.1 1378.2-126.8 1922 196 65.1 38.7 86.5 122.8 47.9 187.8-38.5 65.2-122.8 86.7-187.8 48z" />
-                        </svg>
-                      </div>
-                      <div key={index} style={{  }}>
-                        <Text type="h4">{track.title}</Text>
-                        <Text.Small.Dark type="h4">{track.artist}</Text.Small.Dark>
-                      </div>
-                    </div>
-                  ))}
-                  </div>
-              </r-cell>
-            )} */}
-            {cvListing.map((item, index) => (
-              <CVSection key={index} content={item} />
+              </div>
+            </div>
+          </div>
+          <div className="site-grid site-grid--three">
+            {settings.cards.map((card, index) => (
+              <div key={index}>
+                <Principle card={card} index={index+1} />
+              </div>
             ))}
-            <r-cell span="6">
-              <Gallery title={"Fun Facts"} />
-            </r-cell>
-          </r-grid>
+          </div>
+          {cvListing.map((item, index) => (
+            <CVSection key={index} content={item} />
+          ))}
+          <div>
+            <Gallery title={"Fun Facts"} />
+          </div>
         </div>
       </div>
     </Layout>

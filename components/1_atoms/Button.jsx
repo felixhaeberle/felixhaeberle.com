@@ -1,12 +1,14 @@
 import React from 'react'
-import Text from './Text.jsx'
 import { ArrowRight, Email, Voicemail } from '@carbon/icons-react'
 
 export const ButtonItemText = ({ children, className = '', ...props }) => {
   return (
-    <Text className={`text-textDark ${className}`} {...props}>
+    <span
+      className={`font-sans text-base text-text font-medium text-textDark ${className}`}
+      {...props}
+    >
       {children}
-    </Text>
+    </span>
   )
 }
 

@@ -2,7 +2,6 @@ import Head from 'next/head'
 import Date from '../0_helpers/date'
 import utilStyles from '../../styles/utils.module.css'
 import Layout from '../4_templates/Layout'
-import Text from '../1_atoms/Text'
 
 export default function Post({ postData, settings }) {
   return (
@@ -11,7 +10,7 @@ export default function Post({ postData, settings }) {
         <title>{postData.title}</title>
       </Head>
       <article>
-        <Text.Large>{postData.title}</Text.Large>
+        <h1 className="font-sans text-xl text-textLight font-medium">{postData.title}</h1>
         <div className={utilStyles.lightText}>
           <Date dateString={postData.date} formatString={'LLLL d, yyyy'} />
         </div>

@@ -1,5 +1,4 @@
 import React from 'react'
-import Text from '../1_atoms/Text.jsx'
 import { useMediaQuery } from '../0_helpers/viewport'
 
 export default function Gallery({ title }) {
@@ -13,9 +12,13 @@ export default function Gallery({ title }) {
       sm:mx-[calc(var(--body-padding-y)*-1)]
       sm:border-x-0
     ">
-      <Text.Mono.Dark>{title}</Text.Mono.Dark>
-      <r-grid columns="12" columns-s="4">
-        <r-cell span="5" span-s="4" className="imageCell">
+      <p className="font-mono text-lg text-text font-medium tracking-custom uppercase mb-unit-4.5 text-textDark">{title}</p>
+      <div className="
+        flex flex-col lg:flex-row
+        gap-x-8 md:gap-x-12 lg:gap-x-16
+        gap-y-8 md:gap-y-10 lg:gap-y-12
+      ">
+        <div className="lg:w-5/12">
           <img 
             src="images/fun-facts/firefighter.jpg"
             className="mb-unit-3 border border-textDark/20"
@@ -23,8 +26,8 @@ export default function Gallery({ title }) {
           <p className="font-sans text-sm text-textDark leading-small-text font-medium max-w-[calc(var(--unit)*50)] sm:max-w-full">
             I'm a firefighter! Since I am attending university, I am currently taking a break from it – but I'm soon at it again.
           </p>
-        </r-cell>
-        <r-cell span="6" span-s="4" className="videoCell sm:flex sm:flex-col-reverse">
+        </div>
+        <div className="lg:w-7/12 flex flex-col sm:flex-col-reverse">
           <p className="font-sans text-sm text-textDark leading-small-text font-medium max-w-[calc(var(--unit)*50)] sm:max-w-full">
             I've done flatland unicycling. During my active time (2008 - 2015) I participated at championships all over Europe. I'm very proud of this achievement.
           </p>
@@ -52,8 +55,8 @@ export default function Gallery({ title }) {
               Your browser does not support the video tag.
             </video>
           </div>
-        </r-cell>
-      </r-grid>
+        </div>
+      </div>
     </div>
   )
 }
