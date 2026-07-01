@@ -11,7 +11,7 @@ const navigationItems = [
 
 export default function Header({ settings }) {
   return (
-    <header className={`${styles.header} mb-12`}>
+    <header className={`${styles.header} mb-12 sm:mb-0`}>
       <Navigation navigationItems={navigationItems} title={settings.title}/>
     </header>
   )

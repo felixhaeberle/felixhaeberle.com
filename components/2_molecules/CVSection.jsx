@@ -22,13 +22,13 @@ export default function CVSection({ content }){
         <div 
           key={index}
           className="
-            flex flex-row justify-start
-            sm:flex-col sm:mb-[calc(8px*2)]
+            flex flex-row items-baseline justify-start
+            sm:flex-col sm:items-start sm:mb-[calc(8px*2)]
             sm:last:mb-0
           "
         >
           {isSmallBreakpoint ? (
-            <div className="mr-0">
+            <div className="mr-0 whitespace-nowrap">
               <span className="font-sans text-sm text-text leading-small-text font-medium text-textDark">
                 <Date dateString={item.startDate} formatString={'MMM, yy'}></Date>
               </span>
@@ -50,7 +50,7 @@ export default function CVSection({ content }){
               ) }
             </div>
           ) : (
-            <div className="mr-8 md:mr-12 lg:mr-16 min-w-[150px] sm:mr-0">
+            <div className="mr-8 md:mr-12 lg:mr-16 min-w-[150px] sm:mr-0 shrink-0 whitespace-nowrap">
               <span className="font-sans text-sm text-text leading-small-text font-medium text-textDark">
                 <Date dateString={item.startDate} formatString={'MMM, yyyy'}></Date>
               </span>
@@ -72,7 +72,7 @@ export default function CVSection({ content }){
               ) }
             </div>
           )}
-          <span
+          <div
             key={index}
             className="
               font-sans text-base text-text font-medium
@@ -96,7 +96,7 @@ export default function CVSection({ content }){
               sm:leading-[calc(8px*3.25)]
               sm:text-sm
             ">{item.text}</div>
-          </span>
+          </div>
        
         </div>
       ))}

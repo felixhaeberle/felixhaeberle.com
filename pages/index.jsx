@@ -32,7 +32,7 @@ export default function Home({ writingsList, studiesList, workList, settings }) 
         gap-y-6 md:gap-y-8
         gap-x-8 md:gap-x-12 lg:gap-x-16
       ">
-        <h1 className="font-sans text-xl text-textLight font-medium max-w-[90%] lg:max-w-[60%]">
+        <h1 className="site-home-hero__title font-sans text-xl text-textLight font-medium max-w-[90%] lg:max-w-[60%]">
           {frontpageHeroText}
         </h1>
         <ProfileImage />

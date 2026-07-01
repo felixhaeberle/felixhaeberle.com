@@ -11,7 +11,7 @@ export default function ProfileImage() {
   const imageHeight = Math.round(imageSize * 1310 / 1364)
 
   return (
-    <div className="flex justify-center items-center">
+    <div className="site-profile-image flex justify-center items-center">
       <Image
         className="border border-textDark/20"
         src="/images/profile.png"

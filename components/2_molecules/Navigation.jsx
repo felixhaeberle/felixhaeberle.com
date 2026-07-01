@@ -6,7 +6,7 @@ export default function Navigation({ navigationItems, title }) {
   return (
     <div className="
       flex flex-col lg:flex-row lg:items-center lg:justify-between w-full
-      gap-y-4 md:gap-y-6
+      gap-y-3 md:gap-y-4
       [&_p:hover]:cursor-pointer
     ">
       <div>
@@ -16,15 +16,14 @@ export default function Navigation({ navigationItems, title }) {
       </div>
       <nav className="w-full lg:w-auto">
         <ul className="
-          flex flex-col list-none
-          items-start lg:items-center lg:justify-end
-          gap-y-3 md:gap-y-4 lg:gap-y-0 lg:gap-x-8 xl:gap-x-12
-          lg:flex-row
+          flex flex-row flex-wrap list-none
+          items-center justify-start lg:justify-end
+          gap-x-5 gap-y-2 lg:gap-y-0 lg:gap-x-8 xl:gap-x-12
         ">
         {navigationItems.map(({ url, title }) => (
           <li 
             className="
-              hover:cursor-pointer
+              shrink-0 hover:cursor-pointer
             " 
             key={title}
           >
