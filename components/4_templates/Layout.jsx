@@ -4,6 +4,37 @@ import Head from 'next/head'
 import Header from '../2_molecules/Header.jsx'
 import styles from './layout.module.css'
 
+const SITE_URL = 'https://felixhaeberle.com'
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': `${SITE_URL}/#person`,
+      name: 'Felix Häberle',
+      url: SITE_URL,
+      jobTitle: 'Design Engineer',
+      email: 'mailto:kontakt@felixhaeberle.de',
+      sameAs: [
+        'https://github.com/felixhaeberle',
+        'https://felixhaeberle.substack.com'
+      ]
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: 'Felix Häberle',
+      description: 'Portfolio of Felix Häberle, a design engineer building tasteful AI products and interfaces.',
+      inLanguage: 'en-US',
+      publisher: {
+        '@id': `${SITE_URL}/#person`
+      }
+    }
+  ]
+}
+
 export default function Layout({ children, settings, home, pageTitle }) {
   // Default settings to handle missing data
   const defaultSettings = {
@@ -26,9 +57,12 @@ export default function Layout({ children, settings, home, pageTitle }) {
         <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
         <link rel="manifest" href="/favicons/site.webmanifest" />
         <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5" />
+        <link rel="alternate" type="text/plain" href={`${SITE_URL}/llms.txt`} title="LLM-readable site index" />
+        <link rel="sitemap" type="application/xml" href={`${SITE_URL}/sitemap.xml`} />
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="theme-color" content="#ffffff"></meta>
         <meta name="robots" content="index, follow"></meta>
+        <meta name="author" content="Felix Häberle" />
         <meta
           property="og:image"
           content={`https://og-image.felixhaeberle.vercel.app/${pageTitle ? encodeURI(
@@ -38,6 +72,10 @@ export default function Layout({ children, settings, home, pageTitle }) {
         <meta name="og:title" content={pageTitle ? pageTitle : 'Felix Häberle – Portfolio'} />
         <meta name="description" content={pageTitle ? ('Felix Häberle – '  + pageTitle) : 'Felix Häberle – Portfolio'} />
         <meta name="twitter:card" content="summary_large_image" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
       </Head>
       <Header settings={siteSettings} />
       <main className="space-y-16 md:space-y-20 lg:space-y-24">{children}</main>

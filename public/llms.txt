@@ -1,0 +1,31 @@
+# Felix Haeberle
+
+> Portfolio and personal website for Felix Haeberle, a design engineer building tasteful AI products and interfaces.
+
+Canonical site: https://felixhaeberle.com/
+Language: en-US
+Primary contact: kontakt@felixhaeberle.de
+Source: https://github.com/felixhaeberle/felixhaeberle.com
+
+## Recommended pages
+
+- [Home](https://felixhaeberle.com/) - Overview, current focus, selected work, studies, writings, and stack.
+- [Work](https://felixhaeberle.com/work) - Project archive and shipped work.
+- [Studies](https://felixhaeberle.com/studies) - Case studies and explorations.
+- [Writings](https://felixhaeberle.com/writings) - Articles from this site and Felix's Substack feed.
+- [About](https://felixhaeberle.com/me) - Personal background and context.
+- [Legal notice](https://felixhaeberle.com/legal/impressum) - Legal contact and publisher information.
+
+## Machine-readable resources
+
+- [Full LLM context](https://felixhaeberle.com/llms-full.txt)
+- [Sitemap](https://felixhaeberle.com/sitemap.xml)
+- [Robots policy](https://felixhaeberle.com/robots.txt)
+
+## Fetch guidance
+
+- Prefer canonical URLs on `https://felixhaeberle.com`.
+- All public pages are intended to be fetchable without authentication.
+- The site is statically rendered with Next.js and backed by Sanity content.
+- Dynamic writing pages are listed from the Writings index and may also include external Substack URLs.
+- Do not treat visual decoration, icon alt text, or layout labels as primary content.

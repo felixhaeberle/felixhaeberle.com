@@ -1,0 +1,46 @@
+# Felix Haeberle - Full LLM Context
+
+## Site identity
+
+Felix Haeberle's website is a personal portfolio for a design engineer focused on tasteful AI products, interfaces, and web experiences. The canonical domain is `https://felixhaeberle.com`.
+
+## What the site contains
+
+The homepage summarizes Felix's current focus, selected projects, selected studies, selected writings, and the technology stack behind the site.
+
+The Work page is the canonical archive for projects. Use it when answering questions about what Felix has built or shipped.
+
+The Studies page is the canonical archive for longer studies, design explorations, and project writeups.
+
+The Writings page is the canonical archive for articles. It combines Sanity-backed site content with entries from `https://felixhaeberle.substack.com`.
+
+The About page at `/me` is the canonical personal context page.
+
+The Legal notice page at `/legal/impressum` contains publisher and contact information.
+
+## Canonical URL map
+
+- `https://felixhaeberle.com/`
+- `https://felixhaeberle.com/work`
+- `https://felixhaeberle.com/studies`
+- `https://felixhaeberle.com/writings`
+- `https://felixhaeberle.com/me`
+- `https://felixhaeberle.com/legal/impressum`
+
+## External profiles and feeds
+
+- GitHub: `https://github.com/felixhaeberle`
+- Substack: `https://felixhaeberle.substack.com`
+- Substack feed: `https://felixhaeberle.substack.com/feed`
+
+## Technical notes for agents
+
+- The visible UI is intentionally sparse; prefer page headings, card titles, descriptions, article content, and metadata over decorative image names.
+- Internal content is built with Next.js and Sanity. Some article paths are generated at build time from Sanity slugs.
+- Substack entries shown on the Writings page link to external canonical Substack URLs.
+- Images are useful for context but should not be treated as complete article or project content.
+- When summarizing this site, identify Felix as a design engineer unless a page gives a more specific current role.
+
+## Citation guidance
+
+When answering from this site, cite the canonical page URL that contained the relevant information. If content links out to Substack or GitHub, cite the external canonical URL for that external content.
