@@ -135,6 +135,7 @@ img {
 .site-about-aside {
   width: 100%;
   max-width: 320px;
+  margin-left: auto;
 }
 
 .site-about-image {
@@ -252,6 +253,10 @@ img {
 
   .site-split__media {
     justify-self: start;
+  }
+
+  .site-about-aside {
+    margin-left: 0;
   }
 
   .site-social-links {
