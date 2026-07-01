@@ -11,9 +11,41 @@ import Link from 'next/link'
 import Syntax from '../../components/1_atoms/Syntax.jsx'
 import TweetEmbed from 'react-tweet-embed'
 import { getSiteSettings } from '../../lib/query/settings'
+import { SITE_URL, getSiteUrl } from '../../lib/site-metadata'
 import { urlFor } from '../../lib/sanity'
 
 export default function WritingPage ({ writing, settings }){
+  const writingPath = `/writings/${writing.slug}`
+  const writingUrl = getSiteUrl(writingPath)
+  const writingMarkdownUrl = getSiteUrl(`${writingPath}.md`)
+  const writingDescription = writing.teaserSmall || writing.teaser || `Article by Felix Häberle.`
+  const writingImageUrl = writing.image ? urlFor(writing.image).width(1200).quality(90).url() : undefined
+  const articleStructuredData = {
+    '@type': 'Article',
+    '@id': `${writingUrl}#article`,
+    headline: writing.title,
+    description: writingDescription,
+    datePublished: writing.publishedAt,
+    dateModified: writing.publishedAt,
+    inLanguage: 'en-US',
+    isAccessibleForFree: true,
+    mainEntityOfPage: {
+      '@id': `${writingUrl}#webpage`
+    },
+    author: {
+      '@id': `${SITE_URL}/#person`
+    },
+    publisher: {
+      '@id': `${SITE_URL}/#person`
+    },
+    image: writingImageUrl ? [writingImageUrl] : undefined,
+    articleSection: writing.categories?.map((category) => category.title).filter(Boolean),
+    encoding: {
+      '@type': 'MediaObject',
+      encodingFormat: 'text/markdown',
+      contentUrl: writingMarkdownUrl
+    }
+  }
 
   const serializers = {
     types: {
@@ -74,15 +106,21 @@ export default function WritingPage ({ writing, settings }){
   }
 
   return (
-    <Layout settings={settings}>
+    <Layout
+      settings={settings}
+      pageTitle={writing.title}
+      canonicalPath={writingPath}
+      markdownPath={`${writingPath}.md`}
+      metaDescription={writingDescription}
+      ogImage={writingImageUrl}
+      ogType="article"
+      structuredDataItems={[articleStructuredData]}
+    >
       <Head>
         <title>{writing.title}</title>
-        <meta
-          property="og:image"
-          content={urlFor(writing.image).width(500).url()}
-        />
-        <meta name="og:title" content={writing.title} />
-        <meta name="description" content="Felix Häberle – Portfolio" />
+        <meta name="citation_title" content={writing.title} />
+        <meta name="citation_author" content="Felix Häberle" />
+        <meta name="citation_publication_date" content={writing.publishedAt} />
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet" />
       </Head>
       <main className={'blog'}>        
