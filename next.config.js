@@ -114,6 +114,16 @@ const nextConfig = {
       }
     ]
   },
+  async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: '/writings/:slug.md',
+          destination: '/api/markdown/writings/:slug'
+        }
+      ]
+    }
+  },
   // Support both .js and .jsx page extensions
   pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
   // Ensure Spotify API works properly
