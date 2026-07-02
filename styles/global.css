@@ -203,6 +203,7 @@ img {
 }
 
 .site-home-hero {
+  align-items: flex-end;
   margin-top: calc(var(--unit) * 31);
   margin-bottom: calc(var(--unit) * 12.75);
 }
