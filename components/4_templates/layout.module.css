@@ -5,6 +5,10 @@
   min-height: 100vh;
 }
 
+.header {
+  width: 100%;
+}
+
 .backToHome {
   margin: 3rem 0 0;
 }

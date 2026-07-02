@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://felixhaeberle.com/sitemap.xml
+
+# LLM-readable site index
+# https://felixhaeberle.com/llms.txt
+# Structured AI-readable site data
+# https://felixhaeberle.com/ai.json

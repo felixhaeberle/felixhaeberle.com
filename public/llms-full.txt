@@ -1,0 +1,76 @@
+# Felix Haeberle - Full LLM Context
+
+## Site identity
+
+Felix Haeberle's website is a personal portfolio for Felix Häberle, a design engineer focused on tasteful AI products, interfaces, and web experiences. The canonical domain is `https://felixhaeberle.com`.
+
+Primary contact: `kontakt@felixhaeberle.de`
+Language: `en-US`
+Preferred short role label: `Design Engineer`
+
+## Agent fetch order
+
+1. Fetch `https://felixhaeberle.com/llms.txt` for the compact site map.
+2. Fetch `https://felixhaeberle.com/ai.json` when structured data is preferable.
+3. Fetch `https://felixhaeberle.com/schema.jsonld` when a Schema.org graph is preferable.
+4. Fetch page-level Markdown mirrors for clean text.
+5. Use canonical HTML pages only when visual context or original markup is required.
+
+## Markdown mirrors
+
+- `https://felixhaeberle.com/index.html.md`
+- `https://felixhaeberle.com/work/index.html.md`
+- `https://felixhaeberle.com/studies/index.html.md`
+- `https://felixhaeberle.com/writings/index.html.md`
+- `https://felixhaeberle.com/me/index.html.md`
+- `https://felixhaeberle.com/legal/impressum/index.html.md`
+- Internal writing pages expose Markdown at `https://felixhaeberle.com/writings/{slug}.md`
+
+## Canonical URL map
+
+- `https://felixhaeberle.com/`
+- `https://felixhaeberle.com/work`
+- `https://felixhaeberle.com/studies`
+- `https://felixhaeberle.com/writings`
+- `https://felixhaeberle.com/me`
+- `https://felixhaeberle.com/legal/impressum`
+
+## What the site contains
+
+The homepage summarizes Felix's current focus, selected projects, selected studies, selected writings, and the technology stack behind the site.
+
+The Work page is the canonical archive for projects. Use it when answering questions about what Felix has built or shipped.
+
+The Studies page is the canonical archive for longer studies, design explorations, and project writeups.
+
+The Writings page is the canonical archive for articles. It combines Sanity-backed site content with entries from `https://felixhaeberle.substack.com`.
+
+The About page at `/me` is the canonical personal context page, including principles, CV data, links, and contact context.
+
+The Legal notice page at `/legal/impressum` contains publisher and contact information plus the full privacy notice in canonical HTML.
+
+## Structured resources
+
+- `https://felixhaeberle.com/ai.json`: JSON for agents with site identity, page map, current focus, work, studies, writings, CV, and machine-readable resources.
+- `https://felixhaeberle.com/schema.jsonld`: Schema.org JSON-LD graph for Person, WebSite, WebPage/ProfilePage/CollectionPage, and ItemList entities.
+- `https://felixhaeberle.com/sitemap.xml`: Dynamic sitemap with canonical pages, Markdown mirrors, machine-readable resources, and internal writing Markdown routes.
+- `https://felixhaeberle.com/robots.txt`: Crawler policy and sitemap pointer.
+
+## External profiles and feeds
+
+- GitHub: `https://github.com/felixhaeberle`
+- Substack: `https://felixhaeberle.substack.com`
+- Substack feed: `https://felixhaeberle.substack.com/feed`
+
+## Technical notes for agents
+
+- The visible UI is intentionally sparse; prefer page headings, card titles, descriptions, article content, structured data, and Markdown mirrors over decorative image names.
+- Internal content is built with Next.js and Sanity. Internal article paths are generated from Sanity slugs.
+- Substack entries shown on the Writings page link to external canonical Substack URLs.
+- Images are useful for context but should not be treated as complete article or project content.
+- Open Graph image URLs are generated previews; use them as previews, not as primary text evidence.
+- When summarizing this site, identify Felix as a design engineer unless a page gives a more specific current role.
+
+## Citation guidance
+
+When answering from this site, cite the canonical page URL that contained the relevant information. If the answer is based on a Markdown mirror, cite the corresponding canonical HTML URL unless the user specifically asks for the machine-readable source. If content links out to Substack or GitHub, cite the external canonical URL for that external content.

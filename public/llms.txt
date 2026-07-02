@@ -1,0 +1,45 @@
+# Felix Haeberle
+
+> Portfolio and personal website for Felix Haeberle, also written Felix Häberle, a design engineer building tasteful AI products and interfaces.
+
+Canonical site: https://felixhaeberle.com/
+Language: en-US
+Primary contact: kontakt@felixhaeberle.de
+Source: https://github.com/felixhaeberle/felixhaeberle.com
+
+Use this file as the agent entry point. For structured retrieval, fetch `ai.json`. For readable text, prefer the Markdown mirrors listed below before falling back to canonical HTML.
+
+## Markdown mirrors
+
+- [Home as Markdown](https://felixhaeberle.com/index.html.md): Current focus, selected work, selected studies, writings, and machine-readable resources.
+- [Work as Markdown](https://felixhaeberle.com/work/index.html.md): Project archive generated from the same source as the visible Work page.
+- [Studies as Markdown](https://felixhaeberle.com/studies/index.html.md): Studies and explorations generated from the same source as the visible Studies page.
+- [Writings as Markdown](https://felixhaeberle.com/writings/index.html.md): Site writings plus external Substack entries.
+- [About as Markdown](https://felixhaeberle.com/me/index.html.md): Personal profile, principles, CV, social links, and contact context.
+- [Legal notice as Markdown](https://felixhaeberle.com/legal/impressum/index.html.md): Responsible party and canonical legal page pointer.
+
+## Canonical pages
+
+- [Home](https://felixhaeberle.com/): Overview, current focus, selected work, studies, writings, and stack.
+- [Work](https://felixhaeberle.com/work): Project archive and shipped work.
+- [Studies](https://felixhaeberle.com/studies): Case studies and explorations.
+- [Writings](https://felixhaeberle.com/writings): Articles from this site and Felix's Substack feed.
+- [About](https://felixhaeberle.com/me): Personal background and context.
+- [Legal notice](https://felixhaeberle.com/legal/impressum): Legal contact and publisher information.
+
+## Structured resources
+
+- [AI site data](https://felixhaeberle.com/ai.json): JSON document for agents with site identity, pages, current focus, work, studies, writings, CV, and machine resources.
+- [Schema.org graph](https://felixhaeberle.com/schema.jsonld): JSON-LD graph for the site, person, page index, and content collections.
+- [Full LLM context](https://felixhaeberle.com/llms-full.txt): Expanded text context, URL map, and citation guidance.
+- [Sitemap](https://felixhaeberle.com/sitemap.xml): Dynamic sitemap including canonical and machine-readable routes.
+- [Robots policy](https://felixhaeberle.com/robots.txt): Crawler access policy.
+
+## Fetch guidance
+
+- Prefer canonical URLs on `https://felixhaeberle.com`.
+- All public pages and machine-readable resources are intended to be fetchable without authentication.
+- The site is built with Next.js, backed by Sanity content, and enriched with Substack feed entries on the Writings page.
+- Individual internal writing pages expose Markdown at `/writings/{slug}.md`.
+- External Substack writings should be cited with their Substack canonical URLs.
+- Do not treat visual decoration, icon alt text, layout labels, or generated Open Graph image text as primary content.
