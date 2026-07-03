@@ -29,7 +29,7 @@ export default function Gallery({ title }) {
         </div>
         <div className="lg:w-7/12 flex flex-col sm:flex-col-reverse">
           <p className="font-sans text-sm text-textDark leading-small-text font-medium max-w-[calc(var(--unit)*50)] sm:max-w-full">
-            I've done flatland unicycling. During my active time (2008 - 2015) I participated at championships all over Europe. I'm very proud of this achievement.
+            I've done flatland unicycling. During my active time (2008 - 2015) I participated at championships all over Europe.
           </p>
           <div className="group relative mt-unit-3 sm:mt-0 sm:mb-unit-3">
             <div className="absolute bottom-unit-3 left-unit-3 pointer-events-none sm:hidden">
