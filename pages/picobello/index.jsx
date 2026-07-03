@@ -100,7 +100,13 @@ export default function Picobello() {
           </div>
         </div>
       </main>
-      <footer className="flex justify-center px-unit-4 py-unit-8">
+      <footer className="flex justify-center gap-x-unit-4 px-unit-4 py-unit-8">
+        <Link
+          href="/"
+          className="font-mono text-xs text-textDarker font-medium"
+        >
+          felixhaeberle.com
+        </Link>
         <Link
           href="/legal/impressum"
           className="font-mono text-xs text-textDarker font-medium"
