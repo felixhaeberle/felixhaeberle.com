@@ -24,24 +24,24 @@ export default function Gallery({ title }) {
             className="mb-unit-3 border border-textDark/20"
           />
           <p className="font-sans text-sm text-textDark leading-small-text font-medium max-w-[calc(var(--unit)*50)] sm:max-w-full">
-            I'm a firefighter! Since I am attending university, I am currently taking a break from it – but I'm soon at it again.
+            I'm a firefighter (not on duty rn).
           </p>
         </div>
         <div className="lg:w-7/12 flex flex-col sm:flex-col-reverse">
           <p className="font-sans text-sm text-textDark leading-small-text font-medium max-w-[calc(var(--unit)*50)] sm:max-w-full">
             I've done flatland unicycling. During my active time (2008 - 2015) I participated at championships all over Europe. I'm very proud of this achievement.
           </p>
-          <div className="relative mt-unit-3 sm:mt-0 sm:mb-unit-3">
-            <div className="absolute bottom-unit-2 left-[calc(var(--unit)*2.5)] sm:hidden">
+          <div className="group relative mt-unit-3 sm:mt-0 sm:mb-unit-3">
+            <div className="absolute bottom-unit-3 left-unit-3 pointer-events-none sm:hidden">
               <div className="
                 inline-flex items-center justify-center
-                bg-white/70 backdrop-blur-sm
+                bg-white/80 backdrop-blur-sm
                 border border-textDark/20
-                text-textDark text-xs font-mono
-                py-[calc(var(--unit)*0.5)] px-[calc(var(--unit)*1.5)]
+                font-mono text-xs text-textDark font-medium uppercase tracking-custom
+                py-[calc(var(--unit)*0.75)] px-unit-1.5
                 rounded-full
               ">
-                Hover
+                Hover to play
               </div>
             </div>
             <video 
