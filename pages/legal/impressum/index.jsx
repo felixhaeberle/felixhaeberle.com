@@ -18,8 +18,8 @@ export default function SiteNotice({ settings }) {
             <p className="font-sans text-sm text-text leading-small-text font-medium text-textDark">Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
             <p className="font-sans text-sm text-text leading-small-text font-medium text-textDark">
             Felix Häberle<br/>
-            Nepperbergstraße 8<br/>
-            73525 Schwäbisch Gmünd
+            Liesenstraße 3<br/>
+            10115 Berlin
             </p>
             <p className="font-sans text-sm text-text leading-small-text font-medium text-textDark">Die verantwortliche Stelle entscheidet allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.B. Namen, Kontaktdaten o. Ä.).</p>
 
