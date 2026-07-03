@@ -66,6 +66,8 @@ export default function Picobello() {
               </h1>
               <p className="font-sans text-base text-textDark leading-small-text">
                 Founder of Picobello.
+                <br />
+                AI agents for hospitality.
               </p>
             </div>
           </aside>
