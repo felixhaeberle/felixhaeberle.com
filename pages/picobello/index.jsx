@@ -50,8 +50,8 @@ export default function Picobello() {
         <meta name="description" content={metaDescription} />
         <meta name="robots" content="noindex, nofollow, noarchive" />
       </Head>
-      <main className="flex-grow flex items-center justify-center px-unit-4 py-unit-16">
-        <div className="w-full max-w-[56rem] grid grid-cols-[minmax(0,2fr)_minmax(0,4fr)] md:grid-cols-1 gap-x-unit-16 gap-y-unit-10 items-start">
+      <main className="flex-grow flex items-center justify-center px-unit-4 py-unit-4">
+        <div className="w-full max-w-[56rem] grid grid-cols-[minmax(0,2fr)_minmax(0,4fr)] md:grid-cols-1 gap-x-unit-10 gap-y-unit-8 items-start">
           <aside className="flex flex-col gap-y-unit-3">
             <Image
               src="/images/profile.png"
@@ -71,7 +71,7 @@ export default function Picobello() {
               </p>
             </div>
           </aside>
-          <div className="flex flex-col gap-y-unit-10 max-w-[36rem]">
+          <div className="flex flex-col gap-y-unit-4.5 max-w-[36rem]">
             {chapters.map((chapter) => (
               <section key={chapter.marker} className="flex flex-col gap-y-unit-1.5">
                 <p className="font-mono text-xs text-textDarker font-medium">
@@ -102,7 +102,7 @@ export default function Picobello() {
           </div>
         </div>
       </main>
-      <footer className="flex justify-center gap-x-unit-4 px-unit-4 py-unit-8">
+      <footer className="flex justify-center gap-x-unit-4 px-unit-4 py-unit-4">
         <Link
           href="/"
           className="font-mono text-xs text-textDarker font-medium"
