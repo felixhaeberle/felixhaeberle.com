@@ -28,7 +28,7 @@ export default function Home({ writingsList, studiesList, workList, settings }) 
       </Head>
       <section className="
         site-home-hero
-        flex flex-col lg:flex-row lg:items-center lg:justify-between
+        flex flex-col lg:flex-row lg:items-end lg:justify-between
         gap-y-6 md:gap-y-8
         gap-x-8 md:gap-x-12 lg:gap-x-16
       ">
