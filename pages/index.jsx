@@ -1,5 +1,3 @@
-import dynamic from 'next/dynamic'
-
 import Button from '../components/1_atoms/Button.jsx'
 import Card from '../components/2_molecules/Card.jsx'
 import Head from 'next/head'
@@ -11,12 +9,6 @@ import { getSiteSettings } from '../lib/query/settings'
 import { getStudies } from '../lib/query/studies'
 import { getWork } from '../lib/query/work'
 import { getWritings } from '../lib/query/writings'
-
-// Import Stack component with improved client-side support
-// No need for ssr: false as the component now has 'use client' directive
-const Stack = dynamic(() => import('../components/2_molecules/Stack.jsx'), {
-  loading: () => <div className="py-20 text-center">Loading stack...</div>
-})
 
 const frontpageHeroText = 'Hi, I’m Felix — a design engineer building tasteful AI products and interfaces.'
 
@@ -99,7 +91,6 @@ export default function Home({ writingsList, studiesList, workList, settings }) 
           </Link>
         </div>
       </div>
-      <Stack />
     </Layout>
   )
 }
