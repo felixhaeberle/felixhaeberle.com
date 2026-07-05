@@ -13,22 +13,18 @@ const belRivaMapsUrl =
 const chapters = [
   {
     marker: '01',
-    title: 'Growing up in a hotel',
+    title: 'Hotels, from the inside',
     body: [
       'I grew up in ',
       { href: belRivaMapsUrl, label: 'my parents’ hotel' },
-      ', right on the shore of Lake Constance, with the Swiss Alps across the water. As a kid I played ball between the sunbathing guests on our lawn by the lake. Later I helped wherever hands were needed, washing dishes, fixing things around the house, looking after guests. A well-run hotel looks effortless from the outside. From the inside I saw the daily, precise work behind it, and the discipline it takes to care about details that nobody will ever mention.',
+      ' on Lake Constance and worked in every corner of the house. I know hotel operations in depth, and I know the challenges hoteliers face today: rising costs, staff shortages, growing guest expectations and more administration every year. Running a hotel with excellence has never been harder.',
     ],
   },
   {
     marker: '02',
     title: 'Design & technology as a backbone',
     body: [
-      'I went on to study interaction design at HfG Schwäbisch Gmünd and spent more than ten years building digital products in startups, most recently as a senior design engineer at ',
-      { href: 'https://inlang.com', label: 'inlang' },
-      ' in Berlin, and before that as co-founder of ',
-      { href: 'https://getstage.app', label: 'Stage' },
-      '. The lesson stayed the same. Good products, like good hotels, come from many small decisions made with care.',
+      'I spent more than ten years designing and engineering digital products in startups, from first prototypes to tools people rely on every day. Along the way I co-founded a company and helped build open source software used around the world. The learning that stayed: good products, like good hotels, come from many small decisions made with care.',
     ],
   },
   {
