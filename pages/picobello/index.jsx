@@ -14,7 +14,7 @@ const content = {
       marker: '01',
       title: 'Running a hotel today',
       body: [
-        'It’s 10 pm and the day should be over. But the inbox is full, tomorrow’s shift plan has a hole in it, and water is leaking in room 12. Anyone who runs a hotel knows this evening. Costs keep rising, good people are hard to find, and the booking platforms take their cut. I know this evening too. I grew up in a family-run hotel and worked every job in the house.',
+        'It’s 10 pm and the day should be over. But the inbox is full, tomorrow’s shift plan has a hole in it, and water is leaking in room 12. Anyone who runs a hotel knows this evening. Costs keep rising, and good people are hard to find. I know this evening too. I grew up in a family-run hotel and worked every job in the house.',
       ],
     },
     {
