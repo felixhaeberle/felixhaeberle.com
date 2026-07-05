@@ -13,11 +13,11 @@ const belRivaMapsUrl =
 const chapters = [
   {
     marker: '01',
-    title: 'Hotels, from the inside',
+    title: 'Running a hotel today',
     body: [
-      'I grew up in ',
-      { href: belRivaMapsUrl, label: 'my parents’ hotel' },
-      ' on Lake Constance and worked in every corner of the house. I know hotel operations in depth, and I know the challenges hoteliers face today: rising costs, staff shortages, growing guest expectations and more administration every year. Running a hotel with excellence has never been harder.',
+      'Rising costs, open positions that stay open, and shift plans built around them. OTA commissions pressing on the rate, a PMS that does not talk to the channel manager, and guests who expect an answer within minutes, at any hour. I know this reality from the inside: I grew up in ',
+      { href: belRivaMapsUrl, label: 'a family-run hotel' },
+      ' and worked every station in the house. Excellence, I learned there, is won in exactly these details.',
     ],
   },
   {
