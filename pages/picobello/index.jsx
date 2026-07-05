@@ -15,7 +15,7 @@ const chapters = [
     marker: '01',
     title: 'Running a hotel today',
     body: [
-      'Costs keep rising, good staff is hard to find, and the OTAs take their cut. The PMS doesn’t talk to the channel manager, and guests expect an answer within minutes, even at 11 pm. I know all this from the inside. I grew up in ',
+      'Costs keep rising, good staff is hard to find, and the booking platforms take their cut. The systems behind the front desk don’t talk to each other, and guests expect an answer within minutes, even at 11 pm. I know all this from the inside. I grew up in ',
       { href: belRivaMapsUrl, label: 'a family-run hotel' },
       ' and worked every job in the house. That’s where I learned how much daily work it takes to run a hotel well.',
     ],
