@@ -14,7 +14,7 @@ const content = {
       marker: '01',
       title: 'Ein Hotel führen, heute',
       body: [
-        'Es ist 22 Uhr, und eigentlich wäre Feierabend. Aber das Postfach ist voll, im Dienstplan für morgen fehlt jemand, und in Zimmer 12 tropft Wasser. Wer ein Hotel führt, kennt diesen Abend. Die Kosten steigen, und gutes Personal ist kaum zu finden. Ich kenne diesen Abend auch. Ich bin in einem familiengeführten Hotel aufgewachsen und habe dort jede Arbeit im Haus gemacht.',
+        'Es ist 22 Uhr, und eigentlich wäre Feierabend. Aber das Postfach ist voll, im Dienstplan für morgen fehlt jemand, und in Zimmer 12 tropft Wasser. Wer ein Hotel führt, kennt diesen Abend. Die Kosten steigen, und gutes Personal ist kaum zu finden. Ich kenne diesen Abend auch. Ich bin in einem familiengeführten Hotel aufgewachsen und habe dort so gut wie jede Arbeit gemacht.',
       ],
     },
     {
