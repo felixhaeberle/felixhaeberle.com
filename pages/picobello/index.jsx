@@ -15,9 +15,9 @@ const chapters = [
     marker: '01',
     title: 'Running a hotel today',
     body: [
-      'Rising costs, open positions that stay open, and shift plans built around them. OTA commissions pressing on the rate, a PMS that does not talk to the channel manager, and guests who expect an answer within minutes, at any hour. I know this reality from the inside: I grew up in ',
+      'Costs keep rising, good staff is hard to find, and the OTAs take their cut. The PMS doesn’t talk to the channel manager, and guests expect an answer within minutes, even at 11 pm. I know all this from the inside. I grew up in ',
       { href: belRivaMapsUrl, label: 'a family-run hotel' },
-      ' and worked every station in the house. Excellence, I learned there, is won in exactly these details.',
+      ' and worked every job in the house. That’s where I learned how much daily work it takes to run a hotel well.',
     ],
   },
   {
