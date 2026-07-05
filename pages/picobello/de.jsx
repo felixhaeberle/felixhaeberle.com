@@ -28,7 +28,7 @@ const content = {
       marker: '03',
       title: 'Meine Mission: KI für die Hotellerie',
       body: [
-        'Picobello bringt beides zusammen. Es ist die fehlende KI-Ebene für die Hotellerie: Sie übernimmt die immer gleichen Aufgaben hinter Betrieb und Gästekommunikation, damit der Tag endet, wann er soll, und die Zeit wieder den Gästen gehört. Sie finden uns auf ',
+        'Picobello bringt beide Welten zusammen. Wir bauen KI-Agenten für Hotels: Sie übernehmen die Arbeit, die sich jeden Tag wiederholt, von Gästeanfragen bis zu den Routinen im Betrieb. Damit um 22 Uhr wirklich Feierabend ist und die Zeit wieder den Gästen gehört. Sie finden uns auf ',
         { href: 'https://picobello.ai', label: 'picobello.ai' },
         '.',
       ],
