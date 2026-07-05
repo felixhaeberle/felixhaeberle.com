@@ -12,21 +12,21 @@ const chapters = [
     marker: '01',
     title: 'Running a hotel today',
     body: [
-      'Costs keep rising, good staff is hard to find, and the booking platforms take their cut. The systems behind the front desk don’t talk to each other, and guests expect an answer within minutes, even at 11 pm. I know all this from the inside. I grew up in a family-run hotel and worked every job in the house. That’s where I learned how much daily work it takes to run a hotel well.',
+      'It’s 10 pm and the day should be over. But the inbox is full, tomorrow’s shift plan has a hole in it, and a guest just asked if late check-in is possible. Anyone who runs a hotel knows this evening. Costs keep rising, good people are hard to find, and the booking platforms take their cut. I know this evening too. I grew up in a family-run hotel and worked every job in the house.',
     ],
   },
   {
     marker: '02',
     title: 'Design & technology as a backbone',
     body: [
-      'I spent more than ten years designing and engineering digital products in startups, from first prototypes to tools people rely on every day. Along the way I co-founded a company and helped build open source software used around the world. The learning that stayed: good products, like good hotels, come from many small decisions made with care.',
+      'Later I spent more than ten years building digital products in startups, from first prototypes to tools people rely on every day. I co-founded a company and helped build open source software used around the world. And I kept noticing the same thing: good products and good hotels are built alike, out of many small decisions made with care.',
     ],
   },
   {
     marker: '03',
     title: 'On a mission to solve AI for hospitality',
     body: [
-      'Now I’m bringing both together. With Picobello I’m building the missing AI layer for hospitality. It takes over the repetitive work behind hotel operations and guest communication, so teams have time for their guests again. You can find us at ',
+      'Picobello brings the two together. It’s the missing AI layer for hospitality: it takes over the repetitive work behind hotel operations and guest communication, so the day ends when it should and the time goes back to the guests. You can find us at ',
       { href: 'https://picobello.ai', label: 'picobello.ai' },
       '.',
     ],
