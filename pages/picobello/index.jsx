@@ -7,17 +7,12 @@ import Link from 'next/link'
 const metaDescription =
   'Picobello is the missing AI layer for hospitality. It takes over the repetitive work behind hotel operations and guest communication.'
 
-const belRivaMapsUrl =
-  'https://www.google.com/maps/search/?api=1&query=Seehotel+BelRiva+Hagnau+am+Bodensee'
-
 const chapters = [
   {
     marker: '01',
     title: 'Running a hotel today',
     body: [
-      'Costs keep rising, good staff is hard to find, and the booking platforms take their cut. The systems behind the front desk don’t talk to each other, and guests expect an answer within minutes, even at 11 pm. I know all this from the inside. I grew up in ',
-      { href: belRivaMapsUrl, label: 'a family-run hotel' },
-      ' and worked every job in the house. That’s where I learned how much daily work it takes to run a hotel well.',
+      'Costs keep rising, good staff is hard to find, and the booking platforms take their cut. The systems behind the front desk don’t talk to each other, and guests expect an answer within minutes, even at 11 pm. I know all this from the inside. I grew up in a family-run hotel and worked every job in the house. That’s where I learned how much daily work it takes to run a hotel well.',
     ],
   },
   {
