@@ -14,7 +14,7 @@ const content = {
       marker: '01',
       title: 'Erfahrungswerte',
       body: [
-        'Ich bin in einem kleinen Familienhotel groß geworden und habe dort über die Jahre so ziemlich jede Arbeit selbst gemacht. Dabei habe ich früh gesehen, wie viel im Hintergrund passieren muss, damit für den Gast am Ende alles selbstverständlich wirkt. Und ich weiß, dass dieser Beruf nicht leichter geworden ist, mit steigenden Kosten, fehlendem Personal und Gästen, die rund um die Uhr eine schnelle, persönliche Antwort und guten Service erwarten.',
+        'Ich bin in einem kleinen Familienhotel groß geworden und habe dort über die Jahre so ziemlich jede Arbeit mal selbst gemacht. Dabei habe ich früh gesehen, wie viel im Hintergrund passieren muss, damit für den Gast am Ende alles selbstverständlich wirkt. Und ich weiß, dass dieser Beruf nicht leichter geworden ist, mit steigenden Kosten, fehlendem Personal und Gästen, die rund um die Uhr eine schnelle, persönliche Antwort und guten Service erwarten.',
       ],
     },
     {
