@@ -21,7 +21,7 @@ const content = {
       marker: '02',
       title: 'Design & Technologie als Rückgrat',
       body: [
-        'Danach hat es mich in eine ganz andere Welt gezogen. Ich habe Design studiert und über zehn Jahre lang digitale Produkte entwickelt, ein Unternehmen mitgegründet und an Open-Source-Projekten mitgeschrieben, die heute weltweit genutzt werden. Dabei habe ich gemerkt, wie ähnlich sich beide Seiten meines Lebens sind, und wie selten jemand beide wirklich von innen kennt.',
+        'Danach habe ich über zehn Jahre lang digitale Produkte entwickelt, ein Unternehmen mitgegründet und an Open-Source-Projekten mitgeschrieben, die heute weltweit genutzt werden. Dabei habe ich gemerkt, wie ähnlich sich beide Seiten meines Lebens sind, und wie selten jemand beide wirklich von innen kennt.',
       ],
     },
     {
