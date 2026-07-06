@@ -28,7 +28,7 @@ const content = {
       marker: '03',
       title: 'Meine Mission: KI für die Hotellerie',
       body: [
-        'Mit Picobello bringe ich beide Seiten zusammen. Wir entwickeln KI-Agenten für Hotels, die die immer gleichen Aufgaben im Hintergrund übernehmen, von wiederkehrenden Gästeanfragen bis zu den kleinen Abläufen im Betrieb. So bleibt wieder mehr Zeit für das, was wirklich zählt: die Gäste. Mehr darüber auf ',
+        'Mit Picobello bringe ich beide Seiten zusammen. Wir entwickeln KI-Agenten für Hotels, die die immer gleichen Aufgaben im Hintergrund übernehmen, von wiederkehrenden Gästeanfragen bis zu den kleinen Abläufen im Betrieb. So bleibt wieder mehr Zeit für das, was wirklich zählt: die Gäste. Entdecken Sie die Zukunft: ',
         { href: 'https://picobello.ai', label: 'picobello.ai' },
         '.',
       ],
