@@ -12,14 +12,14 @@ const content = {
   chapters: [
     {
       marker: '01',
-      title: 'Ein Hotel führen, heute',
+      title: 'Aufgewachsen im Hotel',
       body: [
         'Ich bin in einem kleinen Familienhotel groß geworden und habe dort über die Jahre so ziemlich jede Arbeit selbst gemacht. Dabei habe ich früh gesehen, wie viel im Hintergrund passieren muss, damit für den Gast am Ende alles selbstverständlich wirkt. Und ich weiß, dass dieser Beruf nicht leichter geworden ist, mit steigenden Kosten, fehlendem Personal und Gästen, die rund um die Uhr eine schnelle, persönliche Antwort erwarten.',
       ],
     },
     {
       marker: '02',
-      title: 'Über den Tellerrand',
+      title: 'Über den Tellerrand geschaut',
       body: [
         'Danach habe ich über zehn Jahre lang digitale Produkte entwickelt, ein Unternehmen mitgegründet und an Open-Source-Software mitgearbeitet, die weltweit genutzt wird. So kenne ich heute beide Welten, die Hotellerie und die Technologie, und weiß, wie selten jemand in beiden zu Hause ist.',
       ],
