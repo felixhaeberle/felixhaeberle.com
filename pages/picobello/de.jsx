@@ -19,9 +19,9 @@ const content = {
     },
     {
       marker: '02',
-      title: 'Die andere Seite: Technologie',
+      title: 'Über den Tellerrand',
       body: [
-        'Danach habe ich über zehn Jahre lang digitale Produkte entwickelt, ein Unternehmen mitgegründet und an Open-Source-Projekten mitgeschrieben, die heute weltweit genutzt werden. Dabei habe ich gemerkt, wie ähnlich sich beide Seiten meines Lebens sind, und wie selten jemand beide wirklich von innen kennt.',
+        'Danach habe ich über zehn Jahre lang digitale Produkte entwickelt, ein Unternehmen mitgegründet und an Open-Source-Software mitgearbeitet, die weltweit genutzt wird. So kenne ich heute beide Welten, die Hotellerie und die Technologie, und weiß, wie selten jemand in beiden zu Hause ist.',
       ],
     },
     {
