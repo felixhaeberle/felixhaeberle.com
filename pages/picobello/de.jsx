@@ -19,7 +19,7 @@ const content = {
     },
     {
       marker: '02',
-      title: 'Über den Tellerrand geschaut',
+      title: 'Über den Tellerrand schauen',
       body: [
         'Danach habe ich über zehn Jahre lang digitale Produkte entwickelt, ein Unternehmen mitgegründet und an Open-Source-Software mitgearbeitet, die weltweit genutzt wird. So kenne ich heute beide Welten, die Hotellerie und die Technologie, und weiß, wie selten jemand in beiden zu Hause ist.',
       ],
