@@ -1,12 +1,12 @@
 import React from 'react'
 
-import PicobelloPage from '../../components/4_templates/PicobelloPage.jsx'
+import UltrahostPage from '../../components/4_templates/UltrahostPage.jsx'
 
 const content = {
-  title: 'Felix Häberle — Picobello',
+  title: 'Felix Häberle — Ultrahost',
   metaDescription:
-    'Picobello ist die fehlende KI-Ebene für die Hotellerie. Sie übernimmt die immer gleichen Aufgaben hinter Hotelbetrieb und Gästekommunikation.',
-  sublineLine1: 'Gründer von Picobello.',
+    'Ultrahost ist die fehlende KI-Ebene für die Hotellerie. Sie übernimmt die immer gleichen Aufgaben hinter Hotelbetrieb und Gästekommunikation.',
+  sublineLine1: 'Gründer von Ultrahost.',
   sublineLine2: 'KI-Agenten für die Hotellerie.',
   imprintLabel: 'Impressum',
   chapters: [
@@ -28,14 +28,14 @@ const content = {
       marker: '03',
       title: 'Meine Mission: KI für die Hotellerie',
       body: [
-        'Mit Picobello bringe ich beide Seiten zusammen. Wir entwickeln KI-Agenten für Hotels, die die immer gleichen Aufgaben im Hintergrund übernehmen, von wiederkehrenden Gästeanfragen bis zu den kleinen Abläufen im Betrieb. So bleibt wieder mehr Zeit für das, was wirklich zählt: die Gäste. Entdecken Sie die Zukunft: ',
-        { href: 'https://picobello.ai', label: 'picobello.ai' },
+        'Mit Ultrahost bringe ich beide Seiten zusammen. Wir entwickeln KI-Agenten für Hotels, die die immer gleichen Aufgaben im Hintergrund übernehmen, von wiederkehrenden Gästeanfragen bis zu den kleinen Abläufen im Betrieb. So bleibt wieder mehr Zeit für das, was wirklich zählt: die Gäste. Entdecken Sie die Zukunft: ',
+        { href: 'https://ultrahost.ai', label: 'ultrahost.ai' },
         '.',
       ],
     },
   ],
 }
 
-export default function PicobelloDe() {
-  return <PicobelloPage content={content} />
+export default function UltrahostDe() {
+  return <UltrahostPage content={content} />
 }

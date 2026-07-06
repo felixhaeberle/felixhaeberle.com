@@ -4,7 +4,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function PicobelloPage({ content }) {
+export default function UltrahostPage({ content }) {
   return (
     <div className="min-h-screen flex flex-col">
       <Head>

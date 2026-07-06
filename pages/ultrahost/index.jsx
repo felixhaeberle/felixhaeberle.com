@@ -1,12 +1,12 @@
 import React from 'react'
 
-import PicobelloPage from '../../components/4_templates/PicobelloPage.jsx'
+import UltrahostPage from '../../components/4_templates/UltrahostPage.jsx'
 
 const content = {
-  title: 'Felix Häberle — Picobello',
+  title: 'Felix Häberle — Ultrahost',
   metaDescription:
-    'Picobello is the missing AI layer for hospitality. It takes over the repetitive work behind hotel operations and guest communication.',
-  sublineLine1: 'Founder of Picobello.',
+    'Ultrahost is the missing AI layer for hospitality. It takes over the repetitive work behind hotel operations and guest communication.',
+  sublineLine1: 'Founder of Ultrahost.',
   sublineLine2: 'AI agents for hospitality.',
   imprintLabel: 'Imprint',
   chapters: [
@@ -28,14 +28,14 @@ const content = {
       marker: '03',
       title: 'On a mission to solve AI for hospitality',
       body: [
-        'Picobello brings the two together. It’s the missing AI layer for hospitality: it takes over the repetitive work behind hotel operations and guest communication, so the day ends when it should and the time goes back to the guests. You can find us at ',
-        { href: 'https://picobello.ai', label: 'picobello.ai' },
+        'Ultrahost brings the two together. It’s the missing AI layer for hospitality: it takes over the repetitive work behind hotel operations and guest communication, so the day ends when it should and the time goes back to the guests. You can find us at ',
+        { href: 'https://ultrahost.ai', label: 'ultrahost.ai' },
         '.',
       ],
     },
   ],
 }
 
-export default function Picobello() {
-  return <PicobelloPage content={content} />
+export default function Ultrahost() {
+  return <UltrahostPage content={content} />
 }
