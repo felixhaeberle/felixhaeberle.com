@@ -14,21 +14,21 @@ const content = {
       marker: '01',
       title: 'Ein Hotel führen, heute',
       body: [
-        'Es ist 22 Uhr, und eigentlich wäre Feierabend. Aber das Postfach ist voll, im Dienstplan für morgen fehlt jemand, und in Zimmer 12 tropft Wasser. Wer ein Hotel führt, kennt diesen Abend. Die Kosten steigen, gutes Personal ist kaum zu finden, und dazu die tausend Kleinigkeiten, die niemand bemerkt, solange sie funktionieren. Ich kenne diesen Abend nicht aus Erzählungen. Ich bin in ihm aufgewachsen, im Hotel meiner Familie, und habe dort so gut wie jede Arbeit selbst gemacht.',
+        'Ich bin in einem kleinen Familienhotel groß geworden und habe dort über die Jahre so ziemlich jede Arbeit selbst gemacht, an der Rezeption, im Service und überall dort, wo sonst gerade Hände fehlten. Dabei habe ich früh ein Gespür dafür bekommen, wie viel im Hintergrund passieren muss, damit für den Gast am Ende alles ganz selbstverständlich aussieht. Leichter ist dieser Beruf über die Jahre nicht geworden. Die Kosten steigen, gutes Personal zu finden wird immer schwerer, und gleichzeitig erwarten Gäste zu jeder Tages- und Nachtzeit eine schnelle, persönliche Antwort. Ich kenne die Abende, an denen eigentlich längst Feierabend wäre und trotzdem noch das Postfach voll ist, im Dienstplan für den nächsten Tag jemand fehlt und nebenbei in einem der Zimmer etwas kaputtgeht.',
       ],
     },
     {
       marker: '02',
       title: 'Design & Technologie als Rückgrat',
       body: [
-        'Dann bin ich gegangen, um die andere Seite zu verstehen. Mehr als zehn Jahre habe ich digitale Produkte gebaut, vom ersten Prototyp bis zu Tools, auf die sich Menschen täglich verlassen. Ich habe ein Unternehmen mitgegründet und an Open-Source-Software mitgearbeitet, die weltweit läuft. Und je länger ich baute, desto klarer wurde mir: Ein gutes Produkt entsteht wie ein gutes Hotel, aus unzähligen kleinen Entscheidungen, jede mit Sorgfalt getroffen. Es sind dieselben zwei Welten. Nur begegnen sie sich fast nie in einem Menschen.',
+        'Irgendwann hat es mich in eine ganz andere Welt gezogen. Ich habe Design studiert und danach über zehn Jahre lang digitale Produkte entwickelt, vom ersten Entwurf bis zu Anwendungen, mit denen Menschen jeden Tag arbeiten. Ich habe ein eigenes Unternehmen mitgegründet und an Open-Source-Projekten mitgeschrieben, die heute weltweit genutzt werden. Je länger ich das gemacht habe, desto deutlicher habe ich gemerkt, wie ähnlich sich die beiden Seiten meines Lebens eigentlich sind. Ein gutes Produkt und ein gut geführtes Hotel entstehen auf die gleiche Weise, nämlich aus vielen kleinen Entscheidungen, die jemand mit Sorgfalt und einem Gespür für die Menschen trifft, die am Ende damit zu tun haben. Und ich habe festgestellt, dass man nur selten jemanden trifft, der beide Seiten wirklich von innen kennt.',
       ],
     },
     {
       marker: '03',
       title: 'Meine Mission: KI für die Hotellerie',
       body: [
-        'Genau dort setzt Picobello an. Wir bauen KI-Agenten für Hotels: Sie übernehmen, was sich jeden Tag wiederholt, von der Gästeanfrage bis zur Routine im Betrieb. Kein weiteres Tool, das noch mehr Aufmerksamkeit fordert, sondern eine stille Entlastung, die einfach funktioniert. Damit um 22 Uhr wirklich Feierabend ist. Und die Zeit wieder den Gästen gehört. Sie finden uns auf ',
+        'Mit Picobello bringe ich diese beiden Seiten zusammen. Wir entwickeln KI-Agenten für Hotels, die den Teil der Arbeit übernehmen, der sich jeden Tag wiederholt, von wiederkehrenden Gästeanfragen bis zu den vielen kleinen Abläufen im Betrieb, die Zeit kosten, ohne dass sie groß auffallen. Mir ist dabei wichtig, dass es sich im Alltag nicht nach einem weiteren Programm anfühlt, um das man sich auch noch kümmern muss, sondern nach einer echten Entlastung, die im Hintergrund einfach mitläuft. Worum es mir am Ende geht, ist ganz einfach: dass in einem Hotel wieder mehr Zeit für das bleibt, was wirklich zählt, für die Gäste und für die Menschen, die sich um sie kümmern. Mehr darüber auf ',
         { href: 'https://picobello.ai', label: 'picobello.ai' },
         '.',
       ],
