@@ -18,7 +18,9 @@ export default function Writings({page, writings, settings}) {
         <div className="site-split site-split--hide-media-medium mb-10 md:mb-12">
           <div className="space-y-6 md:space-y-8">
             <h1 className="site-page-title font-sans text-xl text-textLight font-medium mb-3 md:mb-4">Writings</h1>
-            <Intro page={page} />
+            <div className="lg:max-w-[75%]">
+              <Intro page={page} />
+            </div>
           </div>
           <div className="site-split__media">
             <img
