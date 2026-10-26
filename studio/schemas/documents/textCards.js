@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default {
   title: 'Text Cards',
   name: 'text_cards',
@@ -16,7 +14,7 @@ export default {
     prepare() {
       return {
         title: 'Cards',
-        media: <span>🗂</span>
+        media: () => '🗂'
       }
     }
   }

@@ -1,6 +1,3 @@
-import React from 'react'
-import getFavicons from 'get-website-favicon'
-
 export default {
   type: 'document',
   name: 'project',
@@ -47,7 +44,7 @@ export default {
       return {
         title: title,
         subtitle: link,
-        media: <span>🛠</span>
+        media: () => '🛠'
       }
     }
   }

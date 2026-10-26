@@ -1,7 +1,5 @@
 import { format, parseISO } from 'date-fns'
 
-import React from 'react'
-
 export default {
   title: 'Page',
   name: 'page',
@@ -32,7 +30,7 @@ export default {
       return {
         title: title,
         subtitle: format(parseISO(updatedAt), 'MMM, yyyy'),
-        media: <span>📑</span>
+        media: () => '📑'
       }
     }
   }

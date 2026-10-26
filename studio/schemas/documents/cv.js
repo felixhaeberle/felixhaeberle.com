@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default {
   title: 'CV',
   name: 'cv',
@@ -28,7 +26,7 @@ export default {
     prepare() {
       return {
         title: 'CV',
-        media: <span>🎓</span>
+        media: () => '🎓'
       }
     }
   }

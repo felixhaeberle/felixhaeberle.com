@@ -1,11 +1,13 @@
-# Sanity Blogging Content Studio
+# Felix Häberle Content Studio
 
-Congratulations, you have now installed the Sanity Content Studio, an open source real-time content editing environment connected to the Sanity backend.
+Modern Sanity Studio for project `32kc4e2s` and the `production` dataset.
 
-Now you can do the following things:
+```sh
+pnpm install --ignore-workspace
+pnpm start
+pnpm build
+pnpm deploy
+```
 
-- [Read “getting started” in the docs](https://www.sanity.io/docs/introduction/getting-started?utm_source=readme)
-- Check out the example frontend: [React/Next.js](https://github.com/sanity-io/tutorial-sanity-blog-react-next)
-- [Read the blog post about this template](https://www.sanity.io/blog/build-your-own-blog-with-sanity-and-next-js?utm_source=readme)
-- [Join the community Slack](https://slack.sanity.io/?utm_source=readme)
-- [Extend and build plugins](https://www.sanity.io/docs/content-studio/extending?utm_source=readme)
+The Studio schema lives in `schemas/`. Built output is intentionally excluded
+from Git and is produced by Sanity during deployment.

@@ -1,14 +1,11 @@
-// deskStructure.js
-import S from "@sanity/desk-tool/structure-builder";
- 
-export default () =>
+export const structure = (S) =>
   S.list()
     .title('Content')
     .items([
       S.listItem()
         .title('Site settings')
         .child(
-          S.editor()
+          S.document()
             .schemaType('siteSettings')
             .documentId('siteSettings')
         ),
