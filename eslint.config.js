@@ -11,6 +11,7 @@ export default [
       'out/**',
       'studio/**',
       'public/**',
+      'next-env.d.ts',
       'tsconfig.tsbuildinfo',
     ],
   },
